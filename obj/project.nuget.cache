@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ty7J6XiWV/Dczd2j9d/Xm+wSXW0Y/ybP3UUJ6RwDMO2uUECmafEbP5zmMjjHrD8NK5BqHvwVe4t/MmDMTzW+sQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\qiao\\source\\repos\\SuccClan\\SuccClan.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\qiao\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\qiao\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
