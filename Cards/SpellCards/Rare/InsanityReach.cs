@@ -45,8 +45,8 @@ namespace SuccClan.Cards.SpellCards
 					new CardEffectDataBuilder
 					{
 						EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
-						TargetMode = TargetMode.DropTargetCharacter,
-						TargetTeamType = Team.Type.Monsters | Team.Type.Heroes,
+						TargetMode = TargetMode.Room,
+						TargetTeamType = Team.Type.Heroes,
 						ParamStatusEffects = new StatusEffectStackData[]
 						{
 							new StatusEffectStackData

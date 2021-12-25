@@ -21,9 +21,8 @@ namespace SuccClan.Cards
 			var testCardID = new List<string>
 			{
 				PainAndPleasure.IDName,
-				CubusSpike.IDName,
-				ParadoxTome.IDName,
 				InsanityReach.IDName,
+				PlagueBoost.IDName,
 			};
 
 			foreach (var cardID in testCardID)

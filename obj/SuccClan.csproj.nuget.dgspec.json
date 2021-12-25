@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\qiao\\source\\repos\\SuccClan\\SuccClan.csproj": {}
+    "C:\\Users\\rukun\\Documents\\Visual Studio 2019\\Projects\\SuccClan\\SuccClan.csproj": {}
   },
   "projects": {
-    "C:\\Users\\qiao\\source\\repos\\SuccClan\\SuccClan.csproj": {
+    "C:\\Users\\rukun\\Documents\\Visual Studio 2019\\Projects\\SuccClan\\SuccClan.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\qiao\\source\\repos\\SuccClan\\SuccClan.csproj",
+        "projectUniqueName": "C:\\Users\\rukun\\Documents\\Visual Studio 2019\\Projects\\SuccClan\\SuccClan.csproj",
         "projectName": "SuccClan",
-        "projectPath": "C:\\Users\\qiao\\source\\repos\\SuccClan\\SuccClan.csproj",
-        "packagesPath": "C:\\Users\\qiao\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\qiao\\source\\repos\\SuccClan\\obj\\",
+        "projectPath": "C:\\Users\\rukun\\Documents\\Visual Studio 2019\\Projects\\SuccClan\\SuccClan.csproj",
+        "packagesPath": "C:\\Users\\rukun\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rukun\\Documents\\Visual Studio 2019\\Projects\\SuccClan\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\qiao\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rukun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +57,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

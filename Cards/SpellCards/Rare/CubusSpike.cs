@@ -25,12 +25,26 @@ namespace SuccClan.Cards.SpellCards
 
 				CardType = CardType.Spell,
 
+				EffectBuilders = new List<CardEffectDataBuilder>
+				{
+					new CardEffectDataBuilder
+					{
+						EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+						TargetMode = TargetMode.Room,
+						TargetTeamType = Team.Type.Heroes,
+						ParamStatusEffects = new StatusEffectStackData[]
+						{
+							new StatusEffectStackData
+							{
+								statusId = (StatusEffectFrantic.IDName).ToLower(),
+								count = 0,
+							},
+						},
+					},
+				},
+
 				TraitBuilders = new List<CardTraitDataBuilder>
 				{
-					new CardTraitDataBuilder
-					{
-						TraitStateType = VanillaCardTraitTypes.CardTraitExhaustState,
-					},
 					new CardTraitDataBuilder
 					{
 						TraitStateType = VanillaCardTraitTypes.CardTraitScalingAddStatusEffect,
@@ -42,27 +56,15 @@ namespace SuccClan.Cards.SpellCards
 						{
 							new StatusEffectStackData
 							{
-								statusId = StatusEffectFrantic.IDName,
+								statusId = (StatusEffectFrantic.IDName).ToLower(),
+								count = 0,
 							},
 						},
 						ParamTeamType = Team.Type.Heroes,
 					},
-				},
-				
-				EffectBuilders = new List<CardEffectDataBuilder>
-				{ 
-					new CardEffectDataBuilder
+					new CardTraitDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
-						TargetMode = TargetMode.Room,
-						TargetTeamType = Team.Type.Heroes,
-						ParamStatusEffects = new StatusEffectStackData[]
-						{
-							new StatusEffectStackData
-							{
-								statusId = StatusEffectFrantic.IDName,
-							},
-						}
+						TraitStateType = VanillaCardTraitTypes.CardTraitExhaustState,
 					},
 				},
 			};

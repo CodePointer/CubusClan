@@ -5,6 +5,8 @@ using System.Text;
 using Trainworks.Builders;
 using Trainworks.Constants;
 
+using SuccClan.CardEffects;
+
 namespace SuccClan.Cards.SpellCards
 {
 	class PlagueBoost
@@ -28,18 +30,11 @@ namespace SuccClan.Cards.SpellCards
 					},
 					new CardTraitDataBuilder
 					{
-						TraitStateType = VanillaCardTraitTypes.CardTraitFreeze,
+						TraitStateType = VanillaCardTraitTypes.CardTraitExhaustState,
 					},
-				},
-
-				EffectBuilders = new List<CardEffectDataBuilder>  // TODO
-				{
-					new CardEffectDataBuilder
+					new CardTraitDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectBuffDamage,
-						ParamInt = 8,
-						TargetMode = TargetMode.Room,
-						TargetTeamType = Team.Type.Heroes | Team.Type.Monsters,
+						TraitStateType = typeof(CardTraitBlightAddEnergy),
 					},
 				},
 			};

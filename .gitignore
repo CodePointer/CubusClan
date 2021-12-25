@@ -1,0 +1,7 @@
+
+*.lnk
+*.cache
+
+obj/Release/*
+*.pdb
+*.cache
