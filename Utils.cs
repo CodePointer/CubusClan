@@ -36,7 +36,7 @@ namespace SuccClan
 			}));
 		}
 
-		public static void AddBlight(CardDataBuilder r, string IDName)
+		public static void AddSpellWithoutPool(CardDataBuilder r, string IDName)
 		{
 			r.CardID = IDName;
 			r.NameKey = IDName + "_Name";
@@ -50,7 +50,7 @@ namespace SuccClan
 
 			Trainworks.Trainworks.Log(BepInEx.Logging.LogLevel.All, string.Join("\t", new string[]
 			{
-				"BlightCardAdded", r.NameKey.Localize(), r.Rarity.ToString(), r.Cost.ToString(),
+				"OtherCardAdded", r.NameKey.Localize(), r.Rarity.ToString(), r.Cost.ToString(),
 				r.OverrideDescriptionKey.Localize()
 			}));
 		}
@@ -93,7 +93,7 @@ namespace SuccClan
 			r.RelicActivatedKey = ID + "_Active";
 			r.RelicLoreTooltipKeys = new List<string> { ID + "_Lore" };
 			r.ClanID = Clan.IDName;
-			r.Rarity = CollectableRarity.Common;
+			r.Rarity = CollectableRarity.Uncommon;
 			r.IsBossGivenRelic = false;
 		}
 

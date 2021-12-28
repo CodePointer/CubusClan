@@ -5,6 +5,8 @@ using System.Text;
 using Trainworks.Builders;
 using Trainworks.Constants;
 
+using SuccClan.CardEffects;
+
 namespace SuccClan.Cards.SpellCards
 {
 	class VitalityExtraction
@@ -18,7 +20,7 @@ namespace SuccClan.Cards.SpellCards
 				Cost = 2,
 				Rarity = CollectableRarity.Rare,
 				TargetsRoom = true,
-				Targetless = false,
+				Targetless = true,
 
 				TraitBuilders = new List<CardTraitDataBuilder>
 				{
@@ -26,17 +28,42 @@ namespace SuccClan.Cards.SpellCards
 					{
 						TraitStateType = VanillaCardTraitTypes.CardTraitExhaustState,
 					},
+					new CardTraitDataBuilder
+					{
+						TraitStateType = typeof(CardTraitFranticAddStatus),
+					},
 				},
 
 				EffectBuilders = new List<CardEffectDataBuilder>  // TODO
 				{
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectBuffDamage,
-						ParamInt = 8,
+						EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
 						TargetMode = TargetMode.Room,
-						TargetTeamType = Team.Type.Heroes | Team.Type.Monsters,
+						TargetTeamType = Team.Type.Monsters,
+						ParamStatusEffects = new StatusEffectStackData[]
+						{
+							new StatusEffectStackData
+							{
+								statusId = VanillaStatusEffectIDs.Regen,
+								count = 0,
+							}
+						},
 					},
+					new CardEffectDataBuilder
+					{
+						EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+						TargetMode = TargetMode.Room,
+						TargetTeamType = Team.Type.Monsters,
+						ParamStatusEffects = new StatusEffectStackData[]
+						{
+							new StatusEffectStackData
+							{
+								statusId = VanillaStatusEffectIDs.Rage,
+								count = 0,
+							}
+						},
+					}
 				},
 			};
 

@@ -6,13 +6,13 @@ using Trainworks.Builders;
 using Trainworks.Constants;
 using Trainworks.Managers;
 using SuccClan.Cards;
-using SuccClan.Effects;
+using SuccClan.RelicEffects;
 
 namespace SuccClan.Relics
 {
-	class NahyndrianCrystal
+	class DesireCrystal
 	{
-		public static string IDName = "Relic_NahyndrianCrystal";
+		public static string IDName = "Relic_DesireCrystal";
 		public static string offeringUpgradeID = "BlightOfferingUpgrade";
 
 		public static void Make()
@@ -21,7 +21,7 @@ namespace SuccClan.Relics
 			// You can refer to Sting-relevent relics for upgrade writing.
 			var offeringUpgrade = new CardUpgradeDataBuilder
 			{
-				
+
 				UpgradeTitleKey = offeringUpgradeID + "_Title",
 				UpgradeDescriptionKey = offeringUpgradeID + "_Desc",
 
@@ -46,7 +46,7 @@ namespace SuccClan.Relics
 				{
 					new RelicEffectDataBuilder
 					{
-						RelicEffectClassType = typeof(RelicEffectBlightAddOfferingUpgrade),  // This is a custom RelicEffect
+						RelicEffectClassType = typeof(RelicEffectBlightAddOfferingUpgrade),
 						ParamSourceTeam = Team.Type.Monsters,
 						ParamCardUpgradeData = offeringUpgrade,
 					},

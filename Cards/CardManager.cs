@@ -21,8 +21,6 @@ namespace SuccClan.Cards
 			var testCardID = new List<string>
 			{
 				PainAndPleasure.IDName,
-				InsanityReach.IDName,
-				PlagueBoost.IDName,
 			};
 
 			foreach (var cardID in testCardID)
@@ -33,8 +31,11 @@ namespace SuccClan.Cards
 			if (__instance.GetMainClass() == SuccClanPlugin.clanRef
 				|| __instance.GetSubClass() == SuccClanPlugin.clanRef)
 			{
-				var starterCrystal = CustomCollectableRelicManager.GetRelicDataByID(NahyndrianCrystal.IDName);
+				var starterCrystal = CustomCollectableRelicManager.GetRelicDataByID(DesireCrystal.IDName);
 				__instance.AddRelic(starterCrystal);
+
+				var testRelic = CustomCollectableRelicManager.GetRelicDataByID(ObsessingAromatherapy.IDName);
+				__instance.AddRelic(testRelic);
 			}
 		}
 	}

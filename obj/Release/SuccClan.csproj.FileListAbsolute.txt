@@ -11,7 +11,6 @@ C:\Users\qiao\source\repos\SuccClan\obj\Release\SuccClan.csproj.AssemblyReferenc
 C:\Program Files (x86)\Steam\steamapps\workshop\content\1102190\CubusClan\plugins\SuccClan.deps.json
 C:\Program Files (x86)\Steam\steamapps\workshop\content\1102190\CubusClan\plugins\SuccClan.dll
 C:\Program Files (x86)\Steam\steamapps\workshop\content\1102190\CubusClan\plugins\SuccClan.pdb
-C:\Users\rukun\Documents\Visual Studio 2019\Projects\SuccClan\obj\Release\SuccClan.csprojAssemblyReference.cache
 C:\Users\rukun\Documents\Visual Studio 2019\Projects\SuccClan\obj\Release\SuccClan.AssemblyInfoInputs.cache
 C:\Users\rukun\Documents\Visual Studio 2019\Projects\SuccClan\obj\Release\SuccClan.AssemblyInfo.cs
 C:\Users\rukun\Documents\Visual Studio 2019\Projects\SuccClan\obj\Release\SuccClan.csproj.CoreCompileInputs.cache

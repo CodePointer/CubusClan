@@ -7,11 +7,11 @@ using Trainworks.Constants;
 using Trainworks.Managers;
 
 //using SuccClan.Cards;
-namespace SuccClan.Effects
+namespace SuccClan.RelicEffects
 {
 	// Refer to the RelicEffectAddTempUpgrade
 	public class RelicEffectBlightAddOfferingUpgrade : RelicEffectBase, ICardModifierRelicEffect,
-		IRelicEffect, IStatusEffectRelicEffect
+		IRelicEffect
 	{
 		private Team.Type _sourceTeam;
 		private CardUpgradeData _cardUpgradeData;
@@ -55,11 +55,6 @@ namespace SuccClan.Effects
 			title = string.Empty;
 			body = string.Empty;
 			return false;
-		}
-
-		public StatusEffectStackData[] GetStatusEffects()
-		{
-			return this._cardUpgradeData.GetStatusEffectUpgrades().ToArray();
 		}
 	}
 }

@@ -43,7 +43,7 @@ namespace SuccClan.Cards.UnitCards
 				SubtypeKeys = new List<string> { "SuccClan_Subtype_Ghost" },
 
 				Size = 1,
-				Health = 10,
+				Health = 40,
 				AttackDamage = 0,
 				PriorityDraw = false,
 				
@@ -91,7 +91,14 @@ namespace SuccClan.Cards.UnitCards
 							{
 								EffectStateType = typeof(CardEffectSpread),
 								ParamInt = 1,
-							}
+							},
+							new CardEffectDataBuilder
+							{
+								EffectStateType = VanillaCardEffectTypes.CardEffectDebuffMaxHealth,
+								TargetMode = TargetMode.Self,
+								TargetTeamType = Team.Type.Monsters,
+								ParamInt = 2,
+							},
 						},
 					},
 				}

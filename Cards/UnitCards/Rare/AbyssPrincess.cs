@@ -6,6 +6,7 @@ using Trainworks.Builders;
 using Trainworks.Constants;
 
 using SuccClan.Effects;
+using SuccClan.CardEffects;
 
 namespace SuccClan.Cards.UnitCards
 {
@@ -23,24 +24,6 @@ namespace SuccClan.Cards.UnitCards
 			{
 				Cost = 2,
 				Rarity = CollectableRarity.Rare,
-
-				TriggerBuilders = new List<CardTriggerEffectDataBuilder>
-				{
-					new CardTriggerEffectDataBuilder
-					{
-						Trigger = Trigger_OnFanatic.OnFanaticTrigger.GetEnum(),
-						DescriptionKey = IDName + "_OnFanatic_Desc",
-						CardTriggerEffects = new List<CardTriggerData>
-						{
-							new CardTriggerData
-							{
-								persistenceMode = PersistenceMode.SingleRun,
-								cardTriggerEffect = "CardTriggerEffectBuffCharacterDamage",
-								paramInt = 2,
-							},
-						},
-					},
-				},
 			};
 
 			Utils.AddUnit(railyard, IDName, charData);
@@ -58,8 +41,57 @@ namespace SuccClan.Cards.UnitCards
 				SubtypeKeys = new List<string> { "SuccClan_Subtype_Cubus" },
 
 				Size = 2,
-				Health = 10,
-				AttackDamage = 5,
+				Health = 1,
+				AttackDamage = 25,
+
+				StartingStatusEffects = new StatusEffectStackData[]
+				{
+					new StatusEffectStackData
+					{
+						statusId = VanillaStatusEffectIDs.Quick,
+					},
+				},
+
+				TriggerBuilders = new List<CharacterTriggerDataBuilder>
+				{
+					new CharacterTriggerDataBuilder
+					{
+						Trigger = CharacterTriggerData.Trigger.OnAttacking,
+						DescriptionKey = IDName + "_OnAttack_Desc",
+
+						EffectBuilders = new List<CardEffectDataBuilder>
+						{
+							new CardEffectDataBuilder
+							{
+								EffectStateType = typeof(CardEffectDebuffDamage),
+								ParamInt = 5,
+								TargetMode = TargetMode.Self,
+								TargetTeamType = Team.Type.Monsters,
+							},
+							new CardEffectDataBuilder
+							{
+								EffectStateType = VanillaCardEffectTypes.CardEffectBuffDamage,
+								ParamInt = 5,
+								TargetMode = TargetMode.Room,
+								TargetTeamType = Team.Type.Heroes,
+							},
+							new CardEffectDataBuilder
+							{
+								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+								TargetMode = TargetMode.Room,
+								TargetTeamType = Team.Type.Heroes,
+								ParamStatusEffects = new StatusEffectStackData[]
+								{
+									new StatusEffectStackData
+									{
+										statusId = StatusEffectFrantic.IDName,
+										count = 1,
+									},
+								},
+							},
+						},
+					},
+				},
 			};
 
 			Utils.AddUnitImg(charBuilder, IDName + ".png");
@@ -74,23 +106,39 @@ namespace SuccClan.Cards.UnitCards
 				UpgradeDescriptionKey = IDName + "_Upgrade_Desc",
 				SourceSynthesisUnit = charData,
 
-				CardTriggerUpgradeBuilders = new List<CardTriggerEffectDataBuilder>
+				TriggerUpgradeBuilders = new List<CharacterTriggerDataBuilder>
 				{
-					new CardTriggerEffectDataBuilder
+					new CharacterTriggerDataBuilder
 					{
-						Trigger = Trigger_OnFanatic.OnFanaticTrigger.GetEnum(),
-						DescriptionKey = IDName + "_OnFanatic_Desc",
-						CardTriggerEffects = new List<CardTriggerData>
+						Trigger = CharacterTriggerData.Trigger.OnAttacking,
+						DescriptionKey = IDName + "_Updating_OnAttack_Desc",
+
+						EffectBuilders = new List<CardEffectDataBuilder>
 						{
-							new CardTriggerData
+							new CardEffectDataBuilder
 							{
-								persistenceMode = PersistenceMode.SingleRun,
-								cardTriggerEffect = "CardTriggerEffectBuffCharacterDamage",
-								paramInt = 1,
+								EffectStateType = typeof(CardEffectDebuffDamage),
+								ParamInt = 5,
+								TargetMode = TargetMode.Self,
+								TargetTeamType = Team.Type.Monsters,
+							},
+							new CardEffectDataBuilder
+							{
+								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+								TargetMode = TargetMode.LastAttackedCharacter,
+								TargetTeamType = Team.Type.Heroes,
+								ParamStatusEffects = new StatusEffectStackData[]
+								{
+									new StatusEffectStackData
+									{
+										statusId = StatusEffectFrantic.IDName,
+										count = 1,
+									},
+								},
 							},
 						},
 					},
-				},
+				}
 
 			}.Build();
 		}

@@ -30,15 +30,15 @@ namespace SuccClan.Cards.SpellCards
 					new CardEffectDataBuilder
 					{
 						EffectStateType = VanillaCardEffectTypes.CardEffectDamage,
-						ParamInt = 1,
+						ParamInt = 2,
 						TargetMode = TargetMode.Room,
 						TargetTeamType = Team.Type.Heroes
 					},
 					new CardEffectDataBuilder
 					{
 						EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
-						ParamInt = (int)CardPile.HandPile,
-						AdditionalParamInt = 2,  // Number of added card
+						ParamInt = (int)CardPile.DeckPileRandom,
+						AdditionalParamInt = 1,  // Number of added card
 						ParamCardPool = MyCardPools.ObsessingShardPool,
 					},
 					//new CardEffectDataBuilder

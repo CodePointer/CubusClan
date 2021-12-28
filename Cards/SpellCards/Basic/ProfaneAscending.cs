@@ -20,7 +20,7 @@ namespace SuccClan.Cards.SpellCards
 			CardDataBuilder railyard = new CardDataBuilder
 			{
 				Cost = 0,
-				Rarity = CollectableRarity.Starter,
+				Rarity = CollectableRarity.Common,
 				TargetsRoom = true,
 				Targetless = false,
 
@@ -60,7 +60,7 @@ namespace SuccClan.Cards.SpellCards
 				},
 			};
 
-			Utils.AddSpell(railyard, IDName);
+			Utils.AddSpellWithoutPool(railyard, IDName);
 			Utils.AddImg(railyard, IDName + ".png");
 			railyard.BuildAndRegister();
 

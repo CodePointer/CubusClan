@@ -7,6 +7,8 @@ using HarmonyLib;
 using Trainworks.Builders;
 using Trainworks.Constants;
 
+using SuccClan.CardEffects;
+
 namespace SuccClan.Cards.UnitCards
 {
 	class EndlessShadow
@@ -17,10 +19,6 @@ namespace SuccClan.Cards.UnitCards
 		public static void Make()
 		{
 			var charData = BuildUnit();
-
-			CardEffectData effectData = charData.GetTriggers()[0].GetEffects()[0];
-			Traverse.Create(effectData).Field("paramCharacterData").SetValue(charData); // TODO: 可能还是需要写一个自己的Effect。
-
 			BuildUpgrade(charData);
 
 			CardDataBuilder railyard = new CardDataBuilder
@@ -44,8 +42,8 @@ namespace SuccClan.Cards.UnitCards
 				SubtypeKeys = new List<string> { "SuccClan_Subtype_Cubus" },
 
 				Size = 2,
-				Health = 5,
-				AttackDamage = 10,
+				Health = 25,
+				AttackDamage = 20,
 
 				TriggerBuilders = new List<CharacterTriggerDataBuilder>
 				{
@@ -57,8 +55,13 @@ namespace SuccClan.Cards.UnitCards
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectSpawnMonster,
+								EffectStateType = typeof(CardEffectCopyUnitWithUpgrade),
 								ParamInt = 1,
+								AdditionalParamInt = (int)SpawnMode.FrontSlot,
+								ParamBool = true,
+								TargetMode = TargetMode.Self,
+								TargetTeamType = Team.Type.Monsters,
+								ParamStr = "Self",
 								ParamCardUpgradeData = new CardUpgradeDataBuilder
 								{
 									BonusHP = -5,

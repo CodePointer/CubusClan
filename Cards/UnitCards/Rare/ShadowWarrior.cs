@@ -6,6 +6,7 @@ using Trainworks.Builders;
 using Trainworks.Constants;
 
 using SuccClan.Effects;
+using SuccClan.CardEffects;
 
 namespace SuccClan.Cards.UnitCards
 {
@@ -23,25 +24,6 @@ namespace SuccClan.Cards.UnitCards
 			{
 				Cost = 1,
 				Rarity = CollectableRarity.Rare,
-
-				TriggerBuilders = new List<CardTriggerEffectDataBuilder>
-				{
-					new CardTriggerEffectDataBuilder
-					{
-						Trigger = Trigger_OnFanatic.OnFanaticTrigger.GetEnum(),
-						DescriptionKey = IDName + "_OnFanatic_Desc",
-						CardTriggerEffects = new List<CardTriggerData>
-						{
-							new CardTriggerData
-							{
-								persistenceMode = PersistenceMode.SingleRun,
-								cardTriggerEffect = "CardTriggerEffectBuffCharacterDamage",
-								buffEffectType = "None",
-								paramInt = 2,
-							},
-						},
-					},
-				},
 			};
 
 			Utils.AddUnit(railyard, IDName, charData);
@@ -59,8 +41,36 @@ namespace SuccClan.Cards.UnitCards
 				SubtypeKeys = new List<string> { "SuccClan_Subtype_Cubus" },
 
 				Size = 2,
-				Health = 20,
+				Health = 1,
 				AttackDamage = 5,
+
+				TriggerBuilders = new List<CharacterTriggerDataBuilder>
+				{
+					new CharacterTriggerDataBuilder
+					{
+						Trigger = Trigger_OnFanatic.OnFanaticCharTrigger.GetEnum(),
+						DescriptionKey = IDName + "_OnFanatic_Desc",
+						EffectBuilders = new List<CardEffectDataBuilder>
+						{
+							new CardEffectDataBuilder
+							{
+								EffectStateType = typeof(CardEffectUpgradePermanent),
+								ParamCardUpgradeData = new CardUpgradeDataBuilder
+								{
+									BonusDamage = 2,
+								}.Build(),
+							},
+						},
+					},
+				},
+
+				//StartingStatusEffects = new StatusEffectStackData[]
+				//{
+				//	new StatusEffectStackData
+				//	{
+				//		statusId = VanillaStatusEffectIDs.Endless,
+				//	},
+				//},
 			};
 
 			Utils.AddUnitImg(charBuilder, IDName + ".png");

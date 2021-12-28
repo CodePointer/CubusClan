@@ -5,6 +5,8 @@ using System.Text;
 using Trainworks.Builders;
 using Trainworks.Constants;
 
+using SuccClan.CardEffects;
+
 namespace SuccClan.Cards.SpellCards
 {
 	class IllusionTwins
@@ -15,7 +17,7 @@ namespace SuccClan.Cards.SpellCards
 		{
 			CardDataBuilder railyard = new CardDataBuilder
 			{
-				Cost = 1,
+				Cost = 2,
 				Rarity = CollectableRarity.Rare,
 				TargetsRoom = true,
 				Targetless = false,
@@ -26,17 +28,32 @@ namespace SuccClan.Cards.SpellCards
 					{
 						TraitStateType = VanillaCardTraitTypes.CardTraitExhaustState,
 					},
+					new CardTraitDataBuilder
+					{
+						TraitStateType = VanillaCardTraitTypes.CardTraitIntrinsicState,
+					},
 				},
 
-				EffectBuilders = new List<CardEffectDataBuilder>  // TODO
+				EffectBuilders = new List<CardEffectDataBuilder>
 				{
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectCopyUnits,
+						EffectStateType = typeof(CardEffectCopyUnitWithUpgrade),
 						TargetMode = TargetMode.DropTargetCharacter,
 						TargetTeamType = Team.Type.Monsters,
-						TargetCharacterSubtype = "SubtypesData_None",
-						ParamInt = 1
+						ParamInt = 1,
+						AdditionalParamInt = (int)SpawnMode.BackSlot,
+						ParamBool = false,  // Restore the health
+						ParamCardUpgradeData = new CardUpgradeDataBuilder
+						{
+							StatusEffectUpgrades = new List<StatusEffectStackData>
+							{
+								new StatusEffectStackData
+								{
+									statusId = VanillaStatusEffectIDs.Fragile,
+								},
+							},
+						}.Build(),
 					},
 				},
 			};

@@ -18,6 +18,7 @@ namespace SuccClan.Effects
 
 		static Trigger_OnFanatic()
 		{
+			Utils.BepLog(new List<string> { "AssociateTriggers. " });
 			CustomTriggerManager.AssociateTriggers(OnFanaticTrigger, OnFanaticCharTrigger);
 		}
 	}

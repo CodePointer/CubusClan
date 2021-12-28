@@ -43,10 +43,10 @@ namespace SuccClan
 				IncubusButcher.IDName,
 				SuccbusTorturer.IDName,
 				Vrolikai.IDName,
-				EndlessShadow.IDName,
 
+				EndlessShadow.IDName,
 				ShadowWarrior.IDName,
-				//AbyssPrincess.IDName,
+				AbyssPrincess.IDName,
 			};
 
 			CustomLocalizationManager.ImportCSV("SuccClan.csv", ',');
@@ -64,7 +64,7 @@ namespace SuccClan
 
 			MakeRelics();
 
-			ProviderManager.SaveManager.GetMetagameSave().SetLevelAndXP(clanRef.GetID(), 5, 99999);
+			//ProviderManager.SaveManager.GetMetagameSave().SetLevelAndXP(clanRef.GetID(), 5, 99999);
 			Trainworks.Trainworks.Log(BepInEx.Logging.LogLevel.All, "OUTPUTHERE");
 		}
 
@@ -145,16 +145,27 @@ namespace SuccClan
 			IncubusButcher.Make();
 			SuccbusTorturer.Make();
 			Vrolikai.Make();
-			EndlessShadow.Make();
 
 			// Unit cards: Rare
-			//AbyssPrincess.Make();
+			AbyssPrincess.Make();
 			ShadowWarrior.Make();
+			EndlessShadow.Make();
 		}
 
 		static void MakeRelics()
 		{
-			NahyndrianCrystal.Make();
+			DesireCrystal.Make();
+
+			AbyssCrown.Make();
+			DemonBlood.Make();
+			FlareRibbon.Make();
+			FleshRing.Make();
+			MutantElixirs.Make();
+			NetherBlossom.Make();
+			ObsessingAromatherapy.Make();
+			PoisonSerum.Make();
+			ProfaneCrossbow.Make();
+			ShadowCloak.Make();
 		}
 	}
 }
