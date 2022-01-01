@@ -22,6 +22,23 @@ namespace SuccClan.Relics
 				IconPath = "Relic/" + IDName + ".png",
 				RelicPoolIDs = new List<string> { VanillaRelicPoolIDs.MegaRelicPool },
 				
+				EffectBuilders = new List<RelicEffectDataBuilder>
+				{
+					new RelicEffectDataBuilder
+					{
+						RelicEffectClassType = typeof(RelicEffectAddStatusEffectForPyreDamage),
+						ParamCharacterSubtype = "SubtypesData_Pyre",
+						ParamSourceTeam = Team.Type.Monsters,
+						ParamStatusEffects = new StatusEffectStackData[]
+						{
+							new StatusEffectStackData
+							{
+								statusId = VanillaStatusEffectIDs.Armor,
+								count = 4,
+							},
+						},
+					},
+				},
 			};
 
 			Utils.AddRelic(relic, IDName);

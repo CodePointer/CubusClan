@@ -19,37 +19,59 @@ namespace SuccClan.Relics
 		{
 			// Please add your upgrade via this CardUpgradeData.
 			// You can refer to Sting-relevent relics for upgrade writing.
-			var offeringUpgrade = new CardUpgradeDataBuilder
-			{
+			//var offeringUpgrade = new CardUpgradeDataBuilder
+			//{
 
-				UpgradeTitleKey = offeringUpgradeID + "_Title",
-				UpgradeDescriptionKey = offeringUpgradeID + "_Desc",
+			//	UpgradeTitleKey = offeringUpgradeID + "_Title",
+			//	UpgradeDescriptionKey = offeringUpgradeID + "_Desc",
 
-				HideUpgradeIconOnCard = false,
-				UseUpgradeHighlightTextTags = true,
+			//	HideUpgradeIconOnCard = false,
+			//	UseUpgradeHighlightTextTags = true,
 
-				TraitDataUpgrades = new List<CardTraitData>
-				{
-					new CardTraitDataBuilder
-					{
-						TraitStateType = VanillaCardTraitTypes.CardTraitTreasure,
-					}.Build(),
-				},
+			//	TraitDataUpgrades = new List<CardTraitData>
+			//	{
+			//		new CardTraitDataBuilder
+			//		{
+			//			TraitStateType = VanillaCardTraitTypes.CardTraitTreasure,
+			//		}.Build(),
+			//	},
 
-			}.Build();
+			//}.Build();
 
 			var relic = new CollectableRelicDataBuilder
 			{
 				IconPath = "Relic/" + IDName + ".png",
 				RelicPoolIDs = new List<string> { VanillaRelicPoolIDs.MegaRelicPool },
+
 				EffectBuilders = new List<RelicEffectDataBuilder>
 				{
 					new RelicEffectDataBuilder
 					{
-						RelicEffectClassType = typeof(RelicEffectBlightAddOfferingUpgrade),
+						RelicEffectClassType = typeof(RelicEffectEnergyAndCardDrawOnUnitSpawned),
 						ParamSourceTeam = Team.Type.Monsters,
-						ParamCardUpgradeData = offeringUpgrade,
+						ParamInt = 1,
+						ParamCharacterSubtype = "SubtypesData_None",
+						EffectConditionBuilders = new List<RelicEffectConditionBuilder>
+						{
+							new RelicEffectConditionBuilder
+							{
+								paramTrackedValue = CardStatistics.TrackedValueType.MonsterSubtypePlayed,
+								paramCardType = CardStatistics.CardTypeTarget.Monster,
+								paramTrackTriggerCount = false,
+								paramEntryDuration = CardStatistics.EntryDuration.ThisTurn,
+								paramInt = 1,
+								allowMultipleTriggersPerDuration = false,
+								paramSubtype = "SuccClan_Subtype_Ghost",
+							},
+						},
 					},
+
+					//new RelicEffectDataBuilder
+					//{
+					//	RelicEffectClassType = typeof(RelicEffectBlightAddOfferingUpgrade),
+					//	ParamSourceTeam = Team.Type.Monsters,
+					//	ParamCardUpgradeData = offeringUpgrade,
+					//},
 				}
 			};
 

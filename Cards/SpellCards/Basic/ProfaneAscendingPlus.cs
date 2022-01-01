@@ -53,7 +53,7 @@ namespace SuccClan.Cards.SpellCards
 							new StatusEffectStackData
 							{
 								statusId = StatusEffectFrantic.IDName,
-								count = 2
+								count = 3
 							},
 						},
 					},
@@ -62,7 +62,7 @@ namespace SuccClan.Cards.SpellCards
 						EffectStateType = VanillaCardEffectTypes.CardEffectBuffDamage,
 						TargetMode = TargetMode.LastTargetedCharacters,
 						TargetTeamType = Team.Type.Heroes,
-						ParamInt = 5,
+						ParamInt = 10,
 					},
 				},
 			};

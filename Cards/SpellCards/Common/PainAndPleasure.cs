@@ -22,17 +22,17 @@ namespace SuccClan.Cards.SpellCards
 				TargetsRoom = true,
 				Targetless = true,
 
-				TraitBuilders = new List<CardTraitDataBuilder>
-				{
-					new CardTraitDataBuilder
-					{
-						TraitStateType = VanillaCardTraitTypes.CardTraitRetain,
-					},
-					new CardTraitDataBuilder
-					{
-						TraitStateType = VanillaCardTraitTypes.CardTraitIntrinsicState,
-					},
-				},
+				//TraitBuilders = new List<CardTraitDataBuilder>
+				//{
+				//	new CardTraitDataBuilder
+				//	{
+				//		TraitStateType = VanillaCardTraitTypes.CardTraitRetain,
+				//	},
+				//	new CardTraitDataBuilder
+				//	{
+				//		TraitStateType = VanillaCardTraitTypes.CardTraitIntrinsicState,
+				//	},
+				//},
 
 				EffectBuilders = new List<CardEffectDataBuilder>
 				{

@@ -17,14 +17,14 @@ namespace SuccClan.Cards.Upgrades
 			{
 				UpgradeTitleKey = IDName + "_Name",
 				UseUpgradeHighlightTextTags = true,
-				BonusDamage = 15,
-				BonusHP = 30,
+				BonusDamage = 0,
+				BonusHP = 40,
 
 				TriggerUpgradeBuilders = new List<CharacterTriggerDataBuilder>
 				{ 
 					new CharacterTriggerDataBuilder
 					{
-						Trigger = CharacterTriggerData.Trigger.PreCombat,
+						Trigger = CharacterTriggerData.Trigger.OnTurnBegin,
 						DescriptionKey = IDName + "_OnAction_Desc",
 						EffectBuilders = new List<CardEffectDataBuilder>
 						{

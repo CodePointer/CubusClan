@@ -26,7 +26,7 @@ namespace SuccClan.Cards.UnitCards
 				Rarity = CollectableRarity.Uncommon,
 			};
 
-			Utils.AddUnit(railyard, IDName, charData);
+			Utils.AddUnit(railyard, IDName, charData, true);
 			Utils.AddImg(railyard, IDName + ".png");
 
 			railyard.BuildAndRegister();

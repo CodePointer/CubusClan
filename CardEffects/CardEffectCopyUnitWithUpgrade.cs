@@ -41,7 +41,7 @@ namespace SuccClan.CardEffects
 		// Token: 0x0600071D RID: 1821 RVA: 0x00021A2D File Offset: 0x0001FC2D
 		public override IEnumerator ApplyEffect(CardEffectState cardEffectState, CardEffectParams cardEffectParams)
 		{
-			Utils.BepLog(new List<string> { "ApplyEffectEnter." });
+			//Utils.BepLog(new List<string> { "ApplyEffectEnter." });
 			int numSpawns = 0;
 			//var targetList = cardEffectParams.targets;
 			//if (cardEffectState.GetParamStr() == "Self")
@@ -63,14 +63,21 @@ namespace SuccClan.CardEffects
 						int currentMaxHP = copyUnitSrc.GetMaxHP();
 						if (currentMaxHP - bounsMaxHP <= 0)
 						{
-							Utils.BepLog(new List<string> { "HP check failed." });
+							//Utils.BepLog(new List<string> { "HP check failed." });
 							continue;
 						}
 					}
 
+					//Utils.BepLog(new List<string>
+					//{
+					//	"Test:",
+					//	copyUnitSrc.GetSpawnPoint(true) == null ? "null" : copyUnitSrc.GetSpawnPoint(true).ToString(),
+					//	copyUnitSrc.GetSpawnPoint(false) == null ? "null" : copyUnitSrc.GetSpawnPoint(false).ToString(),
+					//});
+
 					SpawnPoint spawnPoint = copyUnitSrc.GetSpawnPoint(false);
 					
-					Utils.BepLog(new List<string> { "ApplyEffect-enumerator.", copyUnitSrc.ToString(), copyUnitSrc.GetCharacterManager().ToString() });
+					//Utils.BepLog(new List<string> { "ApplyEffect-enumerator.", copyUnitSrc.ToString(), copyUnitSrc.GetCharacterManager().ToString() });
 					//var subtypeData = copyUnitSrc.GetSubtypes();
 					//foreach(SubtypeData subtype in subtypeData)
 					//{
@@ -79,11 +86,33 @@ namespace SuccClan.CardEffects
 
 					if (spawnPoint != null)
 					{
-						Utils.BepLog(new List<string> { "ApplyEffect-spawnPoint.", spawnPoint.ToString() });
+						var roomOwner = spawnPoint.GetRoomOwner();
+						//var new_spawnPoint = roomOwner.GetFirstEmptyMonsterPoint();
+
+						//Utils.BepLog(new List<string> { "ApplyEffect-spawnPoint.", spawnPoint.ToString(), new_spawnPoint.ToString() });
+
+						//new_spawnPoint = spawnPoint;
+
+						//List<CharacterState> preList = new List<CharacterState>();
+						//cardEffectParams.combatManager.GetAllCharactersInRoom(preList, roomOwner);
+						//Utils.BepLog(new List<string> { "Pre summon:" });
+						//foreach (var character in preList)
+						//{
+						//	Utils.BepLog(new List<string> 
+						//	{ 
+						//		character.ToString(),
+						//		character.GetSpawnPoint().ToString(),
+						//		character.GetHP().ToString(), character.GetAttackDamage().ToString(),
+						//	});
+						//}
+						
+
 						int num = 0;
 						for (int i = 0; i < this.numCopiesOfEachUnit; i = num + 1)
 						{
 							CharacterState newMonster = null;
+
+							SpawnPoint myPoint = null;
 
 							yield return cardEffectParams.monsterManager.CreateMonsterState(copyUnitSrc.GetSourceCharacterData(), copyUnitSrc.GetSpawnerCard(), 
 								cardEffectParams.selectedRoom, delegate (CharacterState character)
@@ -92,9 +121,9 @@ namespace SuccClan.CardEffects
 									if (newMonster != null)
 									{
 										CharacterHelper.CopyCharacterStats(newMonster, copyUnitSrc);
-										//newMonster.AddStatusEffect("cardless", 1);
+										newMonster.AddStatusEffect("cardless", 1);
 									}
-								}, this.spawnMode, spawnPoint, null, false, null, null, false);
+								}, this.spawnMode, myPoint, null, false, null, null, false);
 
 							if (newMonster != null)
 							{
@@ -109,12 +138,24 @@ namespace SuccClan.CardEffects
 									yield return newMonster.ApplyCardUpgrade(upgradeState, false);
 								}
 
-								Utils.BepLog(new List<string> { "ApplyEffect-newMonster.", newMonster.ToString() });
+								//Utils.BepLog(new List<string> { "ApplyEffect-newMonster.", newMonster.ToString() });
 								num = numSpawns;
 								numSpawns = num + 1;
 							}
 							num = i;
 						}
+						//List<CharacterState> afterList = new List<CharacterState>();
+						//cardEffectParams.combatManager.GetAllCharactersInRoom(afterList, roomOwner);
+						//Utils.BepLog(new List<string> { "After summon:" });
+						//foreach (var character in afterList)
+						//{
+						//	Utils.BepLog(new List<string>
+						//	{
+						//		character.ToString(),
+						//		character.GetSpawnPoint().ToString(),
+						//		character.GetHP().ToString(), character.GetAttackDamage().ToString(),
+						//	});
+						//}
 						spawnPoint = null;
 					}
 				}

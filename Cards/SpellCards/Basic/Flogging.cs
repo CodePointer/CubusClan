@@ -40,6 +40,7 @@ namespace SuccClan.Cards.SpellCards
 						ParamInt = (int)CardPile.DeckPileRandom,
 						AdditionalParamInt = 1,  // Number of added card
 						ParamCardPool = MyCardPools.ObsessingShardPool,
+						ShouldTest = false,
 					},
 					//new CardEffectDataBuilder
 					//{

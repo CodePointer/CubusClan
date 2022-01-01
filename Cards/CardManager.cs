@@ -20,7 +20,13 @@ namespace SuccClan.Cards
 		{
 			var testCardID = new List<string>
 			{
-				PainAndPleasure.IDName,
+				ForTheQueen.IDName,
+				EndlessShadow.IDName,
+				IllusionTwins.IDName,
+				//GreedGhost.IDName,
+				//GreedGhost.IDName,
+				//GreedGhost.IDName,
+				//GreedGhost.IDName,
 			};
 
 			foreach (var cardID in testCardID)
@@ -31,11 +37,11 @@ namespace SuccClan.Cards
 			if (__instance.GetMainClass() == SuccClanPlugin.clanRef
 				|| __instance.GetSubClass() == SuccClanPlugin.clanRef)
 			{
-				var starterCrystal = CustomCollectableRelicManager.GetRelicDataByID(DesireCrystal.IDName);
-				__instance.AddRelic(starterCrystal);
+				//var starterCrystal = CustomCollectableRelicManager.GetRelicDataByID(DesireCrystal.IDName);
+				//__instance.AddRelic(starterCrystal);
 
-				var testRelic = CustomCollectableRelicManager.GetRelicDataByID(ObsessingAromatherapy.IDName);
-				__instance.AddRelic(testRelic);
+				//__instance.AddRelic(CustomCollectableRelicManager.GetRelicDataByID(DesireCrystal.IDName));
+				//__instance.AddRelic(CustomCollectableRelicManager.GetRelicDataByID(MutantElixirs.IDName));
 			}
 		}
 	}

@@ -26,7 +26,7 @@ namespace SuccClan.Cards.SpellCards
 				CardType = CardType.Spell,
 
 				TraitBuilders = new List<CardTraitDataBuilder>
-				{ 
+				{
 					new CardTraitDataBuilder
 					{
 						TraitStateType = VanillaCardTraitTypes.CardTraitExhaustState,
@@ -36,15 +36,20 @@ namespace SuccClan.Cards.SpellCards
 						TraitStateType = typeof(CardTraitRewardGold),
 						ParamInt = 50,
 					},
+					new CardTraitDataBuilder
+					{
+						TraitStateType = VanillaCardTraitTypes.CardTraitIntrinsicState,
+					},
 				},
 
 				EffectBuilders = new List<CardEffectDataBuilder>
 				{ 
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectSacrifice,
+						EffectStateType = VanillaCardEffectTypes.CardEffectDamage,
 						TargetMode = TargetMode.DropTargetCharacter,
 						TargetTeamType = Team.Type.Monsters,
+						ParamInt = 999,
 					},
 				},
 			};

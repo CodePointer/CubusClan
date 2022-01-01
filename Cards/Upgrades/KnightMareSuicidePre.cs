@@ -5,14 +5,14 @@ using System.Text;
 using Trainworks.Builders;
 using Trainworks.Constants;
 
-using SuccClan.Cards.SpellCards;
 using SuccClan.Effects;
+using SuccClan.CardEffects;
 
 namespace SuccClan.Cards.Upgrades
 {
-	class ShadowLadyPlaguePre
+	class KnightMareSuicidePre
 	{
-		public static string IDName = "Upgrade_ShadowLadyPlaguePre";
+		public static string IDName = "Upgrade_KnightMareTraitorPre";
 
 		public static CardUpgradeDataBuilder Builder()
 		{
@@ -20,55 +20,60 @@ namespace SuccClan.Cards.Upgrades
 			{
 				UpgradeTitleKey = IDName + "_Name",
 				UseUpgradeHighlightTextTags = true,
-				BonusDamage = 15,
-				BonusHP = 40,
+				BonusDamage = 0,
+				BonusHP = 30,
+
+				StatusEffectUpgrades = new List<StatusEffectStackData>
+				{
+					new StatusEffectStackData
+					{
+						statusId = StatusEffectSoulEnchant.IDName,
+						count = 1,
+					},
+				},
 
 				TriggerUpgradeBuilders = new List<CharacterTriggerDataBuilder>
 				{
 					new CharacterTriggerDataBuilder
 					{
-						Trigger = CharacterTriggerData.Trigger.OnSpawn,
-						DescriptionKey = IDName + "_OnSpawn_Desc",
+						Trigger = CharacterTriggerData.Trigger.CardSpellPlayed,
+						DescriptionKey = IDName + "_OnIncant_Desc",
 						EffectBuilders = new List<CardEffectDataBuilder>
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
-								ParamInt = (int)CardPile.HandPile,  // 0: Draw  1: Discard  3: Hand
-								AdditionalParamInt = 3,
-								ParamCardPool = MyCardPools.ObsessingShardPool,
-							}
-						}
-					},
-					new CharacterTriggerDataBuilder
-					{
-						Trigger = Trigger_OnFanatic.OnFanaticCharTrigger.GetEnum(),
-						DescriptionKey = IDName + "_OnFanatic_Desc",
-						EffectBuilders = new List<CardEffectDataBuilder>
-						{
-							new CardEffectDataBuilder
-							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectBuffDamage,
+								EffectStateType = VanillaCardEffectTypes.CardEffectBuffMaxHealth,
 								TargetMode = TargetMode.Self,
-								ParamInt = 4,
+								TargetTeamType = Team.Type.Monsters,
+								ParamInt = 2,
 							},
 							new CardEffectDataBuilder
 							{
 								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
 								TargetMode = TargetMode.Self,
+								TargetTeamType = Team.Type.Monsters,
 								ParamStatusEffects = new StatusEffectStackData[]
 								{
 									new StatusEffectStackData
 									{
-										statusId = VanillaStatusEffectIDs.Regen,
+										statusId = VanillaStatusEffectIDs.Spikes,
 										count = 2,
 									},
 								},
 							},
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectGainEnergy,
-								ParamInt = 1
+								EffectStateType = typeof(CardEffectAddStatusEffectWithSoul),
+								TargetMode = TargetMode.Self,
+								TargetTeamType = Team.Type.Monsters,
+								ParamStatusEffects = new StatusEffectStackData[]
+								{
+									new StatusEffectStackData
+									{
+										statusId = VanillaStatusEffectIDs.Regen,
+										count = 3,
+									},
+								},
 							},
 						},
 					},

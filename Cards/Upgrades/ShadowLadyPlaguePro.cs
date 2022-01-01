@@ -20,8 +20,8 @@ namespace SuccClan.Cards.Upgrades
 			{
 				UpgradeTitleKey = IDName + "_Name",
 				UseUpgradeHighlightTextTags = true,
-				BonusDamage = 0,
-				BonusHP = 80,
+				BonusDamage = 25,
+				BonusHP = 70,
 
 				TriggerUpgradeBuilders = new List<CharacterTriggerDataBuilder>
 				{
@@ -34,7 +34,7 @@ namespace SuccClan.Cards.Upgrades
 							new CardEffectDataBuilder
 							{
 								EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
-								ParamInt = 3,  // 0: Draw  1: Discard  3: Hand
+								ParamInt = (int)CardPile.HandPile,  // 0: Draw  1: Discard  3: Hand
 								AdditionalParamInt = 3,
 								ParamCardPool = MyCardPools.VengefulShardPool,
 							}
@@ -50,7 +50,7 @@ namespace SuccClan.Cards.Upgrades
 							{
 								EffectStateType = VanillaCardEffectTypes.CardEffectBuffDamage,
 								TargetMode = TargetMode.Self,
-								ParamInt = 6,
+								ParamInt = 5,
 							},
 							new CardEffectDataBuilder
 							{

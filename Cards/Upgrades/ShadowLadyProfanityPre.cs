@@ -19,8 +19,16 @@ namespace SuccClan.Cards.Upgrades
 			{
 				UpgradeTitleKey = IDName + "_Name",
 				UseUpgradeHighlightTextTags = true,
-				BonusDamage = 20,
-				BonusHP = 40,
+				BonusDamage = 25,
+				BonusHP = 30,
+
+				StatusEffectUpgrades = new List<StatusEffectStackData>
+				{
+					new StatusEffectStackData
+					{
+						statusId = VanillaStatusEffectIDs.Quick,
+					},
+				},
 
 				TriggerUpgradeBuilders = new List<CharacterTriggerDataBuilder>
 				{
@@ -33,7 +41,7 @@ namespace SuccClan.Cards.Upgrades
 							new CardEffectDataBuilder
 							{
 								EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
-								ParamInt = 3,
+								ParamInt = (int)CardPile.HandPile,
 								AdditionalParamInt = 1,
 								ParamCardPool = ProfaneAscendingPlus.cardPool,
 							},
@@ -54,8 +62,8 @@ namespace SuccClan.Cards.Upgrades
 								{
 									new StatusEffectStackData
 									{
-										statusId = VanillaStatusEffectIDs.Lifesteal,
-										count = 2,
+										statusId = VanillaStatusEffectIDs.Stealth,
+										count = 1,
 									},
 								},
 							},

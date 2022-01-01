@@ -55,7 +55,7 @@ namespace SuccClan
 			}));
 		}
 
-		public static void AddUnit(CardDataBuilder r, string IDName, CharacterData character)
+		public static void AddUnit(CardDataBuilder r, string IDName, CharacterData character, bool subunit=false)
 		{
 			r.CardID = IDName;
 			r.NameKey = IDName + "_Name";
@@ -63,7 +63,14 @@ namespace SuccClan
 			r.LinkedClass = SuccClanPlugin.getClan();
 
 			r.ClanID = Clan.IDName;
-			r.CardPoolIDs = new List<string> { "Succubus", VanillaCardPoolIDs.UnitsAllBanner };
+			if (subunit)
+			{
+				r.CardPoolIDs = new List<string> { "Succbus", VanillaCardPoolIDs.MegaPool };
+			}
+			else
+			{
+				r.CardPoolIDs = new List<string> { "Succubus", VanillaCardPoolIDs.UnitsAllBanner };
+			}
 			r.CardType = CardType.Monster;
 			r.TargetsRoom = true;
 

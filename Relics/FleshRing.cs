@@ -11,7 +11,7 @@ using SuccClan.Effects;
 
 namespace SuccClan.Relics
 {
-	class FleshRing
+	class FleshRing // TODO: Add scourge.
 	{
 		public static string IDName = "Relic_FleshRing";
 
@@ -21,7 +21,29 @@ namespace SuccClan.Relics
 			{
 				IconPath = "Relic/" + IDName + ".png",
 				RelicPoolIDs = new List<string> { VanillaRelicPoolIDs.MegaRelicPool },
-				
+
+				EffectBuilders = new List<RelicEffectDataBuilder>
+				{
+					new RelicEffectDataBuilder
+					{
+						RelicEffectClassType = typeof(RelicEffectCardDrawOnBlightPlay),
+						ParamInt = 1,
+						ParamCardType = CardType.Blight,
+						EffectConditionBuilders = new List<RelicEffectConditionBuilder>
+						{
+							new RelicEffectConditionBuilder
+							{
+								paramTrackedValue = CardStatistics.TrackedValueType.AnyCardPlayed,
+								paramCardType = CardStatistics.CardTypeTarget.Any,
+								paramTrackTriggerCount = false,
+								paramEntryDuration = CardStatistics.EntryDuration.ThisTurn,
+								paramComparator = RelicEffectCondition.Comparator.Equal | RelicEffectCondition.Comparator.GreaterThan,
+								allowMultipleTriggersPerDuration = false,
+								paramInt = 1,
+							},
+						},
+					},
+				},
 			};
 
 			Utils.AddRelic(relic, IDName);

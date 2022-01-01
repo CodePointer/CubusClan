@@ -22,6 +22,16 @@ namespace SuccClan.Relics
 				IconPath = "Relic/" + IDName + ".png",
 				RelicPoolIDs = new List<string> { VanillaRelicPoolIDs.MegaRelicPool },
 				
+				EffectBuilders = new List<RelicEffectDataBuilder>
+				{
+					new RelicEffectDataBuilder
+					{
+						RelicEffectClassType = typeof(RelicEffectModifyTriggerCount),
+						ParamSourceTeam = Team.Type.Monsters,
+						ParamInt = 1,
+						ParamTrigger = Trigger_OnFanatic.OnFanaticCharTrigger.GetEnum(),
+					},
+				},
 			};
 
 			Utils.AddRelic(relic, IDName);

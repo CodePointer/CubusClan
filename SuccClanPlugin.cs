@@ -38,15 +38,15 @@ namespace SuccClan
 		{
 			var unitIDList = new List<string>
 			{
-				ChaosCreation.IDName,
-				DemonPioneer.IDName,
-				IncubusButcher.IDName,
-				SuccbusTorturer.IDName,
-				Vrolikai.IDName,
+				//ChaosCreation.IDName,
+				//DemonPioneer.IDName,
+				//IncubusButcher.IDName,
+				//SuccbusTorturer.IDName,
+				//Vrolikai.IDName,
 
-				EndlessShadow.IDName,
-				ShadowWarrior.IDName,
-				AbyssPrincess.IDName,
+				//EndlessShadow.IDName,
+				//ShadowWarrior.IDName,
+				//AbyssPrincess.IDName,
 			};
 
 			CustomLocalizationManager.ImportCSV("SuccClan.csv", ',');
@@ -58,6 +58,7 @@ namespace SuccClan
 
 			MakeCards();
 
+			Trainworks.Patches.AccessUnitSynthesisMapping.FindUnitSynthesisMappingInstanceToStub();
 			ShadowLady.Make();
 			KnightMare.Make();
 			Clan.RegisterBanner(unitIDList);
@@ -82,6 +83,7 @@ namespace SuccClan
 		static void MakeStatuses()
 		{
 			StatusEffectFrantic.Make();
+			StatusEffectSoulEnchant.Make();
 		}
 
 		static void MakeCardPools()
@@ -131,25 +133,25 @@ namespace SuccClan
 			//GiveEveryoneArmor.Make();
 
 			// Subunit Cards
-			ArroganceGhost.Make();
-			EnvyGhost.Make();
-			GluttonyGhost.Make();
-			GreedGhost.Make();
-			LustGhost.Make();
-			SlothGhost.Make();
-			WrathGhost.Make();
+			//ArroganceGhost.Make();
+			//EnvyGhost.Make();
+			//GluttonyGhost.Make();
+			//GreedGhost.Make();
+			//LustGhost.Make();
+			//SlothGhost.Make();
+			//WrathGhost.Make();
 
 			// Unit cards: Uncommon
-			ChaosCreation.Make();
-			DemonPioneer.Make();
-			IncubusButcher.Make();
-			SuccbusTorturer.Make();
-			Vrolikai.Make();
+			//ChaosCreation.Make();
+			//DemonPioneer.Make();
+			//IncubusButcher.Make();
+			//SuccbusTorturer.Make();
+			//Vrolikai.Make();
 
 			// Unit cards: Rare
-			AbyssPrincess.Make();
-			ShadowWarrior.Make();
-			EndlessShadow.Make();
+			//AbyssPrincess.Make();
+			//ShadowWarrior.Make();
+			EndlessShadow.Make2();
 		}
 
 		static void MakeRelics()

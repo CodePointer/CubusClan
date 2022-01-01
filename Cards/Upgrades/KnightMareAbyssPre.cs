@@ -7,9 +7,9 @@ using Trainworks.Constants;
 
 namespace SuccClan.Cards.Upgrades
 {
-	class KnightMareTraitorPre
+	class KnightMareAbyssPre
 	{
-		public static string IDName = "Upgrade_KnightMareTraitorPre";
+		public static string IDName = "Upgrade_KnightMareBlustPre";
 
 		public static CardUpgradeDataBuilder Builder()
 		{

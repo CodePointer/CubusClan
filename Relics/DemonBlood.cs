@@ -22,6 +22,25 @@ namespace SuccClan.Relics
 				IconPath = "Relic/" + IDName + ".png",
 				RelicPoolIDs = new List<string> { VanillaRelicPoolIDs.MegaRelicPool },
 				
+				EffectBuilders = new List<RelicEffectDataBuilder>
+				{
+					new RelicEffectDataBuilder
+					{
+						RelicEffectClassType = typeof(RelicEffectDamageOnCardPlayed),
+						ParamSourceTeam = Team.Type.Heroes,
+						ParamInt = 3,
+						ParamTargetMode = TargetMode.RandomInRoom,
+						ParamCardType = CardType.Blight,
+					},
+					new RelicEffectDataBuilder
+					{
+						RelicEffectClassType = typeof(RelicEffectDamageOnCardPlayed),
+						ParamSourceTeam = Team.Type.Heroes,
+						ParamInt = 3,
+						ParamTargetMode = TargetMode.RandomInRoom,
+						ParamCardType = CardType.Junk,
+					},
+				},
 			};
 
 			Utils.AddRelic(relic, IDName);

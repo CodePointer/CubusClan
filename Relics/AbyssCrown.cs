@@ -22,6 +22,22 @@ namespace SuccClan.Relics
 				IconPath = "Relic/" + IDName + ".png",
 				RelicPoolIDs = new List<string> { VanillaRelicPoolIDs.MegaRelicPool },
 				
+				EffectBuilders = new List<RelicEffectDataBuilder>
+				{
+					new RelicEffectDataBuilder
+					{
+						RelicEffectClassType = typeof(RelicEffectAddStackOnApplyStatus),
+						ParamBool = true,
+						ParamStatusEffects = new StatusEffectStackData[]
+						{
+							new StatusEffectStackData
+							{
+								statusId = StatusEffectFrantic.IDName,
+								count = 1,
+							},
+						},
+					},
+				},
 			};
 
 			Utils.AddRelic(relic, IDName);

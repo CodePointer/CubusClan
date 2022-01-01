@@ -30,7 +30,7 @@ namespace SuccClan.Cards.SpellCards
 					new CardEffectDataBuilder
 					{
 						EffectStateType = VanillaCardEffectTypes.CardEffectDamage,
-						ParamInt = 10,
+						ParamInt = 2,
 						TargetMode = TargetMode.DropTargetCharacter,
 						TargetTeamType = Team.Type.Heroes | Team.Type.Monsters
 					},

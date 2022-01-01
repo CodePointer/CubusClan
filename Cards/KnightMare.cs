@@ -33,21 +33,21 @@ namespace SuccClan.Cards
 					{
 						new List<CardUpgradeDataBuilder>
 						{
-							KnightMareBlustBasic.Builder(),
-							KnightMareBlustPre.Builder(),
-							KnightMareBlustPro.Builder(),
+							KnightMareAbyssBasic.Builder(),
+							KnightMareAbyssPre.Builder(),
+							KnightMareAbyssPro.Builder(),
 						},
 						new List<CardUpgradeDataBuilder>
 						{
-							KnightMareSiphonBasic.Builder(),
-							KnightMareSiphonPre.Builder(),
-							KnightMareBlustPro.Builder()
+							KnightMareEndlessBasic.Builder(),
+							KnightMareEndlessPre.Builder(),
+							KnightMareAbyssPro.Builder()
 						},
 						new List<CardUpgradeDataBuilder>
 						{
-							KnightMareTraitorBasic.Builder(),
-							KnightMareTraitorPre.Builder(),
-							KnightMareTraitorPro.Builder()
+							KnightMareSuicideBasic.Builder(),
+							KnightMareSuicidePre.Builder(),
+							KnightMareSuicidePro.Builder()
 						},
 					},
 				},
@@ -79,7 +79,33 @@ namespace SuccClan.Cards
 
 				Size = 2,
 				Health = 10,
-				AttackDamage = 10,
+				AttackDamage = 0,
+
+				TriggerBuilders = new List<CharacterTriggerDataBuilder>
+				{
+					new CharacterTriggerDataBuilder
+					{
+						Trigger = CharacterTriggerData.Trigger.OnAnyUnitDeathOnFloor,
+						DescriptionKey = IDName + "_OnHarvest_Desc",
+						EffectBuilders = new List<CardEffectDataBuilder>
+						{
+							new CardEffectDataBuilder
+							{
+								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+								TargetMode = TargetMode.Self,
+								TargetTeamType = Team.Type.Monsters,
+								ParamStatusEffects = new StatusEffectStackData[]
+								{
+									new StatusEffectStackData
+									{
+										statusId = VanillaStatusEffectIDs.Soul,
+										count = 1,
+									},
+								},
+							},
+						},
+					},
+				},
 			};
 
 			Utils.AddUnitImg(charBuilder, IDName + ".png");

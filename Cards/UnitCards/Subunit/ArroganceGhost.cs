@@ -19,7 +19,7 @@ namespace SuccClan.Cards.UnitCards
 		public static void Make()
 		{
 			var charData = BuildUnit();
-			BuildUpgrade(charData);
+			//BuildUpgrade(charData);
 
 			CardDataBuilder railyard = new CardDataBuilder
 			{
@@ -27,7 +27,7 @@ namespace SuccClan.Cards.UnitCards
 				Rarity = CollectableRarity.Rare,
 			};
 
-			Utils.AddUnit(railyard, IDName, charData);
+			Utils.AddUnit(railyard, IDName, charData, true);
 			Utils.AddImg(railyard, IDName + ".png");
 
 			railyard.BuildAndRegister();

@@ -23,32 +23,32 @@ namespace SuccClan.Effects
 		}
 	}
 
-	[HarmonyPatch(typeof(CardManager), "OnCardPlayed")]
-	class QueueOnFanaticUpdatePlay
-	{
-		static void Prefix(CardManager __instance, CardState playCard, int selectedRoom, 
-			RoomState roomState, SpawnPoint dropLocation, CharacterState characterSummoned, 
-			List<CharacterState> targets, bool discardCard)
-		{
-			if (playCard.GetCardType() == CardType.Blight 
-				|| playCard.GetCardType() == CardType.Junk)
-			{
-				ProviderManager.TryGetProvider<RoomManager>(out RoomManager roomManager);
-				roomManager.GetSelectedRoom();
-				int roomIndex = roomManager.GetSelectedRoom();
-				if (roomIndex != -1)
-				{
-					List<CharacterState> charList = new List<CharacterState>();
-					ProviderManager.CombatManager.GetMonsterManager().AddCharactersInRoomToList(charList, roomManager.GetSelectedRoom());
-					ProviderManager.CombatManager.GetHeroManager().AddCharactersInRoomToList(charList, roomManager.GetSelectedRoom());
-					foreach (var unit in charList)
-					{
-						CustomTriggerManager.QueueTrigger(Trigger_OnFanatic.OnFanaticCharTrigger, unit);
-					}
-				}
-			}
-		}
-	}
+	//[HarmonyPatch(typeof(CardManager), "OnCardPlayed")]
+	//class QueueOnFanaticUpdatePlay
+	//{
+	//	static void Prefix(CardManager __instance, CardState playCard, int selectedRoom, 
+	//		RoomState roomState, SpawnPoint dropLocation, CharacterState characterSummoned, 
+	//		List<CharacterState> targets, bool discardCard)
+	//	{
+	//		if (playCard.GetCardType() == CardType.Blight 
+	//			|| playCard.GetCardType() == CardType.Junk)
+	//		{
+	//			ProviderManager.TryGetProvider<RoomManager>(out RoomManager roomManager);
+	//			roomManager.GetSelectedRoom();
+	//			int roomIndex = roomManager.GetSelectedRoom();
+	//			if (roomIndex != -1)
+	//			{
+	//				List<CharacterState> charList = new List<CharacterState>();
+	//				ProviderManager.CombatManager.GetMonsterManager().AddCharactersInRoomToList(charList, roomManager.GetSelectedRoom());
+	//				ProviderManager.CombatManager.GetHeroManager().AddCharactersInRoomToList(charList, roomManager.GetSelectedRoom());
+	//				foreach (var unit in charList)
+	//				{
+	//					CustomTriggerManager.QueueTrigger(Trigger_OnFanatic.OnFanaticCharTrigger, unit);
+	//				}
+	//			}
+	//		}
+	//	}
+	//}
 
 	[HarmonyPatch(typeof(CardManager), "DiscardCard")]
 	class QueueOnFanaticUpdateDiscard
@@ -63,34 +63,31 @@ namespace SuccClan.Effects
 			//	"\nhandDiscarded", discardCardParams.handDiscarded.ToString(),
 			//	"\ntriggeredByCard", discardCardParams.triggeredByCard.ToString(),
 			//}));
-			if (!discardCardParams.handDiscarded && !discardCardParams.wasPlayed)
+			if (!discardCardParams.handDiscarded)  // && !discardCardParams.wasPlayed)  // discardCardParams.wasPlayed
 			{
 				CardState discardCard = discardCardParams.discardCard;
-				if (discardCard.HasTrait(VanillaCardTraitTypes.CardTraitTreasure))
-				{
-					if (discardCard.GetCardType() == CardType.Blight
+				if (discardCard.GetCardType() == CardType.Blight
 						|| discardCard.GetCardType() == CardType.Junk)
+				{
+					//Trainworks.Trainworks.Log(BepInEx.Logging.LogLevel.All, string.Join("\t", new string[]
+					//{
+					//	"DiscardCard", discardCardParams.discardCard.ToString(),
+					//}));
+					ProviderManager.TryGetProvider<RoomManager>(out RoomManager roomManager);
+					roomManager.GetSelectedRoom();
+					int roomIndex = roomManager.GetSelectedRoom();
+					//Trainworks.Trainworks.Log(BepInEx.Logging.LogLevel.All, string.Join("\t", new string[]
+					//{
+					//	"RoomIndex", roomIndex.ToString(),
+					//}));
+					if (roomIndex != -1)
 					{
-						//Trainworks.Trainworks.Log(BepInEx.Logging.LogLevel.All, string.Join("\t", new string[]
-						//{
-						//	"DiscardCard", discardCardParams.discardCard.ToString(),
-						//}));
-						ProviderManager.TryGetProvider<RoomManager>(out RoomManager roomManager);
-						roomManager.GetSelectedRoom();
-						int roomIndex = roomManager.GetSelectedRoom();
-						//Trainworks.Trainworks.Log(BepInEx.Logging.LogLevel.All, string.Join("\t", new string[]
-						//{
-						//	"RoomIndex", roomIndex.ToString(),
-						//}));
-						if (roomIndex != -1)
+						List<CharacterState> charList = new List<CharacterState>();
+						ProviderManager.CombatManager.GetMonsterManager().AddCharactersInRoomToList(charList, roomManager.GetSelectedRoom());
+						ProviderManager.CombatManager.GetHeroManager().AddCharactersInRoomToList(charList, roomManager.GetSelectedRoom());
+						foreach (var unit in charList)
 						{
-							List<CharacterState> charList = new List<CharacterState>();
-							ProviderManager.CombatManager.GetMonsterManager().AddCharactersInRoomToList(charList, roomManager.GetSelectedRoom());
-							ProviderManager.CombatManager.GetHeroManager().AddCharactersInRoomToList(charList, roomManager.GetSelectedRoom());
-							foreach (var unit in charList)
-							{
-								CustomTriggerManager.QueueTrigger(Trigger_OnFanatic.OnFanaticCharTrigger, unit);
-							}
+							CustomTriggerManager.QueueTrigger(Trigger_OnFanatic.OnFanaticCharTrigger, unit);
 						}
 					}
 				}
