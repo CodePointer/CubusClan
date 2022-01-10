@@ -87,19 +87,19 @@ namespace SuccClan.Cards.UnitCards
 					new CharacterTriggerDataBuilder
 					{
 						Trigger = CharacterTriggerData.Trigger.OnHit,
-						DescriptionKey = IDName + "_OnHit_Desc",
+						DescriptionKey = IDName + "_OnHit_Upgrade_Desc",
 						EffectBuilders = new List<CardEffectDataBuilder>
 						{
 							new CardEffectDataBuilder
 							{
 								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
-								TargetMode = TargetMode.Room,
+								TargetMode = TargetMode.LastAttackerCharacter,
 								TargetTeamType = Team.Type.Heroes,
 								ParamStatusEffects = new StatusEffectStackData[]
 								{
 									new StatusEffectStackData
 									{
-										count = 1,
+										count = 2,
 										statusId = StatusEffectFrantic.IDName,
 									}
 								}

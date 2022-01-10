@@ -25,7 +25,7 @@ namespace SuccClan
 			r.LinkedClass = SuccClanPlugin.getClan();
 
 			r.ClanID = Clan.IDName;
-			r.CardPoolIDs = new List<string> { "Succubus", VanillaCardPoolIDs.MegaPool };
+			r.CardPoolIDs = new List<string> { VanillaCardPoolIDs.MegaPool };
 
 			r.AssetPath = rootPath + scardPath;
 
@@ -65,11 +65,11 @@ namespace SuccClan
 			r.ClanID = Clan.IDName;
 			if (subunit)
 			{
-				r.CardPoolIDs = new List<string> { "Succbus", VanillaCardPoolIDs.MegaPool };
+				r.CardPoolIDs = new List<string> { VanillaCardPoolIDs.MegaPool };
 			}
 			else
 			{
-				r.CardPoolIDs = new List<string> { "Succubus", VanillaCardPoolIDs.UnitsAllBanner };
+				r.CardPoolIDs = new List<string> { VanillaCardPoolIDs.UnitsAllBanner };
 			}
 			r.CardType = CardType.Monster;
 			r.TargetsRoom = true;
@@ -78,7 +78,8 @@ namespace SuccClan
 			r.EffectBuilders.Add(
 				new CardEffectDataBuilder
 				{
-					EffectStateType = VanillaCardEffectTypes.CardEffectSpawnMonster,
+					EffectStateName = "CardEffectSpawnMonster",
+					//EffectStateType = VanillaCardEffectTypes.CardEffectSpawnMonster,
 					TargetMode = TargetMode.DropTargetCharacter,
 					ParamCharacterData = character,
 				});

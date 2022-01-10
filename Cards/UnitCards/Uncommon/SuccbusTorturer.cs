@@ -87,7 +87,7 @@ namespace SuccClan.Cards.UnitCards
 					new CharacterTriggerDataBuilder
 					{
 						Trigger = CharacterTriggerData.Trigger.OnAttacking,
-						DescriptionKey = IDName + "_OnAttack_Desc",
+						DescriptionKey = IDName + "_OnAttack_Upgrade_Desc",
 						EffectBuilders = new List<CardEffectDataBuilder>
 						{
 							new CardEffectDataBuilder

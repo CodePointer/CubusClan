@@ -85,20 +85,21 @@ namespace SuccClan.Cards.UnitCards
 				UpgradeDescriptionKey = IDName + "_Upgrade_Desc",
 				SourceSynthesisUnit = charData,
 
-				CardTriggerUpgradeBuilders = new List<CardTriggerEffectDataBuilder>
+				TriggerUpgradeBuilders = new List<CharacterTriggerDataBuilder>
 				{
-					new CardTriggerEffectDataBuilder
+					new CharacterTriggerDataBuilder
 					{
-						Trigger = Trigger_OnFanatic.OnFanaticTrigger.GetEnum(),
-						DescriptionKey = IDName + "_OnFanatic_Desc",
-						CardTriggerEffects = new List<CardTriggerData>
+						Trigger = Trigger_OnFanatic.OnFanaticCharTrigger.GetEnum(),
+						DescriptionKey = IDName + "_OnFanatic_Upgrade_Desc",
+						EffectBuilders = new List<CardEffectDataBuilder>
 						{
-							new CardTriggerData
+							new CardEffectDataBuilder
 							{
-								persistenceMode = PersistenceMode.SingleRun,
-								cardTriggerEffect = "CardTriggerEffectBuffCharacterDamage",
-								buffEffectType = "None",
-								paramInt = 2,
+								EffectStateType = typeof(CardEffectUpgradePermanent),
+								ParamCardUpgradeData = new CardUpgradeDataBuilder
+								{
+									BonusDamage = 1,
+								}.Build(),
 							},
 						},
 					},

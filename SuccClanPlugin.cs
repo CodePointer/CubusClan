@@ -38,15 +38,15 @@ namespace SuccClan
 		{
 			var unitIDList = new List<string>
 			{
-				//ChaosCreation.IDName,
-				//DemonPioneer.IDName,
-				//IncubusButcher.IDName,
-				//SuccbusTorturer.IDName,
-				//Vrolikai.IDName,
+				ChaosCreation.IDName,
+				DemonPioneer.IDName,
+				IncubusButcher.IDName,
+				SuccbusTorturer.IDName,
+				Vrolikai.IDName,
 
-				//EndlessShadow.IDName,
-				//ShadowWarrior.IDName,
-				//AbyssPrincess.IDName,
+				EndlessShadow.IDName,
+				ShadowWarrior.IDName,
+				AbyssPrincess.IDName,
 			};
 
 			CustomLocalizationManager.ImportCSV("SuccClan.csv", ',');
@@ -58,7 +58,8 @@ namespace SuccClan
 
 			MakeCards();
 
-			AccessUnitSynthesisMapping.FindUnitSynthesisMappingInstanceToStub();
+			Trainworks.Patches.AccessUnitSynthesisMapping.FindUnitSynthesisMappingInstanceToStub();
+			//AccessUnitSynthesisMapping.FindUnitSynthesisMappingInstanceToStub();
 			ShadowLady.Make();
 			KnightMare.Make();
 			Clan.RegisterBanner(unitIDList);
@@ -103,55 +104,55 @@ namespace SuccClan
 			Inception.Make();
 			MyCardPools.MakeLater();
 
-			// Spell Cards: Common
-			//BloodCarnival.Make();
-			//DreadShot.Make();
-			//MindDomaination.Make();
-			//PainAndPleasure.Make();
+			//Spell Cards: Common
+			BloodCarnival.Make();
+			DreadShot.Make();
+			MindDomaination.Make();
+			PainAndPleasure.Make();
 
-			//// Spell Cards: Uncommon
-			//DangerousGame.Make();
-			//DarkFury.Make();
-			//DarkPact.Make();
-			//ForTheQueen.Make();
-			//MindBurning.Make();
-			//PiercingShriek.Make();
-			//PowerSiphon.Make();
-			//ShadowEmbrace.Make();
+			// Spell Cards: Uncommon
+			DangerousGame.Make();
+			DarkFury.Make();
+			DarkPact.Make();
+			ForTheQueen.Make();
+			MindBurning.Make();
+			PiercingShriek.Make();
+			PowerSiphon.Make();
+			ShadowEmbrace.Make();
 
-			//// Spell Cards: Rare
-			//CubusSpike.Make();
-			//DepressionWhisper.Make();
-			//IllusionTwins.Make();
-			//InsanityReach.Make();
-			//ParadoxTome.Make();
-			//PlagueBoost.Make();
-			//VitalityExtraction.Make();
+			// Spell Cards: Rare
+			CubusSpike.Make();
+			DepressionWhisper.Make();
+			IllusionTwins.Make();
+			InsanityReach.Make();
+			ParadoxTome.Make();
+			PlagueBoost.Make();
+			VitalityExtraction.Make();
 
-			// Debug
+			//// Debug
 			//NotHornBreak.Make();
 			//GiveEveryoneArmor.Make();
 
 			// Subunit Cards
-			//ArroganceGhost.Make();
-			//EnvyGhost.Make();
-			//GluttonyGhost.Make();
-			//GreedGhost.Make();
-			//LustGhost.Make();
-			//SlothGhost.Make();
-			//WrathGhost.Make();
+			ArroganceGhost.Make();
+			EnvyGhost.Make();
+			GluttonyGhost.Make();
+			GreedGhost.Make();
+			LustGhost.Make();
+			SlothGhost.Make();
+			WrathGhost.Make();
 
 			// Unit cards: Uncommon
-			//ChaosCreation.Make();
-			//DemonPioneer.Make();
-			//IncubusButcher.Make();
-			//SuccbusTorturer.Make();
-			//Vrolikai.Make();
+			ChaosCreation.Make();
+			DemonPioneer.Make();
+			IncubusButcher.Make();
+			SuccbusTorturer.Make();
+			Vrolikai.Make();
 
 			// Unit cards: Rare
-			//AbyssPrincess.Make();
-			//ShadowWarrior.Make();
-			EndlessShadow.Make2();
+			AbyssPrincess.Make();
+			ShadowWarrior.Make();
+			EndlessShadow.Make();
 		}
 
 		static void MakeRelics()

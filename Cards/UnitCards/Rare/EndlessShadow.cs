@@ -16,50 +16,50 @@ namespace SuccClan.Cards.UnitCards
 		public static readonly string IDName = "Unit_EndlessShadow";
 		public static readonly string IDChar = "Unit_EndlessShadowCharacter";
 
-		public static void Make2()
-		{
-			var charBuilder = new CharacterDataBuilder
-			{
-				CharacterID = IDChar,
-				NameKey = IDName + "_Name",
-				SubtypeKeys = new List<string> { "SuccClan_Subtype_Cubus" },
+		//public static void Make2()
+		//{
+		//	var charBuilder = new CharacterDataBuilder
+		//	{
+		//		CharacterID = IDChar,
+		//		NameKey = IDName + "_Name",
+		//		SubtypeKeys = new List<string> { "SuccClan_Subtype_Cubus" },
 
-				Size = 2,
-				Health = 15,
-				AttackDamage = 10,
-			};
+		//		Size = 2,
+		//		Health = 15,
+		//		AttackDamage = 10,
+		//	};
 
-			Utils.AddUnitImg(charBuilder, IDName + ".png");
-			var character = charBuilder.BuildAndRegister();
+		//	Utils.AddUnitImg(charBuilder, IDName + ".png");
+		//	var character = charBuilder.BuildAndRegister();
 
-			var cardBuilder = new CardDataBuilder
-			{
-				Cost = 1,
-				Rarity = CollectableRarity.Rare,
-			};
-			Utils.AddUnit(cardBuilder, IDName, character);
-			Utils.AddImg(cardBuilder, IDName + ".png");
-			var card = cardBuilder.BuildAndRegister();
+		//	var cardBuilder = new CardDataBuilder
+		//	{
+		//		Cost = 1,
+		//		Rarity = CollectableRarity.Rare,
+		//	};
+		//	Utils.AddUnit(cardBuilder, IDName, character);
+		//	Utils.AddImg(cardBuilder, IDName + ".png");
+		//	var card = cardBuilder.BuildAndRegister();
 
-			var upgradeBuilder = new CardUpgradeDataBuilder()
-			{
-				UpgradeTitle = "123",
-				//UpgradeTitleKey = IDName + "_Upgrade_Name",
-				UpgradeDescription = "456",
-				//UpgradeDescriptionKey = IDName + "_Upgrade_Desc",
-				SourceSynthesisUnit = character,
+		//	var upgradeBuilder = new CardUpgradeDataBuilder()
+		//	{
+		//		UpgradeTitle = "123",
+		//		UpgradeTitleKey = IDName + "_Upgrade_Name",
+		//		UpgradeDescription = "456",
+		//		UpgradeDescriptionKey = IDName + "_Upgrade_Desc",
+		//		SourceSynthesisUnit = character,
 
-				StatusEffectUpgrades = new List<StatusEffectStackData>
-				{
-					new StatusEffectStackData
-					{
-						statusId = VanillaStatusEffectIDs.Endless,
-					},
-				},
+		//		StatusEffectUpgrades = new List<StatusEffectStackData>
+		//		{
+		//			new StatusEffectStackData
+		//			{
+		//				statusId = VanillaStatusEffectIDs.Endless,
+		//			},
+		//		},
 
-			};
-			upgradeBuilder.Build();
-		}
+		//	};
+		//	upgradeBuilder.Build();
+		//}
 
 		public static void Make()
 		{
@@ -126,10 +126,10 @@ namespace SuccClan.Cards.UnitCards
 		{
 			new CardUpgradeDataBuilder()
 			{
-				UpgradeTitle = "123",
-				//UpgradeTitleKey = IDName + "_Upgrade_Name",
-				UpgradeDescription = "456",
-				//UpgradeDescriptionKey = IDName + "_Upgrade_Desc",
+				//UpgradeTitle = "123",
+				UpgradeTitleKey = IDName + "_Upgrade_Name",
+				//UpgradeDescription = "456",
+				UpgradeDescriptionKey = IDName + "_Upgrade_Desc",
 				SourceSynthesisUnit = charData,
 
 				StatusEffectUpgrades = new List<StatusEffectStackData>

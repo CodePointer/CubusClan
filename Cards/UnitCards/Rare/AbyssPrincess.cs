@@ -63,17 +63,31 @@ namespace SuccClan.Cards.UnitCards
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateType = typeof(CardEffectDebuffDamage),
-								ParamInt = 5,
+								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
 								TargetMode = TargetMode.Self,
 								TargetTeamType = Team.Type.Monsters,
+								ParamStatusEffects = new StatusEffectStackData[]
+								{
+									new StatusEffectStackData
+									{
+										statusId = VanillaStatusEffectIDs.Sap,
+										count = 3,
+									},
+								},
 							},
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectBuffDamage,
-								ParamInt = 5,
+								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
 								TargetMode = TargetMode.Room,
 								TargetTeamType = Team.Type.Heroes,
+								ParamStatusEffects = new StatusEffectStackData[]
+								{
+									new StatusEffectStackData
+									{
+										statusId = VanillaStatusEffectIDs.Rage,
+										count = 3,
+									},
+								},
 							},
 							new CardEffectDataBuilder
 							{
@@ -111,21 +125,42 @@ namespace SuccClan.Cards.UnitCards
 					new CharacterTriggerDataBuilder
 					{
 						Trigger = CharacterTriggerData.Trigger.OnAttacking,
-						DescriptionKey = IDName + "_Updating_OnAttack_Desc",
+						DescriptionKey = IDName + "_OnAttack_Upgrade_Desc",
 
 						EffectBuilders = new List<CardEffectDataBuilder>
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateType = typeof(CardEffectDebuffDamage),
-								ParamInt = 5,
+								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
 								TargetMode = TargetMode.Self,
 								TargetTeamType = Team.Type.Monsters,
+								ParamStatusEffects = new StatusEffectStackData[]
+								{
+									new StatusEffectStackData
+									{
+										statusId = VanillaStatusEffectIDs.Sap,
+										count = 3,
+									},
+								},
 							},
 							new CardEffectDataBuilder
 							{
 								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
-								TargetMode = TargetMode.LastAttackedCharacter,
+								TargetMode = TargetMode.Room,
+								TargetTeamType = Team.Type.Heroes,
+								ParamStatusEffects = new StatusEffectStackData[]
+								{
+									new StatusEffectStackData
+									{
+										statusId = VanillaStatusEffectIDs.Rage,
+										count = 3,
+									},
+								},
+							},
+							new CardEffectDataBuilder
+							{
+								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+								TargetMode = TargetMode.Room,
 								TargetTeamType = Team.Type.Heroes,
 								ParamStatusEffects = new StatusEffectStackData[]
 								{
