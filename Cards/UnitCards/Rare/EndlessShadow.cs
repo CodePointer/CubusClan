@@ -27,32 +27,6 @@ namespace SuccClan.Cards.UnitCards
 				Size = 2,
 				Health = 15,
 				AttackDamage = 10,
-
-				TriggerBuilders = new List<CharacterTriggerDataBuilder>
-				{
-					new CharacterTriggerDataBuilder
-					{
-						Trigger = CharacterTriggerData.Trigger.OnDeath,
-						DescriptionKey = IDName + "_OnDeath_Desc",
-						EffectBuilders = new List<CardEffectDataBuilder>
-						{
-							new CardEffectDataBuilder
-							{
-								EffectStateType = typeof(CardEffectSpawnSelf),
-								ParamInt = 1,
-								AdditionalParamInt = (int)SpawnMode.FrontSlot,
-								ParamBool = true,
-								TargetMode = TargetMode.Self,
-								TargetTeamType = Team.Type.Monsters,
-								ParamStr = "Self",
-								ParamCardUpgradeData = new CardUpgradeDataBuilder
-								{
-									BonusHP = -5,
-								}.Build(),
-							}
-						}
-					}
-				}
 			};
 
 			Utils.AddUnitImg(charBuilder, IDName + ".png");

@@ -58,7 +58,7 @@ namespace SuccClan
 
 			MakeCards();
 
-			Trainworks.Patches.AccessUnitSynthesisMapping.FindUnitSynthesisMappingInstanceToStub();
+			AccessUnitSynthesisMapping.FindUnitSynthesisMappingInstanceToStub();
 			ShadowLady.Make();
 			KnightMare.Make();
 			Clan.RegisterBanner(unitIDList);
@@ -104,29 +104,29 @@ namespace SuccClan
 			MyCardPools.MakeLater();
 
 			// Spell Cards: Common
-			BloodCarnival.Make();
-			DreadShot.Make();
-			MindDomaination.Make();
-			PainAndPleasure.Make();
+			//BloodCarnival.Make();
+			//DreadShot.Make();
+			//MindDomaination.Make();
+			//PainAndPleasure.Make();
 
-			// Spell Cards: Uncommon
-			DangerousGame.Make();
-			DarkFury.Make();
-			DarkPact.Make();
-			ForTheQueen.Make();
-			MindBurning.Make();
-			PiercingShriek.Make();
-			PowerSiphon.Make();
-			ShadowEmbrace.Make();
+			//// Spell Cards: Uncommon
+			//DangerousGame.Make();
+			//DarkFury.Make();
+			//DarkPact.Make();
+			//ForTheQueen.Make();
+			//MindBurning.Make();
+			//PiercingShriek.Make();
+			//PowerSiphon.Make();
+			//ShadowEmbrace.Make();
 
-			// Spell Cards: Rare
-			CubusSpike.Make();
-			DepressionWhisper.Make();
-			IllusionTwins.Make();
-			InsanityReach.Make();
-			ParadoxTome.Make();
-			PlagueBoost.Make();
-			VitalityExtraction.Make();
+			//// Spell Cards: Rare
+			//CubusSpike.Make();
+			//DepressionWhisper.Make();
+			//IllusionTwins.Make();
+			//InsanityReach.Make();
+			//ParadoxTome.Make();
+			//PlagueBoost.Make();
+			//VitalityExtraction.Make();
 
 			// Debug
 			//NotHornBreak.Make();

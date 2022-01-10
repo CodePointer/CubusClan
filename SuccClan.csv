@@ -1,0 +1,211 @@
+﻿Key,Type,Desc,Plural,Group,Descriptions,English [en-US],Chinese [zh-CN]
+Succubus_ClassData_TitleLoc,Text,,,,,Succubus,魅魔
+Succubus_ClassData_DescriptionLoc,Text,,,,,As primary class,作为主种族选择
+Succubus_ClassData_SubclassDescriptionLoc,Text,,,,,As subclass,作为副种族选择
+RewardNodeData_Succubus_UnitBanner_TooltipTitleKey,Text,,,,,Succubus Banner,魅魔战旗
+RewardNodeData_Succubus_UnitBanner_TooltipBodyKey,Text,,,,,Gain a Succubus unit,获取一个魅魔单位
+SuccubusReward_Title,Text,,,,,Succubus Unit Reward Draft,魅魔单位奖励
+SuccubusReward_Desc,Text,,,,,Choose a card!,选一个吧！
+,,,,,,,
+Champion_ShadowLady_Name,Text,,,,,Shadow Lady,匿影女士
+Champion_ShadowLady_Desc,Text,,,,,,
+Upgrade_ShadowLadyBloodThurstyBasic_Name,Text,,,,,Blood Thursty I,渴血 I
+Upgrade_ShadowLadyBloodThurstyBasic_OnAction_Desc,Text,,,,,Apply +{[effect0.power]}[attack] to friendly and enemy units on this floor.,所有友方与敌方单位 +{[effect0.power]}[attack]。
+Upgrade_ShadowLadyBloodThurstyPre_Name,Text,,,,,Blood Thursty II,渴血 II
+Upgrade_ShadowLadyBloodThurstyPre_OnAction_Desc,Text,,,,,Apply +{[effect0.power]}[attack] to friendly and enemy units on this floor.,所有友方与敌方单位 +{[effect0.power]}[attack]。
+Upgrade_ShadowLadyBloodThurstyPro_Name,Text,,,,,Blood Thursty III,渴血 III
+Upgrade_ShadowLadyBloodThurstyPro_OnAction_Desc,Text,,,,,Apply +{[effect0.power]}[attack] to friendly and enemy units on this floor.,所有友方与敌方单位 +{[effect0.power]}[attack]。
+Upgrade_ShadowLadyPlagueBasic_Name,Text,,,,,Plague I,瘟疫 I
+Upgrade_ShadowLadyPlagueBasic_OnSpawn_Desc,Text,,,,,Add 3 <b>Obsessing Shard</b> to your hand.,将 3 张 <b>欲望碎片</b> 加入你的手牌。
+Upgrade_ShadowLadyPlagueBasic_OnFanatic_Desc,Text,,,,,Gain +{[effect0.power]}[attack],
+Upgrade_ShadowLadyPlaguePre_Name,Text,,,,,Plague II,瘟疫 II
+Upgrade_ShadowLadyPlaguePre_OnSpawn_Desc,Text,,,,,Add 3 <b>Obsessing Shard</b> to your hand.,将 3 张 <b>欲望碎片</b> 加入你的手牌。
+Upgrade_ShadowLadyPlaguePre_OnFanatic_Desc,Text,,,,,Gain +{[effect0.power]}[attack],
+Upgrade_ShadowLadyPlaguePro_Name,Text,,,,,Plague III,瘟疫 III
+Upgrade_ShadowLadyPlaguePro_OnSpawn_Desc,Text,,,,,Add 3 <b>Obsessing Shard</b> to your hand.,将 3 张 <b>欲望碎片</b> 加入你的手牌。
+Upgrade_ShadowLadyPlaguePro_OnFanatic_Desc,Text,,,,,Gain +{[effect0.power]}[attack],
+Upgrade_ShadowLadyProfanityBasic_Name,Text,,,,,Profanity I,亵渎 I
+Upgrade_ShadowLadyProfanityBasic_OnResovle_Desc,Text,,,,,Add 1 <b>Profane Ascending</b> to your hand.,将 1 张 <b>亵渎晋升</b> 加入你的手牌。
+Upgrade_ShadowLadyProfanityBasic_OnHarvest_Desc,Text,,,,,Gain <b>Stealth {[effect0.status0.power]}</b>.,获得 <b>潜行 {[effect0.status0.power]}</b>。
+Upgrade_ShadowLadyProfanityPre_Name,Text,,,,,Profanity II,亵渎 II
+Upgrade_ShadowLadyProfanityPre_OnResovle_Desc,Text,,,,,Add 1 <b>Profane Ascending +</b> to your hand.,将 1 张 <b>亵渎晋升+</b> 加入你的手牌。
+Upgrade_ShadowLadyProfanityPre_OnHarvest_Desc,Text,,,,,Gain <b>Stealth {[effect0.status0.power]}</b>.,获得 <b>潜行 {[effect0.status0.power]}</b>。
+Upgrade_ShadowLadyProfanityPro_Name,Text,,,,,Profanity III,亵渎 III
+Upgrade_ShadowLadyProfanityPro_OnResovle_Desc,Text,,,,,Add 2 <b>Profane Ascending +</b> to your hand.,将 2 张 <b>亵渎晋升+</b> 加入你的手牌。
+Upgrade_ShadowLadyProfanityPro_OnHarvest_Desc,Text,,,,,Gain <b>Stealth {[effect0.status0.power]}</b>.,获得 <b>潜行 {[effect0.status0.power]}</b>。
+,,,,,,,
+Champion_KnightMare_Name,Text,,,,,Knightmare,梦魇骑士
+Champion_KnightMare_Desc,Text,,,,,,
+Upgrade_KnightMareTraitorBasic_Name,Text,,,,,Traitor Lord I,叛徒领主 I
+Upgrade_KnightMareTraitorBasic_Desc,Text,,,,,,
+Upgrade_KnightMareTraitorPre_Name,Text,,,,,Traitor Lord II,叛徒领主 II
+Upgrade_KnightMareTraitorPre_Desc,Text,,,,,,
+Upgrade_KnightMareTraitorPro_Name,Text,,,,,Traitor Lord III,叛徒领主 III
+Upgrade_KnightMareTraitorPro_Desc,Text,,,,,,
+Upgrade_KnightMareBlustBasic_Name,Text,,,,,Mind Blust I,心灵震爆 I
+Upgrade_KnightMareBlustBasic_Desc,Text,,,,,,
+Upgrade_KnightMareBlustPre_Name,Text,,,,,Mind Blust II,心灵震爆 II
+Upgrade_KnightMareBlustPre_Desc,Text,,,,,,
+Upgrade_KnightMareBlustPro_Name,Text,,,,,Mind Blust III,心灵震爆 III
+Upgrade_KnightMareBlustPro_Desc,Text,,,,,,
+Upgrade_KnightMareSiphonBasic_Name,Text,,,,,Thought Siphon I,思想虹吸 I
+Upgrade_KnightMareSiphonBasic_Desc,Text,,,,,,
+Upgrade_KnightMareSiphonPre_Name,Text,,,,,Thought Siphon II,思想虹吸 II
+Upgrade_KnightMareSiphonPre_Desc,Text,,,,,,
+Upgrade_KnightMareSiphonPro_Name,Text,,,,,Thought Siphon III,思想虹吸 III
+Upgrade_KnightMareSiphonPro_Desc,Text,,,,,,
+,,,,,,,
+Blight_ObsessingShard_Name,Text,,,,,Obsessing Spark,欲望碎片
+Blight_ObsessingShard_Desc,Text,,,,,,
+Blight_ObsessingShard_OnReserve_Desc,Text,,,,,Your Pyre takes {[effect0.power]} damage.,对薪火造成 {[effect0.power]} 点伤害。
+Spell_Flogging_Name,Text,,,,,Flogging,鞭笞
+Spell_Flogging_Desc,Text,,,,,Deal {[effect0.power]} damage. Add 1 <b>Obsessing Shard</b> to your discard deck.,对所有敌方单位造成 {[effect0.power]} 伤害。 将1张 <b>欲望碎片</b> 卡牌加入弃牌堆。
+Spell_Inception_Name,Text,,,,,Inception,思想窃取
+Spell_Inception_Desc,Text,,,,,Give <nobr><b>Soul {[effect0.status0.power]}</b>; +{[effect1.power]}[attack],
+Spell_ProfaneAscending_Name,Text,,,,,Profane Ascending,亵渎晋升
+Spell_ProfaneAscending_Desc,Text,,,,,<b>Descend</b> an enemy unit to the bottom floor. Apply <nobr><b>Frantic {[effect1.status0.power]}</b></nobr>.,使一个敌方单位<b>下降</b>到最底层，并对其施加 <nobr><b>疯狂 {[effect1.status0.power]}</b></nobr>。
+Spell_ProfaneAscendingPlus_Name,Text,,,,,Profane Ascending +,亵渎晋升+
+Spell_ProfaneAscendingPlus_Desc,Text,,,,,<b>Descend</b> an enemy unit to the bottom floor. Apply <nobr><b>Frantic {[effect1.status0.power]}</b>. +{[effect2.power]}[attack]</nobr>.,使一个敌方单位<b>下降</b>到最底层，并对其施加 <nobr><b>疯狂 {[effect1.status0.power]}</b>，+{[effect2.power]}[attack]</nobr>。
+,,,,,,,
+Spell_DreadShot_Name,Text,,,,,Dread Shot,恐惧射击
+Spell_DreadShot_Desc,Text,,,,,Deal {[effect0.power]} damage.,造成 {[effect0.power]} 点伤害。
+Spell_DreadShot_OnKill_Desc,Text,,,,,Apply <nobr><b>Frantic {[effect0.status0.power]}</b></nobr> to enemy units.,对所有敌方单位施加 <nobr><b>疯狂 {[effect0.status0.power]}</b></nobr>。
+Spell_BloodCarnival_Name,Text,,,,,Blood Carnival,鲜血狂欢
+Spell_BloodCarnival_Desc,Text,,,,,Give everyone <nobr>+{[effect0.power]}[attack]</nobr>.,所有单位<nobr>+{[effect0.power]}[attack]</nobr>。
+Spell_PainAndPleasure_Name,Text,,,,,Pain And Pleasure,喜怒无常
+Spell_PainAndPleasure_Desc,Text,,,,,Discard all your blight card in your hand and draw that many.,弃除手牌中所有的疫病牌并抽取等量的牌。
+Spell_MindDomaination_Name,Text,,,,,Mind Domaination,支配他人
+Spell_MindDomaination_Desc,Text,,,,,Descend a unit and apply <nobr><b>Frantic {[effect1.status0.power]}</b></nobr>. Add 1 <b>Obsessing Shard</b> to your hand.,使一个单位<b>下降</b>。施加 <b>疯狂 {[effect1.status0.power]}</b>。 将 1 张 <b>欲望碎片</b> 加入手牌。
+Spell_TODOCommonSpell1_Name,Text,,,,,,
+Spell_TODOCommonSpell1_Desc,Text,,,,,,
+,,,,,,,
+Spell_PiercingShriek_Name,Text,,,,,Piercing Shriek,刺耳尖啸
+Spell_PiercingShriek_Desc,Text,,,,,Deal {[effect0.power]} to all enemy units.,对所有敌方单位造成 {[effect0.power]} 点伤害。
+Spell_DangerousGame_Name,Text,,,,,Dangerous Game,危险的游戏
+Spell_DangerousGame_Desc,Text,,,,,Apply <nobr><b>Frantic {[effect0.status0.power]}</b></nobr>,
+Spell_PowerSiphon_Name,Text,,,,,Power Siphon,力量虹吸
+Spell_PowerSiphon_Desc,Text,,,,,Deal {[effect0.power]} damage to the front enemy unit. ,对前排敌方单位造成 {[effect0.power]} 点伤害。
+Spell_ShadowEmbrace_Name,Text,,,,,Shadow Embrace,拥抱暗影
+Spell_ShadowEmbrace_Desc,Text,,,,,Add 2 <b>Obsessing Shard</b> to the discard pile. Draw {[effect1.power]} card。,将 2 张 <b>欲望碎片</b> 加入弃牌堆。抽 {[effect1.power]} 张牌。
+Spell_DarkPact_Name,Text,,,,,Dark Pact,黑暗契约
+Spell_DarkPact_Desc,Text,,,,,Add 2 <b>Obsessing Shard</b> to the draw pile. +{[effect1.power]}[ember] every turn.,将 2 张 <b>欲望碎片</b> 加入抽牌堆。每回合 +{[effect1.power]}[ember]。
+Spell_DarkFury_Name,Text,,,,,Dark Fury,黑暗狂怒
+Spell_DarkFury_Desc,Text,,,,,Double the damage and half the health on enemy units.,使所有敌方单位血量减半，攻击翻倍。
+Spell_ForTheQueen_Name,Text,,,,,For the Queen,为了女王
+Spell_ForTheQueen_Desc,Text,,,,,Gain 50 [coin].,获得 50[coin].
+Spell_PlagueBoost_Name,Text,,,,,Plague Boost,瘟疫爆发
+Spell_PlagueBoost_Desc,Text,,,,,Gain 1[ember] for every blight card in your hand.,手牌中每有1张疫病，+1[ember]
+Spell_MindBurning_Name,Text,,,,,Mind Burning,意识灼烧
+Spell_MindBurning_Desc,Text,,,,,Apply <b>Frantic {[effect0.status0.power]}</b>,
+,,,,,,,
+Spell_CubusSpike_Name,Text,,,,,Cubus Spike,诡影道钉
+Spell_CubusSpike_Desc,Text,,,,,Apply <b>Frantic {[trait0.power]}X</b> to all enemy units.,对所有敌方单位施加 <b>疯狂 {[trait0.power]}X</b>。
+Spell_ParadoxTome_Name,Text,,,,,Paradox Tome,悖论法典
+Spell_ParadoxTome_Desc,Text,,,,,Apply <b>Sweep</b>. Add 3 <b>Obsesssing Shard</b> to your hand.,对一个友方单位施加 <b>横扫</b>。 将 3 张 <b>欲望碎片</b>加入手牌。
+Spell_InsanityReach_Name,Text,,,,,Insanity Reach,疯狂蔓延
+Spell_InsanityReach_Desc,Text,,,,,Apply <nobr>+{[effect0.power]}[attack],
+Spell_DepressionWhisper_Name,Text,,,,,Depression Whisper,忧郁低语
+Spell_DepressionWhisper_Desc,Text,,,,,Remove all <b>Buff</b> and double all <b>Debuff</b> effects from enemy units.,对所有敌方单位，移除其正面效果并翻倍其负面效果。
+Spell_TODORareSpell3_Name,Text,,,,,TODO,TODO
+Spell_TODORareSpell3_Desc,Text,,,,,TODO,TODO
+Spell_VitalityExtraction_Name,Text,,,,,Vitality Extraction,活力汲取
+Spell_VitalityExtraction_Desc,Text,,,,,Gain <b>Rage</b> and <b>Regen</b> to friendly units equal to the number of <b>Frantic</b> in this room.,获取等同于本层  <b>疯狂</b> 层数的 <b>狂怒</b> 和 <b>再生</b>。
+Spell_IllusionTwins_Name,Text,,,,,Illusion Twins,幻影双生
+Spell_IllusionTwins_Desc,Text,,,,,Create 1 copy of a champion unit.,复制 1 个勇者单位。
+,,,,,,,
+Unit_SuccbusTorturer_Name,Text,,,,,Succbus Torturer,魅魔拷打者
+Unit_SuccbusTorturer_OnAttack_Desc,Text,,,,,Apply <b>Melee Weakness {[effect0.status0.power]}</b> to the attacked unit.,对被攻击的单位施加 <b>近战易伤 {[effect0.status0.power]}</b>。
+Unit_SuccbusTorturer_Desc,Text,,,,,,
+Unit_IncubusButcher_Name,Text,,,,,Incubus Butcher,魇魔刽子手
+Unit_IncubusButcher_OnHarvest_Desc,Text,,,,,+{[effect0.power]}[attack],+{[effect0.power]}[attack]
+Unit_IncubusButcher_Desc,Text,,,,,,
+Unit_DemonPioneer_Name,Text,,,,,Demon Pioneer,恶魔先锋
+Unit_DemonPioneer_OnFanatic_Desc,Text,,,,,+{[effect0.power]}[attack],+{[effect0.power]}[attack]
+Unit_DemonPioneer_Upgrade_Name,Text,,,,,Up Name,
+Unit_DemonPioneer_Upgrade_Desc,Text,,,,,Up Desc,
+Unit_DemonPioneer_OnFanatic_Upgrade_Desc,Text,,,,,+{[effect0.power]}[attack],+{[effect0.power]}[attack]
+Unit_DemonPioneer_Desc,Text,,,,,,
+Unit_ChaosCreation_Name,Text,,,,,Chaos Creation,混沌造物
+Unit_ChaosCreation_OnHit_Desc,Text,,,,,Apply <b>Frantic {[effect0.status0.power]}</b> to enemy units.,对所有敌方单位施加 <b>疯狂 {[effect0.status0.power]}</b>。
+Unit_ChaosCreation_Desc,Text,,,,,,
+Unit_Vrolikai_Name,Text,,,,,Vrolikai,四臂蛇魔
+Unit_Vrolikai_Desc,Text,,,,,,
+Unit_EndlessShadow_Name,Text,,,,,Endless Shadow,无尽幽影
+Unit_EndlessShadow_OnDeath_Desc,Text,,,,,-5[health], -5[health]。
+Unit_EndlessShadow_Upgrade_Name,Text,,,,,Endless Shadow Upgrade,无尽幽影升级
+Unit_EndlessShadow_Upgrade_Desc,Text,,,,,Endless Shadow Upgrade Desc,无尽幽影升级 Desc
+Unit_EndlessShadow_Desc,Text,,,,,,
+Unit_ShadowWarrior_Name,Text,,,,,Shadow Warrior,暗影武者
+Unit_ShadowWarrior_OnFanatic_Desc,Text,,,,,+2[attack] permanently.,永久获得 +2[attack]。
+Unit_ShadowWarrior_Desc,Text,,,,,,
+Unit_AbyssPrincess_Name,Text,,,,,Abyss Princess,深渊公主
+Unit_AbyssPrincess_OnAttack_Desc,Text,,,,, -{[effect0.power]}[attack]. Apply +{[effect1.power]}[attack],
+Unit_AbyssPrincess_Desc,Text,,,,,,
+,,,,,,,
+Subunit_GluttonyGhost_Name,Text,,,,,Gluttony Ghost,暴食罪灵
+Subunit_GluttonyGhost_OnSpawn_Desc,Text,,,,,Add 2 <b>Obsesssing Shard</b> to your hand and draw pile.,将 2 张 <b>欲望碎片</b> 分别加入手牌和抽牌堆。
+Subunit_GluttonyGhost_OnFanatic_Desc,Text,,,,,Apply <b>Regen {[effect0.status0.power]}</b> to friendly units.,使友方单位获得 <b>再生 {[effect0.status0.power]}</b>。
+Subunit_GluttonyGhost_Desc,Text,,,,,,
+Subunit_EnvyGhost_Name,Text,,,,,Envy Ghost,嫉妒罪灵
+Subunit_EnvyGhost_OnSpawn_Desc,Text,,,,,Add 2 <b>Obsesssing Shard</b> to your hand and draw pile.,将 2 张 <b>欲望碎片</b> 分别加入手牌和抽牌堆。
+Subunit_EnvyGhost_OnFanatic_Desc,Text,,,,,Deal {[effect0.power]} damage to the front enemy unit.,对前排敌方单位造成 {[effect0.power]} 点伤害。
+Subunit_EnvyGhost_Desc,Text,,,,,,
+Subunit_LustGhost_Name,Text,,,,,Lust Ghost,色欲罪灵
+Subunit_LustGhost_OnSpawn_Desc,Text,,,,,Add 2 <b>Obsesssing Shard</b> to your hand and draw pile.,将 2 张 <b>欲望碎片</b> 分别加入手牌和抽牌堆。
+Subunit_LustGhost_OnFanatic_Desc,Text,,,,,Apply <b>Frantic {[effect0.status0.power]}</b> to the back enemy unit.,对后排敌方单位施加 <b>疯狂 {[effect0.status0.power]}</b>。
+Subunit_LustGhost_Desc,Text,,,,,,
+Subunit_WrathGhost_Name,Text,,,,,Wrath Ghost,愤怒罪灵
+Subunit_WrathGhost_OnSpawn_Desc,Text,,,,,Add 2 <b>Obsesssing Shard</b> to your hand and draw pile.,将 2 张 <b>欲望碎片</b> 分别加入手牌和抽牌堆。
+Subunit_WrathGhost_OnFanatic_Desc,Text,,,,,Apply +{[effect0.power]}[attack] to friendly units.,所有友方单位获得 +{[effect0.power]}[attack]。
+Subunit_WrathGhost_Desc,Text,,,,,,
+Subunit_GreedGhost_Name,Text,,,,,Greed Ghost,贪婪罪灵
+Subunit_GreedGhost_OnSpawn_Desc,Text,,,,,Add 2 <b>Obsesssing Shard</b> to your hand and draw pile.,将 2 张 <b>欲望碎片</b> 分别加入手牌和抽牌堆。
+Subunit_GreedGhost_OnFanatic_Desc,Text,,,,,Gain {[effect0.power]}[coin].,获得 {[effect0.power]}[coin]。
+Subunit_GreedGhost_Desc,Text,,,,,,
+Subunit_SlothGhost_Name,Text,,,,,Sloth Ghost,怠惰罪灵
+Subunit_SlothGhost_OnSpawn_Desc,Text,,,,,Add 2 <b>Obsesssing Shard</b> to your hand and draw pile.,将 2 张 <b>欲望碎片</b> 分别加入手牌和抽牌堆。
+Subunit_SlothGhost_OnFanatic_Desc,Text,,,,,Deal {[effect0.power]} damage to enemy units.,对所有敌方单位造成 {[effect0.power]} 点伤害。
+Subunit_SlothGhost_Desc,Text,,,,,,
+Subunit_ArroganceGhost_Name,Text,,,,,Arrogance Ghost,傲慢罪灵
+Subunit_ArroganceGhost_OnSpawn_Desc,Text,,,,,Add 2 <b>Obsesssing Shard</b> to your hand and draw pile.,将 2 张 <b>欲望碎片</b> 分别加入手牌和抽牌堆。
+Subunit_ArroganceGhost_OnFanatic_Desc,Text,,,,,<b>Spread</b>. -{[effect1.power]}[health].,蔓延。-{[effect1.power]}[health]。
+Subunit_ArroganceGhost_Desc,Text,,,,,,
+,,,,,,,
+Relic_DesireCrystal_Name,Text,,,,,Desire Crystal,欲望水晶
+Relic_DesireCrystal_Active,Text,,,,,Desire Crystal Active!,欲望水晶触发！
+Relic_DesireCrystal_Desc,Text,,,,,When you summon your first <b>Ghost</b> each turn,
+Relic_ObsessingAromatherapy_Name,Text,,,,,Obsessing Aromatherapy,迷乱香薰
+Relic_ObsessingAromatherapy_Desc,Text,,,,,Apply <b>Frantic 1</b> to enemy units when they enter the floor with your champion.,敌方单位进入勇者所在层数时，获得 <b>疯狂 1</b>
+Relic_ProfaneCrossbow_Name,Text,,,,,Profane Crossbow,亵渎手弩
+Relic_ProfaneCrossbow_Desc,Text,,,,,The first spell you play each turn gain <b>Piercing</b>.,TODO 每回合打出的第1张牌获得穿刺。
+Relic_AbyssCrown_Name,Text,,,,,Abyss Crown,深渊王冠
+Relic_AbyssCrown_Desc,Text,,,,,Grant +1 stacks of <b>Frantic</b> each time it is applied.,TODO 获得+1疯狂层数
+Relic_ShadowCloak_Name,Text,,,,,Shadow Cloak,暗影斗篷
+Relic_ShadowCloak_Desc,Text,,,,,<b>Fanatic</b> abilities trigger an additional time.,<b>狂热</b> 效果额外触发一次。
+Relic_FleshRing_Name,Text,,,,,Flesh Ring,血肉之灾
+Relic_FleshRing_Active,Text,,,,,Flesh Ring Active!,血肉之灾触发！
+Relic_FleshRing_Desc,Text,,,,,When you play your first Blight/Scourge card of the turn,
+Relic_PoisonSerum_Name,Text,,,,,Poison Serum,瘟疫血清
+Relic_PoisonSerum_Desc,Text,,,,,Draw +1 each turn. At start of turn,
+Relic_NetherBlossom_Name,Text,,,,,Nether Blossom,下界之花
+Relic_NetherBlossom_Desc,Text,,,,,When you apply <b>Frantic</b> to a unit,
+Relic_MutantElixirs_Name,Text,,,,,Mutant Elixirs,突变药剂
+Relic_MutantElixirs_Desc,Text,,,,,Apply +1[capacity],
+Relic_FlareRibbon_Name,Text,,,,,Flare Ribbon,薪火缎带
+Relic_FlareRibbon_Active,Text,,,,,Flare Ribbon Active!,薪火缎带触发！
+Relic_FlareRibbon_Desc,Text,,,,,Gain +4 <b>Armor</b> when Pyre is attacked.,薪火被攻击时，+4<b>护甲</b>。
+Relic_DemonBlood_Name,Text,,,,,Demon Blood,恶魔之血
+Relic_DemonBlood_Desc,Text,,,,,Playing a Blight/Scourge card deals 3 damage to random unit.,每当打出疫病/祸患牌时，对随机敌方单位造成3点伤害。
+,,,,,,,
+StatusEffect_Status_Frantic_CardText,Text,,,,,Frantic,疯狂
+StatusEffect_Status_Frantic_CardTooltipText,Text,,,,,Unit will damage the friendly front unit in their turn. Decreases every turn.,疯狂的单位在会对友方前排造成伤害。
+StatusEffect_Status_Frantic_CharacterTooltipText,Text,,,,,Unit will damage the friendly front unit in their turn. Decreases every turn.,疯狂的单位在会对友方前排造成伤害。
+,,,,,,,
+Trigger_OnFanatic_CardText,Text,,,,,Fanatic,狂热
+Trigger_OnFanatic_TooltipText,Text,,,,,Triggers when you play blights or scourges.,打出祸患或疫病牌时触发。
+Trigger_OnFanatic_Char_CardText,Text,,,,,Fanatic,狂热
+Trigger_OnFanatic_Char_TooltipText,Text,,,,,Triggers when you play blights or scourges.,打出祸患或疫病牌时触发。
+,,,,,,,
+CardEffectSpread_TooltipTitle,Text,,,,,Spread,蔓延
+CardEffectSpread_TooltipText,Text,,,,,If you have blight/scourge card in your hand,
+CardEffectSpread_AsTrait,Text,,,,,<b>Spread</b>,<b>蔓延</b>
