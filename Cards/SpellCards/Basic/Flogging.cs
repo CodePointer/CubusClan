@@ -29,7 +29,8 @@ namespace SuccClan.Cards.SpellCards
 				{ 
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectDamage,
+						EffectStateName = VanillaCardEffectTypes.CardEffectDamage.AssemblyQualifiedName,  // Use this
+						//EffectStateType = VanillaCardEffectTypes.CardEffectDamage,   // Cannot pass the filter of enhancer
 						ParamInt = 2,
 						TargetMode = TargetMode.Room,
 						TargetTeamType = Team.Type.Heroes

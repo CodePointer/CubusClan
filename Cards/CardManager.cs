@@ -20,9 +20,9 @@ namespace SuccClan.Cards
 		{
 			var testCardID = new List<string>
 			{
-				ForTheQueen.IDName,
-				EndlessShadow.IDName,
-				IllusionTwins.IDName,
+				//ForTheQueen.IDName,
+				//EndlessShadow.IDName,
+				//IllusionTwins.IDName,
 				//GreedGhost.IDName,
 				//GreedGhost.IDName,
 				//GreedGhost.IDName,

@@ -19,7 +19,7 @@ namespace SuccClan.Cards.SpellCards
 		{
 			CardDataBuilder railyard = new CardDataBuilder
 			{
-				Cost = 0,
+				Cost = 1,
 				Rarity = CollectableRarity.Common,
 				TargetsRoom = true,
 				Targetless = false,
@@ -27,13 +27,13 @@ namespace SuccClan.Cards.SpellCards
 				CardType = CardType.Spell,
 
 				TraitBuilders = new List<CardTraitDataBuilder>
-				{ 
+				{
 					new CardTraitDataBuilder
 					{
-						TraitStateType = VanillaCardTraitTypes.CardTraitSelfPurge,
+						TraitStateType = VanillaCardTraitTypes.CardTraitExhaustState,
 					},
 				},
-				
+
 				EffectBuilders = new List<CardEffectDataBuilder>
 				{ 
 					new CardEffectDataBuilder
@@ -60,7 +60,7 @@ namespace SuccClan.Cards.SpellCards
 				},
 			};
 
-			Utils.AddSpellWithoutPool(railyard, IDName);
+			Utils.AddSpell(railyard, IDName);
 			Utils.AddImg(railyard, IDName + ".png");
 			railyard.BuildAndRegister();
 

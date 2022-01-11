@@ -80,7 +80,7 @@ namespace SuccClan.Cards.UnitCards
 				UpgradeDescriptionKey = IDName + "_Upgrade_Desc",
 				SourceSynthesisUnit = charData,
 
-				BonusHP = -20,
+				BonusHP = -10,
 
 				TriggerUpgradeBuilders = new List<CharacterTriggerDataBuilder>
 				{

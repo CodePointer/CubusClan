@@ -2,6 +2,7 @@
 *.cache
 
 obj/*
+.vs/*
 *.pdb
 *.cache
 

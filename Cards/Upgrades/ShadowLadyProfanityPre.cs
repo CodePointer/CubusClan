@@ -43,7 +43,18 @@ namespace SuccClan.Cards.Upgrades
 								EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
 								ParamInt = (int)CardPile.HandPile,
 								AdditionalParamInt = 1,
-								ParamCardPool = ProfaneAscendingPlus.cardPool,
+								ParamCardPool = ProfaneAscending.cardPool,
+								ParamCardUpgradeData = new CardUpgradeDataBuilder
+								{
+									CostReduction = 1,
+									TraitDataUpgradeBuilders = new List<CardTraitDataBuilder>
+									{
+										new CardTraitDataBuilder
+										{
+											TraitStateType = VanillaCardTraitTypes.CardTraitSelfPurge,
+										},
+									},
+								}.Build(),
 							},
 						},
 					},

@@ -44,6 +44,16 @@ namespace SuccClan.Cards.Upgrades
 								ParamInt = (int)CardPile.HandPile,
 								AdditionalParamInt = 1,
 								ParamCardPool = ProfaneAscending.cardPool,
+								ParamCardUpgradeData = new CardUpgradeDataBuilder
+								{
+									TraitDataUpgradeBuilders = new List<CardTraitDataBuilder>
+									{
+										new CardTraitDataBuilder
+										{
+											TraitStateType = VanillaCardTraitTypes.CardTraitSelfPurge,
+										},
+									},
+								}.Build(),
 							},
 						},
 					},

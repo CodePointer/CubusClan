@@ -15,7 +15,7 @@ namespace SuccClan.Cards
 		public static CardPool ObsessingShardPool;
 		public static CardPool VengefulShardPool;
 		public static CardPool BlightAndJunkPool;
-		public static CardPool StarterPool;
+		//public static CardPool StarterPool;
 
 		public static void Make()
 		{
@@ -64,13 +64,13 @@ namespace SuccClan.Cards
 			}.BuildAndRegister();
 		}
 
-		public static void MakeLater()
-		{
-			StarterPool = new CardPoolBuilder
-			{
-				CardPoolID = "Starter_CardPool",
-				CardIDs = { Flogging.IDName, VanillaCardIDs.Torch },
-			}.BuildAndRegister();
-		}
+		//public static void MakeLater()
+		//{
+		//	StarterPool = new CardPoolBuilder
+		//	{
+		//		CardPoolID = "Starter_CardPool",
+		//		CardIDs = { Flogging.IDName, VanillaCardIDs.Torch },
+		//	}.BuildAndRegister();
+		//}
 	}
 }

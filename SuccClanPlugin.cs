@@ -95,35 +95,48 @@ namespace SuccClan
 		static void MakeCards()
 		{
 			//Ascending Cards for Shadow Lady
-			ProfaneAscending.Make();
-			ProfaneAscendingPlus.Make();
+			
+			//ProfaneAscendingPlus.Make();
 
 			// Spell Cards: Basic
 			Flogging.Make();
+			//AddToMagicPowerUpgradeList(Flogging.IDName);
 			Inception.Make();
-			MyCardPools.MakeLater();
+			//AddToDoubleStackEnhancerList(Inception.IDName);
+			//MyCardPools.MakeLater();
 
 			//Spell Cards: Common
 			BloodCarnival.Make();
 			DreadShot.Make();
+			//AddToMagicPowerUpgradeList(DreadShot.IDName);
+			//AddToDoubleStackEnhancerList(DreadShot.IDName);
 			MindDomaination.Make();
+			//AddToDoubleStackEnhancerList(MindDomaination.IDName);
 			PainAndPleasure.Make();
+			ProfaneAscending.Make();
+			//AddToDoubleStackEnhancerList(ProfaneAscending.IDName);
 
 			// Spell Cards: Uncommon
 			DangerousGame.Make();
+			//AddToDoubleStackEnhancerList(DangerousGame.IDName);
 			DarkFury.Make();
 			DarkPact.Make();
 			ForTheQueen.Make();
 			MindBurning.Make();
+			//AddToDoubleStackEnhancerList(MindBurning.IDName);
 			PiercingShriek.Make();
+			//AddToMagicPowerUpgradeList(PiercingShriek.IDName);
 			PowerSiphon.Make();
+			//AddToMagicPowerUpgradeList(PowerSiphon.IDName);
 			ShadowEmbrace.Make();
 
 			// Spell Cards: Rare
 			CubusSpike.Make();
+			//AddToDoubleStackEnhancerList(CubusSpike.IDName);
 			DepressionWhisper.Make();
 			IllusionTwins.Make();
 			InsanityReach.Make();
+			//AddToDoubleStackEnhancerList(InsanityReach.IDName);
 			ParadoxTome.Make();
 			PlagueBoost.Make();
 			VitalityExtraction.Make();
@@ -168,6 +181,30 @@ namespace SuccClan
 			PoisonSerum.Make();
 			ProfaneCrossbow.Make();
 			ShadowCloak.Make();
+		}
+
+		static void AddToMagicPowerUpgradeList(string cardID)
+		{
+			// (11593 SpellMagicPowerBigExtraCost -> +20/Consume)
+			var enhancerData = ProviderManager.SaveManager.GetAllGameData().FindEnhancerData("07de18ca-a585-4200-b139-63c5d4661140");
+			var filter = enhancerData.GetEffects()[0].GetParamCardUpgradeData().GetFilters()[0];
+			var list = Traverse.Create(filter).Field("requiredCardEffects").GetValue<List<string>>();
+			list.Add(cardID);
+
+			// (11592 SpellMagicPower -> +10)
+			enhancerData = ProviderManager.SaveManager.GetAllGameData().FindEnhancerData("015f4d9d-3a87-4053-8e30-45a80fdf78ee");
+			filter = enhancerData.GetEffects()[0].GetParamCardUpgradeData().GetFilters()[0];
+			list = Traverse.Create(filter).Field("requiredCardEffects").GetValue<List<string>>();
+			list.Add(cardID);
+		}
+
+		static void AddToDoubleStackEnhancerList(string cardID)
+		{
+			// (11920 SpellUpgradeTraitAddJuice -> Doublestack)
+			var enhancerData = ProviderManager.SaveManager.GetAllGameData().FindEnhancerData("72f61ae8-7e0f-4066-a3fb-a1273f3aa273");
+			var filter = enhancerData.GetEffects()[0].GetParamCardUpgradeData().GetFilters()[0];
+			var list = Traverse.Create(filter).Field("requiredCardEffects").GetValue<List<string>>();
+			list.Add(cardID);
 		}
 	}
 }
