@@ -59,7 +59,6 @@ namespace SuccClan
 			MakeCards();
 
 			Trainworks.Patches.AccessUnitSynthesisMapping.FindUnitSynthesisMappingInstanceToStub();
-			//AccessUnitSynthesisMapping.FindUnitSynthesisMappingInstanceToStub();
 			ShadowLady.Make();
 			KnightMare.Make();
 			Clan.RegisterBanner(unitIDList);
