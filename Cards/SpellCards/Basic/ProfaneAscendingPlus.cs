@@ -10,7 +10,7 @@ using SuccClan.Effects;
 
 namespace SuccClan.Cards.SpellCards
 {
-	class ProfaneAscendingPlus
+	class ProfaneAscendingPlus  // Deprecated.
 	{
 		public static string IDName = "Spell_ProfaneAscendingPlus";
 		public static CardPool cardPool;

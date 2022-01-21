@@ -101,7 +101,7 @@ namespace SuccClan.Cards.UnitCards
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateType = typeof(CardEffectSpawnSelf),
+								EffectStateName = typeof(CardEffectSpawnSelf).AssemblyQualifiedName,
 								ParamInt = 1,
 								AdditionalParamInt = (int)SpawnMode.FrontSlot,
 								ParamBool = true,

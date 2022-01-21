@@ -29,7 +29,7 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardTraitDataBuilder
 					{
-						TraitStateType = VanillaCardTraitTypes.CardTraitExhaustState
+						TraitStateName = VanillaCardTraitTypes.CardTraitExhaustState.AssemblyQualifiedName
 					},
 				},
 				
@@ -37,14 +37,14 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
+						EffectStateName = VanillaCardEffectTypes.CardEffectAddBattleCard.AssemblyQualifiedName,
 						ParamInt = (int)CardPile.DeckPileRandom,
 						AdditionalParamInt = 2,
 						ParamCardPool = MyCardPools.ObsessingShardPool,
 					},
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectGainEnergyEveryTurn,
+						EffectStateName = VanillaCardEffectTypes.CardEffectGainEnergyEveryTurn.AssemblyQualifiedName,
 						ParamInt = 1,
 					},
 				},

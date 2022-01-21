@@ -29,14 +29,14 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardEffectDataBuilder
 					{
-						EffectStateType = typeof(CardEffectMultiplyDamage),
+						EffectStateName = typeof(CardEffectMultiplyDamage).AssemblyQualifiedName,
 						ParamInt = 2,
 						TargetMode = TargetMode.Room,
 						TargetTeamType = Team.Type.Heroes,
 					},
 					new CardEffectDataBuilder
 					{
-						EffectStateType = typeof(CardEffectMultiplyMaxHealth),
+						EffectStateName = typeof(CardEffectMultiplyMaxHealth).AssemblyQualifiedName,
 						ParamInt = -2,
 						TargetMode = TargetMode.Room,
 						TargetTeamType = Team.Type.Heroes,

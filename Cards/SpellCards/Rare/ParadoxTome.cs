@@ -29,7 +29,7 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardTraitDataBuilder
 					{
-						TraitStateType = VanillaCardTraitTypes.CardTraitExhaustState,
+						TraitStateName = VanillaCardTraitTypes.CardTraitExhaustState.AssemblyQualifiedName,
 					},
 				},
 				
@@ -37,7 +37,7 @@ namespace SuccClan.Cards.SpellCards
 				{ 
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+						EffectStateName = VanillaCardEffectTypes.CardEffectAddStatusEffect.AssemblyQualifiedName,
 						TargetMode = TargetMode.DropTargetCharacter,
 						TargetTeamType = Team.Type.Monsters,
 						ParamStatusEffects = new StatusEffectStackData[]
@@ -50,7 +50,7 @@ namespace SuccClan.Cards.SpellCards
 					},
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
+						EffectStateName = VanillaCardEffectTypes.CardEffectAddBattleCard.AssemblyQualifiedName,
 						ParamInt = (int)CardPile.HandPile,  // 0: Draw  1: Discard  3: Hand
 						AdditionalParamInt = 3,  // Number of added card
 						ParamCardPool = MyCardPools.ObsessingShardPool,

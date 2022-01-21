@@ -29,27 +29,27 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardTraitDataBuilder
 					{
-						TraitStateType = VanillaCardTraitTypes.CardTraitExhaustState,
+						TraitStateName = VanillaCardTraitTypes.CardTraitExhaustState.AssemblyQualifiedName,
 					},
 					new CardTraitDataBuilder
 					{
-						TraitStateType = typeof(CardTraitRewardGold),
+						TraitStateName = typeof(CardTraitRewardGold).AssemblyQualifiedName,
 						ParamInt = 50,
 					},
-					new CardTraitDataBuilder
-					{
-						TraitStateType = VanillaCardTraitTypes.CardTraitIntrinsicState,
-					},
+					//new CardTraitDataBuilder
+					//{
+					//	TraitStateName = VanillaCardTraitTypes.CardTraitIntrinsicState.AssemblyQualifiedName,
+					//},
 				},
 
 				EffectBuilders = new List<CardEffectDataBuilder>
 				{ 
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectDamage,
+						EffectStateName = VanillaCardEffectTypes.CardEffectSacrifice.AssemblyQualifiedName,
 						TargetMode = TargetMode.DropTargetCharacter,
 						TargetTeamType = Team.Type.Monsters,
-						ParamInt = 999,
+						//ParamInt = 999,
 					},
 				},
 			};

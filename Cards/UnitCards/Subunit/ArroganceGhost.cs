@@ -60,14 +60,16 @@ namespace SuccClan.Cards.UnitCards
 								EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
 								ParamInt = (int)CardPile.HandPile,
 								AdditionalParamInt = 1,
-								ParamCardPool = MyCardPools.ObsessingShardPool
+								ParamCardPool = MyCardPools.VengefulShardPool,
+								ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
 							},
 							new CardEffectDataBuilder
 							{
 								EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
 								ParamInt = (int)CardPile.DeckPileRandom,
 								AdditionalParamInt = 1,
-								ParamCardPool = MyCardPools.ObsessingShardPool
+								ParamCardPool = MyCardPools.VengefulShardPool,
+								ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
 							},
 						},
 					},
@@ -77,16 +79,6 @@ namespace SuccClan.Cards.UnitCards
 						DescriptionKey = IDName + "_OnFanatic_Desc",
 						EffectBuilders = new List<CardEffectDataBuilder>
 						{
-							//new CardEffectDataBuilder
-							//{
-							//	EffectStateType = VanillaCardEffectTypes.CardEffectDrawAdditionalNextTurn,
-							//	ParamInt = 1,
-							//},
-							//new CardEffectDataBuilder
-							//{
-							//	EffectStateType = VanillaCardEffectTypes.CardEffectGainEnergy,
-							//	ParamInt = 1,
-							//},
 							new CardEffectDataBuilder
 							{
 								EffectStateType = typeof(CardEffectSpread),
@@ -134,11 +126,11 @@ namespace SuccClan.Cards.UnitCards
 								EffectStateType = VanillaCardEffectTypes.CardEffectGainEnergy,
 								ParamInt = 1,
 							},
-							new CardEffectDataBuilder
-							{
-								EffectStateType = typeof(CardEffectSpread),
-								ParamInt = 1,
-							}
+							//new CardEffectDataBuilder
+							//{
+							//	EffectStateType = typeof(CardEffectSpread),
+							//	ParamInt = 1,
+							//}
 						},
 					},
 				},

@@ -38,7 +38,7 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardEffectDataBuilder
 					{
-						EffectStateType = typeof(CardEffectDiscardBlightAndDraw),
+						EffectStateName = typeof(CardEffectDiscardBlightAndDraw).AssemblyQualifiedName,
 					},
 				},
 			};

@@ -34,7 +34,7 @@ namespace SuccClan.Cards.SpellCards
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectDamage,
+								EffectStateName = VanillaCardEffectTypes.CardEffectDamage.AssemblyQualifiedName,
 								ParamInt = 1,
 								TargetMode = TargetMode.Pyre
 							},
@@ -46,7 +46,7 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardTraitDataBuilder
 					{
-						TraitStateType = VanillaCardTraitTypes.CardTraitExhaustState,
+						TraitStateName = VanillaCardTraitTypes.CardTraitExhaustState.AssemblyQualifiedName,
 					},
 				}
 			};

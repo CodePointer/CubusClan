@@ -15,6 +15,7 @@ namespace SuccClan.Cards
 		public static CardPool ObsessingShardPool;
 		public static CardPool VengefulShardPool;
 		public static CardPool BlightAndJunkPool;
+		public static CardUpgradeData exhaustUpgradeData;
 		//public static CardPool StarterPool;
 
 		public static void Make()
@@ -36,6 +37,17 @@ namespace SuccClan.Cards
 					VanillaCardIDs.VengefulShard
 				},
 			}.BuildAndRegister();
+
+			exhaustUpgradeData = new CardUpgradeDataBuilder
+			{
+				TraitDataUpgradeBuilders = new List<CardTraitDataBuilder>
+				{
+					new CardTraitDataBuilder
+					{
+						TraitStateName = VanillaCardTraitTypes.CardTraitExhaustState.AssemblyQualifiedName,
+					},
+				},
+			}.Build();
 
 			var BlightJunkIDs = new List<string>
 			{ 

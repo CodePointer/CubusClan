@@ -30,7 +30,7 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardEffectDataBuilder
 					{
-						EffectStateType = typeof(CardEffectMultiplyStatusCategory),
+						EffectStateName = typeof(CardEffectMultiplyStatusCategory).AssemblyQualifiedName,
 						TargetMode = TargetMode.Room,
 						TargetTeamType = Team.Type.Heroes,
 						ParamInt = (int)StatusEffectData.DisplayCategory.Positive,
@@ -38,7 +38,7 @@ namespace SuccClan.Cards.SpellCards
 					},
 					new CardEffectDataBuilder
 					{
-						EffectStateType = typeof(CardEffectMultiplyStatusCategory),
+						EffectStateName = typeof(CardEffectMultiplyStatusCategory).AssemblyQualifiedName,
 						TargetMode = TargetMode.Room,
 						TargetTeamType = Team.Type.Heroes,
 						ParamInt = (int)StatusEffectData.DisplayCategory.Negative,

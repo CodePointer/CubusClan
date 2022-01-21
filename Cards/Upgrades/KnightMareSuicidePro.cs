@@ -12,7 +12,7 @@ namespace SuccClan.Cards.Upgrades
 {
 	class KnightMareSuicidePro
 	{
-		public static string IDName = "Upgrade_KnightMareTraitorPro";
+		public static string IDName = "Upgrade_KnightMareSuicidePro";
 
 		public static CardUpgradeDataBuilder Builder()
 		{
@@ -27,7 +27,7 @@ namespace SuccClan.Cards.Upgrades
 				{
 					new StatusEffectStackData
 					{
-						statusId = StatusEffectSoulEnchant.IDName,
+						statusId = StatusEffectSoulBlust.IDName,
 						count = 1,
 					},
 				},

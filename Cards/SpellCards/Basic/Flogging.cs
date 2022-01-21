@@ -37,11 +37,13 @@ namespace SuccClan.Cards.SpellCards
 					},
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
+						EffectStateName = VanillaCardEffectTypes.CardEffectAddBattleCard.AssemblyQualifiedName,
+						//EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
 						ParamInt = (int)CardPile.DeckPileRandom,
 						AdditionalParamInt = 1,  // Number of added card
-						ParamCardPool = MyCardPools.ObsessingShardPool,
-						ShouldTest = false,
+						ParamCardPool = MyCardPools.VengefulShardPool,
+						ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
+						//ShouldTest = false,
 					},
 					//new CardEffectDataBuilder
 					//{

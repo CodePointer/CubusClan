@@ -29,14 +29,15 @@ namespace SuccClan.Cards.SpellCards
 				{ 
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
+						EffectStateName = VanillaCardEffectTypes.CardEffectAddBattleCard.AssemblyQualifiedName,
 						ParamInt = (int)CardPile.DiscardPile,
 						AdditionalParamInt = 2,
-						ParamCardPool = MyCardPools.ObsessingShardPool,
+						ParamCardPool = MyCardPools.VengefulShardPool,
+						ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
 					},
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectDraw,
+						EffectStateName = VanillaCardEffectTypes.CardEffectDraw.AssemblyQualifiedName,
 						ParamInt = 2,
 					},
 				},

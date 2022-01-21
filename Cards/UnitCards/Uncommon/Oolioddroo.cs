@@ -5,15 +5,14 @@ using System.Text;
 using Trainworks.Builders;
 using Trainworks.Constants;
 
-using SuccClan.Effects;
 using SuccClan.CardEffects;
 
 namespace SuccClan.Cards.UnitCards
 {
-	class ShadowWarrior
+	class Oolioddroo
 	{
-		public static readonly string IDName = "Unit_ShadowWarrior";
-		public static readonly string IDChar = "Unit_ShadowWarriorCharacter";
+		public static readonly string IDName = "Unit_Oolioddroo";
+		public static readonly string IDChar = "Unit_OolioddrooCharacter";
 
 		public static void Make()
 		{
@@ -23,7 +22,7 @@ namespace SuccClan.Cards.UnitCards
 			CardDataBuilder railyard = new CardDataBuilder
 			{
 				Cost = 1,
-				Rarity = CollectableRarity.Rare,
+				Rarity = CollectableRarity.Uncommon,
 			};
 
 			Utils.AddUnit(railyard, IDName, charData);
@@ -41,36 +40,28 @@ namespace SuccClan.Cards.UnitCards
 				SubtypeKeys = new List<string> { "SuccClan_Subtype_Cubus" },
 
 				Size = 2,
-				Health = 1,
-				AttackDamage = 5,
+				Health = 20,
+				AttackDamage = 0,
 
 				TriggerBuilders = new List<CharacterTriggerDataBuilder>
 				{
 					new CharacterTriggerDataBuilder
 					{
-						Trigger = Trigger_OnFanatic.OnFanaticCharTrigger.GetEnum(),
-						DescriptionKey = IDName + "_OnFanatic_Desc",
+						Trigger = CharacterTriggerData.Trigger.OnTurnBegin,
+						DescriptionKey = IDName + "_OnAction_Desc",
+
 						EffectBuilders = new List<CardEffectDataBuilder>
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateName = typeof(CardEffectUpgradePermanent).AssemblyQualifiedName,
-								ParamCardUpgradeData = new CardUpgradeDataBuilder
-								{
-									BonusDamage = 2,
-								}.Build(),
+								EffectStateName = typeof(CardEffectDamageByAttack).AssemblyQualifiedName,
+								TargetMode = TargetMode.Room,
+								TargetTeamType = Team.Type.Heroes,
+								ParamInt = 0,
 							},
 						},
 					},
 				},
-
-				//StartingStatusEffects = new StatusEffectStackData[]
-				//{
-				//	new StatusEffectStackData
-				//	{
-				//		statusId = VanillaStatusEffectIDs.Endless,
-				//	},
-				//},
 			};
 
 			Utils.AddUnitImg(charBuilder, IDName + ".png");
@@ -79,7 +70,7 @@ namespace SuccClan.Cards.UnitCards
 
 		public static void BuildUpgrade(CharacterData charData)
 		{
-			new CardUpgradeDataBuilder
+			new CardUpgradeDataBuilder()
 			{
 				UpgradeTitleKey = IDName + "_Upgrade_Name",
 				UpgradeDescriptionKey = IDName + "_Upgrade_Desc",
@@ -89,22 +80,21 @@ namespace SuccClan.Cards.UnitCards
 				{
 					new CharacterTriggerDataBuilder
 					{
-						Trigger = Trigger_OnFanatic.OnFanaticCharTrigger.GetEnum(),
-						DescriptionKey = IDName + "_OnFanatic_Upgrade_Desc",
+						Trigger = CharacterTriggerData.Trigger.OnTurnBegin,
+						DescriptionKey = IDName + "_OnAction_Desc",
+
 						EffectBuilders = new List<CardEffectDataBuilder>
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateName = typeof(CardEffectUpgradePermanent).AssemblyQualifiedName,
-								ParamCardUpgradeData = new CardUpgradeDataBuilder
-								{
-									BonusDamage = 1,
-								}.Build(),
+								EffectStateName = typeof(CardEffectDamageByAttack).AssemblyQualifiedName,
+								TargetMode = TargetMode.Room,
+								TargetTeamType = Team.Type.Heroes,
+								ParamInt = 0,
 							},
 						},
 					},
 				},
-
 			}.Build();
 		}
 	}

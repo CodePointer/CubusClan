@@ -29,7 +29,7 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardTraitDataBuilder
 					{
-						TraitStateType = VanillaCardTraitTypes.CardTraitStrongerMagicPower,
+						TraitStateName = VanillaCardTraitTypes.CardTraitStrongerMagicPower.AssemblyQualifiedName,
 					},
 				},
 				
@@ -37,14 +37,14 @@ namespace SuccClan.Cards.SpellCards
 				{ 
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectDamage,
+						EffectStateName = VanillaCardEffectTypes.CardEffectDamage.AssemblyQualifiedName,
 						ParamInt = 30,
 						TargetMode = TargetMode.FrontInRoom,
 						TargetTeamType = Team.Type.Heroes,
 					},
 					new CardEffectDataBuilder
 					{
-						EffectStateType = typeof(CardEffectSpread),
+						EffectStateName = typeof(CardEffectSpread).AssemblyQualifiedName,
 						ParamInt = 1,
 					},
 				},

@@ -9,7 +9,7 @@ namespace SuccClan.Cards.Upgrades
 {
 	class KnightMareEndlessBasic
 	{
-		public static string IDName = "Upgrade_KnightMareSiphonBasic";
+		public static string IDName = "Upgrade_KnightMareEndlessBasic";
 
 		public static CardUpgradeDataBuilder Builder()
 		{

@@ -29,14 +29,14 @@ namespace SuccClan.Cards.SpellCards
 				{ 
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectBump,
+						EffectStateName = VanillaCardEffectTypes.CardEffectBump.AssemblyQualifiedName,
 						TargetMode = TargetMode.DropTargetCharacter,
 						TargetTeamType = Team.Type.Heroes | Team.Type.Monsters,
 						ParamInt = -1,
 					},
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+						EffectStateName = VanillaCardEffectTypes.CardEffectAddStatusEffect.AssemblyQualifiedName,
 						TargetMode = TargetMode.LastTargetedCharacters,
 						TargetTeamType = Team.Type.Heroes | Team.Type.Monsters,
 						ParamStatusEffects = new StatusEffectStackData[]

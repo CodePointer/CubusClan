@@ -63,7 +63,7 @@ namespace SuccClan.Cards.UnitCards
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+								EffectStateName = VanillaCardEffectTypes.CardEffectAddStatusEffect.AssemblyQualifiedName,
 								TargetMode = TargetMode.Self,
 								TargetTeamType = Team.Type.Monsters,
 								ParamStatusEffects = new StatusEffectStackData[]
@@ -77,7 +77,7 @@ namespace SuccClan.Cards.UnitCards
 							},
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+								EffectStateName = VanillaCardEffectTypes.CardEffectAddStatusEffect.AssemblyQualifiedName,
 								TargetMode = TargetMode.Room,
 								TargetTeamType = Team.Type.Heroes,
 								ParamStatusEffects = new StatusEffectStackData[]
@@ -91,7 +91,7 @@ namespace SuccClan.Cards.UnitCards
 							},
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+								EffectStateName = VanillaCardEffectTypes.CardEffectAddStatusEffect.AssemblyQualifiedName,
 								TargetMode = TargetMode.Room,
 								TargetTeamType = Team.Type.Heroes,
 								ParamStatusEffects = new StatusEffectStackData[]
@@ -131,7 +131,7 @@ namespace SuccClan.Cards.UnitCards
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+								EffectStateName = VanillaCardEffectTypes.CardEffectAddStatusEffect.AssemblyQualifiedName,
 								TargetMode = TargetMode.Self,
 								TargetTeamType = Team.Type.Monsters,
 								ParamStatusEffects = new StatusEffectStackData[]
@@ -145,7 +145,7 @@ namespace SuccClan.Cards.UnitCards
 							},
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+								EffectStateName = VanillaCardEffectTypes.CardEffectAddStatusEffect.AssemblyQualifiedName,
 								TargetMode = TargetMode.Room,
 								TargetTeamType = Team.Type.Heroes,
 								ParamStatusEffects = new StatusEffectStackData[]
@@ -159,7 +159,7 @@ namespace SuccClan.Cards.UnitCards
 							},
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+								EffectStateName = VanillaCardEffectTypes.CardEffectAddStatusEffect.AssemblyQualifiedName,
 								TargetMode = TargetMode.Room,
 								TargetTeamType = Team.Type.Heroes,
 								ParamStatusEffects = new StatusEffectStackData[]

@@ -26,19 +26,19 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardTraitDataBuilder
 					{
-						TraitStateType = VanillaCardTraitTypes.CardTraitExhaustState,
+						TraitStateName = VanillaCardTraitTypes.CardTraitExhaustState.AssemblyQualifiedName,
 					},
-					new CardTraitDataBuilder
-					{
-						TraitStateType = VanillaCardTraitTypes.CardTraitIntrinsicState,
-					},
+					//new CardTraitDataBuilder
+					//{
+					//	TraitStateName = VanillaCardTraitTypes.CardTraitIntrinsicState.AssemblyQualifiedName,
+					//},
 				},
 
 				EffectBuilders = new List<CardEffectDataBuilder>
 				{
 					new CardEffectDataBuilder
 					{
-						EffectStateType = typeof(CardEffectCopyUnitWithUpgrade),
+						EffectStateName = typeof(CardEffectCopyUnitWithUpgrade).AssemblyQualifiedName,
 						TargetMode = TargetMode.DropTargetCharacter,
 						TargetTeamType = Team.Type.Monsters,
 						ParamInt = 1,

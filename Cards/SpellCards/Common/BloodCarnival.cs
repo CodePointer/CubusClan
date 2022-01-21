@@ -24,8 +24,8 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectBuffDamage,
-						ParamInt = 8,
+						EffectStateName = VanillaCardEffectTypes.CardEffectBuffDamage.AssemblyQualifiedName,
+						ParamInt = 10,
 						TargetMode = TargetMode.Room,
 						TargetTeamType = Team.Type.Heroes | Team.Type.Monsters,
 					},

@@ -6,6 +6,7 @@ using BepInEx;
 using HarmonyLib;
 using Trainworks.Interfaces;
 using Trainworks.Managers;
+using Trainworks.Constants;
 
 using SuccClan.Cards;
 using SuccClan.Cards.SpellCards;
@@ -43,6 +44,7 @@ namespace SuccClan
 				IncubusButcher.IDName,
 				SuccbusTorturer.IDName,
 				Vrolikai.IDName,
+				Oolioddroo.IDName,
 
 				EndlessShadow.IDName,
 				ShadowWarrior.IDName,
@@ -65,8 +67,12 @@ namespace SuccClan
 
 			MakeRelics();
 
+			// Fix Magic
+			AddToMagicPowerUpgradeList(VanillaCardEffectTypes.CardEffectDamage.AssemblyQualifiedName);
+			AddToDoubleStackEnhancerList(VanillaCardEffectTypes.CardEffectAddStatusEffect.AssemblyQualifiedName);
+
 			//ProviderManager.SaveManager.GetMetagameSave().SetLevelAndXP(clanRef.GetID(), 5, 99999);
-			Trainworks.Trainworks.Log(BepInEx.Logging.LogLevel.All, "OUTPUTHERE");
+			//Trainworks.Trainworks.Log(BepInEx.Logging.LogLevel.All, "OUTPUTHERE: " + typeof(CardEffectDamage).AssemblyQualifiedName);
 		}
 
 		public static ClassData getClan()
@@ -83,7 +89,7 @@ namespace SuccClan
 		static void MakeStatuses()
 		{
 			StatusEffectFrantic.Make();
-			StatusEffectSoulEnchant.Make();
+			StatusEffectSoulBlust.Make();
 		}
 
 		static void MakeCardPools()
@@ -160,6 +166,7 @@ namespace SuccClan
 			IncubusButcher.Make();
 			SuccbusTorturer.Make();
 			Vrolikai.Make();
+			Oolioddroo.Make();
 
 			// Unit cards: Rare
 			AbyssPrincess.Make();

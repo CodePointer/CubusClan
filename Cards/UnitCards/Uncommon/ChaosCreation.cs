@@ -53,7 +53,7 @@ namespace SuccClan.Cards.UnitCards
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+								EffectStateName = VanillaCardEffectTypes.CardEffectAddStatusEffect.AssemblyQualifiedName,
 								TargetMode = TargetMode.Room,
 								TargetTeamType = Team.Type.Heroes,
 								ParamStatusEffects = new StatusEffectStackData[]

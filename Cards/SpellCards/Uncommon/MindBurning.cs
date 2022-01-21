@@ -30,7 +30,7 @@ namespace SuccClan.Cards.SpellCards
 				{ 
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+						EffectStateName = VanillaCardEffectTypes.CardEffectAddStatusEffect.AssemblyQualifiedName,
 						TargetMode = TargetMode.DropTargetCharacter,
 						TargetTeamType = Team.Type.Heroes,
 						ParamStatusEffects = new StatusEffectStackData[]
@@ -40,6 +40,15 @@ namespace SuccClan.Cards.SpellCards
 								statusId = StatusEffectFrantic.IDName,
 								count = 1,
 							},
+						}
+					},
+					new CardEffectDataBuilder
+					{
+						EffectStateName = VanillaCardEffectTypes.CardEffectAddStatusEffect.AssemblyQualifiedName,
+						TargetMode = TargetMode.LastTargetedCharacters,
+						TargetTeamType = Team.Type.Heroes,
+						ParamStatusEffects = new StatusEffectStackData[]
+						{
 							new StatusEffectStackData
 							{
 								statusId = VanillaStatusEffectIDs.Multistrike,
@@ -56,7 +65,7 @@ namespace SuccClan.Cards.SpellCards
 					//},
 					new CardEffectDataBuilder
 					{
-						EffectStateType = typeof(CardEffectSpread),
+						EffectStateName = typeof(CardEffectSpread).AssemblyQualifiedName,
 						ParamInt = 1,
 						ShouldTest = false,
 					}

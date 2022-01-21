@@ -27,17 +27,23 @@ namespace SuccClan.Cards.Upgrades
 				{
 					new CharacterTriggerDataBuilder
 					{
-						Trigger = CharacterTriggerData.Trigger.OnSpawn,
-						DescriptionKey = IDName + "_OnSpawn_Desc",
+						Trigger = CharacterTriggerData.Trigger.PreCombat,
+						DescriptionKey = IDName + "_PreCombat_Desc",
 						EffectBuilders = new List<CardEffectDataBuilder>
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
+								EffectStateName = VanillaCardEffectTypes.CardEffectAddBattleCard.AssemblyQualifiedName,
 								ParamInt = (int)CardPile.HandPile,  // 0: Draw  1: Discard  3: Hand
-								AdditionalParamInt = 3,
-								ParamCardPool = MyCardPools.ObsessingShardPool,
-							}
+								AdditionalParamInt = 2,
+								ParamCardPool = MyCardPools.VengefulShardPool,
+								ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
+							},
+							new CardEffectDataBuilder
+							{
+								EffectStateName = VanillaCardEffectTypes.CardEffectGainEnergy.AssemblyQualifiedName,
+								ParamInt = 1,
+							},
 						}
 					},
 					new CharacterTriggerDataBuilder
@@ -50,7 +56,7 @@ namespace SuccClan.Cards.Upgrades
 							{
 								EffectStateType = VanillaCardEffectTypes.CardEffectBuffDamage,
 								TargetMode = TargetMode.Self,
-								ParamInt = 3
+								ParamInt = 2
 							},
 							new CardEffectDataBuilder
 							{
@@ -61,15 +67,15 @@ namespace SuccClan.Cards.Upgrades
 									new StatusEffectStackData
 									{
 										statusId = VanillaStatusEffectIDs.Regen,
-										count = 2,
+										count = 1,
 									},
 								},
 							},
-							new CardEffectDataBuilder
-							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectGainEnergy,
-								ParamInt = 1
-							},
+							//new CardEffectDataBuilder
+							//{
+							//	EffectStateType = VanillaCardEffectTypes.CardEffectGainEnergy,
+							//	ParamInt = 1
+							//},
 						},
 					},
 				},

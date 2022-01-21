@@ -59,14 +59,16 @@ namespace SuccClan.Cards.UnitCards
 								EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
 								ParamInt = (int)CardPile.HandPile,
 								AdditionalParamInt = 1,
-								ParamCardPool = MyCardPools.ObsessingShardPool
+								ParamCardPool = MyCardPools.VengefulShardPool,
+								ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
 							},
 							new CardEffectDataBuilder
 							{
 								EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
 								ParamInt = (int)CardPile.DeckPileRandom,
 								AdditionalParamInt = 1,
-								ParamCardPool = MyCardPools.ObsessingShardPool
+								ParamCardPool = MyCardPools.VengefulShardPool,
+								ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
 							},
 						},
 					},

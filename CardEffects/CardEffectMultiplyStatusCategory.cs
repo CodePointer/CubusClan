@@ -34,7 +34,7 @@ namespace SuccClan.CardEffects
 					if (listStatus[j].State.GetDisplayCategory() == displayCategory)
 					{
 						int currentCount = listStatus[j].Count;
-						int targetCount = (int)Math.Max(1.0f, scale * currentCount);
+						int targetCount = (int)Math.Max(0.0f, scale * currentCount);
 						
 						if (targetCount < currentCount)
 						{

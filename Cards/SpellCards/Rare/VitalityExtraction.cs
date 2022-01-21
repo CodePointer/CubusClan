@@ -26,19 +26,19 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardTraitDataBuilder
 					{
-						TraitStateType = VanillaCardTraitTypes.CardTraitExhaustState,
+						TraitStateName = VanillaCardTraitTypes.CardTraitExhaustState.AssemblyQualifiedName,
 					},
 					new CardTraitDataBuilder
 					{
-						TraitStateType = typeof(CardTraitFranticAddStatus),
+						TraitStateName = typeof(CardTraitFranticAddStatus).AssemblyQualifiedName,
 					},
 				},
 
-				EffectBuilders = new List<CardEffectDataBuilder>  // TODO
+				EffectBuilders = new List<CardEffectDataBuilder> 
 				{
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+						EffectStateName = VanillaCardEffectTypes.CardEffectAddStatusEffect.AssemblyQualifiedName,
 						TargetMode = TargetMode.Room,
 						TargetTeamType = Team.Type.Monsters,
 						ParamStatusEffects = new StatusEffectStackData[]
@@ -52,7 +52,7 @@ namespace SuccClan.Cards.SpellCards
 					},
 					new CardEffectDataBuilder
 					{
-						EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+						EffectStateName = VanillaCardEffectTypes.CardEffectAddStatusEffect.AssemblyQualifiedName,
 						TargetMode = TargetMode.Room,
 						TargetTeamType = Team.Type.Monsters,
 						ParamStatusEffects = new StatusEffectStackData[]

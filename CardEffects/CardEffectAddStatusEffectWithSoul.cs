@@ -92,7 +92,7 @@ namespace SuccClan.CardEffects
 				{
 					// Check if have enough souls
 					int soulStacks = characterState.GetStatusEffectStacks(StatusEffectCapturedSoulState.StatusId);
-					int enchantStacks = characterState.GetStatusEffectStacks(StatusEffectSoulEnchant.IDName);
+					int enchantStacks = characterState.GetStatusEffectStacks(StatusEffectSoulBlust.IDName);
 					if (soulStacks >= enchantStacks)
 					{
 						int count = statusEffectStack.count;
@@ -118,7 +118,7 @@ namespace SuccClan.CardEffects
 			{
 				outStatusIdList.Add(statusEffectStackData.statusId);
 			}
-			outStatusIdList.Add(StatusEffectSoulEnchant.IDName);
+			outStatusIdList.Add(StatusEffectSoulBlust.IDName);
 		}
 	}
 }
