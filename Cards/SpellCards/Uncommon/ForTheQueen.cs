@@ -43,7 +43,7 @@ namespace SuccClan.Cards.SpellCards
 				},
 
 				EffectBuilders = new List<CardEffectDataBuilder>
-				{ 
+				{
 					new CardEffectDataBuilder
 					{
 						EffectStateName = VanillaCardEffectTypes.CardEffectSacrifice.AssemblyQualifiedName,

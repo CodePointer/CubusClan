@@ -66,7 +66,7 @@ namespace SuccClan.Cards.Upgrades
 								{
 									new StatusEffectStackData
 									{
-										statusId = VanillaStatusEffectIDs.Regen,
+										statusId = VanillaStatusEffectIDs.DamageShield,
 										count = 1,
 									},
 								},

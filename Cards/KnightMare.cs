@@ -41,13 +41,13 @@ namespace SuccClan.Cards
 						{
 							KnightMareEndlessBasic.Builder(),
 							KnightMareEndlessPre.Builder(),
-							KnightMareAbyssPro.Builder()
+							KnightMareEndlessPro.Builder()
 						},
 						new List<CardUpgradeDataBuilder>
 						{
-							KnightMareSuicideBasic.Builder(),
-							KnightMareSuicidePre.Builder(),
-							KnightMareSuicidePro.Builder()
+							KnightMareIllusionBasic.Builder(),
+							KnightMareIllusionPre.Builder(),
+							KnightMareIllusionPro.Builder()
 						},
 					},
 				},

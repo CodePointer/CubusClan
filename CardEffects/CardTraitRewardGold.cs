@@ -40,16 +40,21 @@ namespace SuccClan.CardEffects
 			return base.GetParamInt();
 		}
 
-		// Token: 0x06000889 RID: 2185 RVA: 0x0001C727 File Offset: 0x0001A927
-		public override bool HasMultiWordDesc()
-		{
-			return true;
-		}
+		//// Token: 0x06000889 RID: 2185 RVA: 0x0001C727 File Offset: 0x0001A927
+		//public override bool HasMultiWordDesc()
+		//{
+		//	return true;
+		//}
 
-		// Token: 0x0600088A RID: 2186 RVA: 0x000248C8 File Offset: 0x00022AC8
-		public override string GetCurrentEffectText(CardStatistics cardStatistics, SaveManager saveManager, RelicManager relicManager)
-		{
-			return string.Empty;
-		}
+		//// Token: 0x0600088A RID: 2186 RVA: 0x000248C8 File Offset: 0x00022AC8
+		//public override string GetCurrentEffectText(CardStatistics cardStatistics, SaveManager saveManager, RelicManager relicManager)
+		//{
+		//	return string.Empty;
+		//}
+
+		//public override string GetCardText()
+		//{
+		//	return base.GetCardText();
+		//}
 	}
 }

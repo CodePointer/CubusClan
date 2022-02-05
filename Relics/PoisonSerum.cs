@@ -33,7 +33,8 @@ namespace SuccClan.Relics
 					{
 						RelicEffectClassType = typeof(RelicEffectAddBattleCardToPile),
 						ParamInt = (int)CardPile.DeckPileRandom,
-						ParamCardPool = MyCardPools.ObsessingShardPool,
+						ParamCardPool = MyCardPools.VengefulShardPool,
+						ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
 					},
 				},
 			};

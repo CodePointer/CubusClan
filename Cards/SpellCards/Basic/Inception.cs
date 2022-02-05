@@ -30,7 +30,7 @@ namespace SuccClan.Cards.SpellCards
 					new CardEffectDataBuilder
 					{
 						EffectStateName = VanillaCardEffectTypes.CardEffectAddStatusEffect.AssemblyQualifiedName,
-						ParamInt = 2,
+						//ParamInt = 2,
 						TargetMode = TargetMode.DropTargetCharacter,
 						TargetTeamType = Team.Type.Monsters,
 						ParamStatusEffects = new StatusEffectStackData[]
@@ -45,14 +45,14 @@ namespace SuccClan.Cards.SpellCards
 					new CardEffectDataBuilder
 					{
 						EffectStateName = VanillaCardEffectTypes.CardEffectBuffDamage.AssemblyQualifiedName,
-						ParamInt = 3,
+						ParamInt = 2,
 						TargetMode = TargetMode.LastTargetedCharacters,
 						TargetTeamType = Team.Type.Monsters,
 					},
 					new CardEffectDataBuilder
 					{
 						EffectStateName = VanillaCardEffectTypes.CardEffectBuffMaxHealth.AssemblyQualifiedName,
-						ParamInt = 3,
+						ParamInt = 2,
 						TargetMode = TargetMode.LastTargetedCharacters,
 						TargetTeamType = Team.Type.Monsters,
 					},

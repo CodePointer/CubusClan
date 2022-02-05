@@ -10,9 +10,9 @@ using SuccClan.CardEffects;
 
 namespace SuccClan.Cards.Upgrades
 {
-	class KnightMareSuicidePre
+	class KnightMareIllusionBasic
 	{
-		public static string IDName = "Upgrade_KnightMareSuicidePre";
+		public static string IDName = "Upgrade_KnightMareIllusionBasic";
 
 		public static CardUpgradeDataBuilder Builder()
 		{
@@ -21,59 +21,44 @@ namespace SuccClan.Cards.Upgrades
 				UpgradeTitleKey = IDName + "_Name",
 				UseUpgradeHighlightTextTags = true,
 				BonusDamage = 0,
-				BonusHP = 30,
-
-				StatusEffectUpgrades = new List<StatusEffectStackData>
-				{
-					new StatusEffectStackData
-					{
-						statusId = StatusEffectSoulBlust.IDName,
-						count = 1,
-					},
-				},
+				BonusHP = 10,
 
 				TriggerUpgradeBuilders = new List<CharacterTriggerDataBuilder>
-				{
+				{ 
 					new CharacterTriggerDataBuilder
 					{
-						Trigger = CharacterTriggerData.Trigger.CardSpellPlayed,
-						DescriptionKey = IDName + "_OnIncant_Desc",
+						Trigger = CharacterTriggerData.Trigger.OnHit,
+						DescriptionKey = IDName + "_OnHit_Desc",
 						EffectBuilders = new List<CardEffectDataBuilder>
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectBuffMaxHealth,
+								EffectStateName = typeof(CardEffectAddStatusEffectSoulEnchant).AssemblyQualifiedName,
+								TargetMode = TargetMode.Self,
+								TargetTeamType = Team.Type.Monsters,
+								ParamInt = 1,
+								ParamStatusEffects = new StatusEffectStackData[]
+								{
+									new StatusEffectStackData
+									{
+										statusId = VanillaStatusEffectIDs.Lifesteal,
+										count = 1,
+									},
+								},
+							},
+							new CardEffectDataBuilder
+							{
+								EffectStateName = VanillaCardEffectTypes.CardEffectBuffDamage.AssemblyQualifiedName,
 								TargetMode = TargetMode.Self,
 								TargetTeamType = Team.Type.Monsters,
 								ParamInt = 2,
 							},
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
+								EffectStateName = VanillaCardEffectTypes.CardEffectBuffMaxHealth.AssemblyQualifiedName,
 								TargetMode = TargetMode.Self,
 								TargetTeamType = Team.Type.Monsters,
-								ParamStatusEffects = new StatusEffectStackData[]
-								{
-									new StatusEffectStackData
-									{
-										statusId = VanillaStatusEffectIDs.Spikes,
-										count = 2,
-									},
-								},
-							},
-							new CardEffectDataBuilder
-							{
-								EffectStateType = typeof(CardEffectAddStatusEffectWithSoul),
-								TargetMode = TargetMode.Self,
-								TargetTeamType = Team.Type.Monsters,
-								ParamStatusEffects = new StatusEffectStackData[]
-								{
-									new StatusEffectStackData
-									{
-										statusId = VanillaStatusEffectIDs.Regen,
-										count = 3,
-									},
-								},
+								ParamInt = 3,
 							},
 						},
 					},

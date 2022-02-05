@@ -6,39 +6,49 @@ using System.Text;
 
 using UnityEngine;
 
-using SuccClan.Effects;
-
 namespace SuccClan.CardEffects
 {
-	// CardEffectAddStatusEffectWithSoul
-	public class CardEffectAddStatusEffectWithSoul : CardEffectBase
+	public class CardEffectAddStatusEffectToOtherHeros : CardEffectBase
 	{
-		// Token: 0x0600069B RID: 1691 RVA: 0x00020CB4 File Offset: 0x0001EEB4
+		private List<CharacterState> targetList = new List<CharacterState>();
+
 		public static StatusEffectStackData GetStatusEffectStack(CardEffectData cardEffectData, CardEffectState cardEffectState, CharacterState selfTarget, bool isTest = false)
 		{
 			StatusEffectStackData[] paramStatusEffects = cardEffectData.GetParamStatusEffects();
-			cardEffectData.GetParamBool();
+
 			if (paramStatusEffects == null || paramStatusEffects.Length == 0)
 			{
 				Log.Error(LogGroups.Gameplay, "cardEffectData.GetParamStatusEffects() yielded no results.");
 				return null;
 			}
+
 			StatusEffectStackData statusEffectStackData = paramStatusEffects[0];
-			if (paramStatusEffects.Length > 1)
-			{
-				RngId rngId = isTest ? RngId.BattleTest : RngId.Battle;
-				statusEffectStackData = paramStatusEffects.RandomElement(rngId);
-			}
 			if (cardEffectState != null && cardEffectState.GetUseStatusEffectStackMultiplier() && selfTarget != null)
 			{
 				statusEffectStackData = statusEffectStackData.Copy();
 				int statusEffectStacks = selfTarget.GetStatusEffectStacks(cardEffectState.GetStatusEffectStackMultiplier());
 				statusEffectStackData.count *= statusEffectStacks;
 			}
+
 			return statusEffectStackData;
 		}
 
-		// Token: 0x0600069C RID: 1692 RVA: 0x00020D38 File Offset: 0x0001EF38
+		private void GetTargetList(CardEffectParams cardEffectParams)
+		{
+			targetList.Clear();
+
+			RoomState roomState = cardEffectParams.selfTarget.GetSpawnPoint().GetRoomOwner();
+			var charactersInRoom = new List<CharacterState>();
+			cardEffectParams.combatManager.GetAllCharactersInRoom(charactersInRoom, roomState);
+			foreach (var character in charactersInRoom)
+			{
+				if (character.GetTeamType() == Team.Type.Heroes && !cardEffectParams.targets.Contains(character))
+				{
+					targetList.Add(character);
+				}
+			}
+		}
+
 		public override bool TestEffect(CardEffectState cardEffectState, CardEffectParams cardEffectParams)
 		{
 			StatusEffectStackData statusEffectStack = CardEffectAddStatusEffect.GetStatusEffectStack(cardEffectState.GetSourceCardEffectData(), cardEffectState, cardEffectParams.selfTarget, true);
@@ -46,19 +56,14 @@ namespace SuccClan.CardEffects
 			{
 				return false;
 			}
-			if (cardEffectState.GetTargetMode() != TargetMode.DropTargetCharacter)
-			{
-				return true;
-			}
-			if (cardEffectParams.targets.Count <= 0)
-			{
-				return false;
-			}
 			if (cardEffectParams.statusEffectManager.GetStatusEffectDataById(statusEffectStack.statusId).IsStackable())
 			{
 				return true;
 			}
-			foreach (CharacterState characterState in cardEffectParams.targets)
+
+			// Get All other character in this room
+			this.GetTargetList(cardEffectParams);
+			foreach (CharacterState characterState in this.targetList)
 			{
 				if (!characterState.HasStatusEffect(statusEffectStack.statusId) && base.IsTargetValid(cardEffectState, characterState, true))
 				{
@@ -68,7 +73,6 @@ namespace SuccClan.CardEffects
 			return false;
 		}
 
-		// Token: 0x0600069D RID: 1693 RVA: 0x00020DF4 File Offset: 0x0001EFF4
 		public override IEnumerator ApplyEffect(CardEffectState cardEffectState, CardEffectParams cardEffectParams)
 		{
 			StatusEffectStackData statusEffectStack = CardEffectAddStatusEffect.GetStatusEffectStack(cardEffectState.GetSourceCardEffectData(), cardEffectState, cardEffectParams.selfTarget, false);
@@ -76,7 +80,7 @@ namespace SuccClan.CardEffects
 			{
 				yield break;
 			}
-			int intInRange = cardEffectState.GetIntInRange();
+
 			CharacterState.AddStatusEffectParams addStatusEffectParams = new CharacterState.AddStatusEffectParams
 			{
 				sourceRelicState = cardEffectParams.sourceRelic,
@@ -84,41 +88,46 @@ namespace SuccClan.CardEffects
 				cardManager = cardEffectParams.cardManager,
 				sourceIsHero = (cardEffectState.GetSourceTeamType() == Team.Type.Heroes)
 			};
-			for (int i = cardEffectParams.targets.Count - 1; i >= 0; i--)
-			{
-				CharacterState characterState = cardEffectParams.targets[i];
-				RngId rngId = cardEffectParams.saveManager.PreviewMode ? RngId.BattleTest : RngId.Battle;
-				if (intInRange == 0 || RandomManager.Range(0, 100, rngId) < intInRange)
-				{
-					// Check if have enough souls
-					int soulStacks = characterState.GetStatusEffectStacks(StatusEffectCapturedSoulState.StatusId);
-					int enchantStacks = characterState.GetStatusEffectStacks(StatusEffectSoulBlust.IDName);
-					if (soulStacks >= enchantStacks)
-					{
-						int count = statusEffectStack.count;
-						characterState.AddStatusEffect(statusEffectStack.statusId, count, addStatusEffectParams);
 
-						characterState.RemoveStatusEffect(StatusEffectCapturedSoulState.StatusId, false, enchantStacks);
-					}
+			this.GetTargetList(cardEffectParams);
+			foreach (var target in this.targetList)
+			{
+				int count = statusEffectStack.count;
+				target.AddStatusEffect(statusEffectStack.statusId, count, addStatusEffectParams);
+				int buffAmount = cardEffectState.GetParamInt();
+				if (buffAmount > 0)
+				{
+					target.BuffDamage(buffAmount, null, false);
 				}
 			}
+
 			yield break;
 		}
 
-		// Token: 0x0600069E RID: 1694 RVA: 0x00020E0A File Offset: 0x0001F00A
 		public override void GetTooltipsStatusList(CardEffectState cardEffectState, ref List<string> outStatusIdList)
 		{
 			CardEffectAddStatusEffect.GetTooltipsStatusList(cardEffectState.GetSourceCardEffectData(), ref outStatusIdList);
 		}
 
-		// Token: 0x0600069F RID: 1695 RVA: 0x00020E18 File Offset: 0x0001F018
 		public static void GetTooltipsStatusList(CardEffectData cardEffectData, ref List<string> outStatusIdList)
 		{
 			foreach (StatusEffectStackData statusEffectStackData in cardEffectData.GetParamStatusEffects())
 			{
 				outStatusIdList.Add(statusEffectStackData.statusId);
 			}
-			outStatusIdList.Add(StatusEffectSoulBlust.IDName);
+		}
+
+		public override string GetActivatedDescription(CardEffectState cardEffectState)
+		{
+			string activatedKey = "CardEffectBuffDamage_Activated";
+			int buffAmount = cardEffectState.GetParamInt();
+
+			if (activatedKey.HasTranslation())
+			{
+				string key = "TextFormat_Add";
+				return string.Format(activatedKey.Localize(null), string.Format(key.Localize(null), buffAmount));
+			}
+			return null;
 		}
 	}
 }

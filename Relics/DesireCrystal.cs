@@ -47,7 +47,7 @@ namespace SuccClan.Relics
 				{
 					new RelicEffectDataBuilder
 					{
-						RelicEffectClassType = typeof(RelicEffectEnergyAndCardDrawOnUnitSpawned),
+						RelicEffectClassName = typeof(RelicEffectEnergyAndCardDrawOnUnitSpawned).AssemblyQualifiedName,
 						ParamSourceTeam = Team.Type.Monsters,
 						ParamInt = 1,
 						ParamCharacterSubtype = "SubtypesData_None",

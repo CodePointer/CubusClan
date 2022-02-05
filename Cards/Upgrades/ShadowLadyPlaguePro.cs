@@ -21,7 +21,7 @@ namespace SuccClan.Cards.Upgrades
 				UpgradeTitleKey = IDName + "_Name",
 				UseUpgradeHighlightTextTags = true,
 				BonusDamage = 25,
-				BonusHP = 70,
+				BonusHP = 40,
 
 				TriggerUpgradeBuilders = new List<CharacterTriggerDataBuilder>
 				{
@@ -66,8 +66,8 @@ namespace SuccClan.Cards.Upgrades
 								{
 									new StatusEffectStackData
 									{
-										statusId = VanillaStatusEffectIDs.Regen,
-										count = 4,
+										statusId = VanillaStatusEffectIDs.DamageShield,
+										count = 2,
 									},
 								},
 							},

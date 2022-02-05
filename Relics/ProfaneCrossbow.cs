@@ -22,6 +22,14 @@ namespace SuccClan.Relics
 				IconPath = "Relic/" + IDName + ".png",
 				RelicPoolIDs = new List<string> { VanillaRelicPoolIDs.MegaRelicPool },
 				
+				EffectBuilders = new List<RelicEffectDataBuilder>
+				{
+					new RelicEffectDataBuilder
+					{
+						RelicEffectClassName = typeof(RelicEffectDamageEnemyOnChampionFloor).AssemblyQualifiedName,
+						ParamInt = 30,
+					},
+				},
 			};
 
 			Utils.AddRelic(relic, IDName);

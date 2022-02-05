@@ -5,7 +5,8 @@ using System.Text;
 using Trainworks.Builders;
 using Trainworks.Constants;
 
-using SuccClan.Cards.SpellCards;
+using SuccClan.Effects;
+using SuccClan.CardEffects;
 
 namespace SuccClan.Cards.Upgrades
 {
@@ -19,8 +20,8 @@ namespace SuccClan.Cards.Upgrades
 			{
 				UpgradeTitleKey = IDName + "_Name",
 				UseUpgradeHighlightTextTags = true,
-				BonusDamage = 25,
-				BonusHP = 30,
+				BonusDamage = 0,
+				BonusHP = 40,
 
 				StatusEffectUpgrades = new List<StatusEffectStackData>
 				{
@@ -34,52 +35,27 @@ namespace SuccClan.Cards.Upgrades
 				{
 					new CharacterTriggerDataBuilder
 					{
-						Trigger = CharacterTriggerData.Trigger.PostCombat,
-						DescriptionKey = IDName + "_OnResovle_Desc",
+						Trigger = CharacterTriggerData.Trigger.OnAttacking,
+						DescriptionKey = IDName + "_OnAttack_Desc",
 						EffectBuilders = new List<CardEffectDataBuilder>
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
-								ParamInt = (int)CardPile.HandPile,
-								AdditionalParamInt = 1,
-								ParamCardPool = ProfaneAscending.cardPool,
-								ParamCardUpgradeData = new CardUpgradeDataBuilder
-								{
-									CostReduction = 1,
-									TraitDataUpgradeBuilders = new List<CardTraitDataBuilder>
-									{
-										new CardTraitDataBuilder
-										{
-											TraitStateType = VanillaCardTraitTypes.CardTraitSelfPurge,
-										},
-									},
-								}.Build(),
-							},
-						},
-					},
-
-					new CharacterTriggerDataBuilder
-					{
-						Trigger = CharacterTriggerData.Trigger.OnAnyUnitDeathOnFloor,
-						DescriptionKey = IDName + "_OnHarvest_Desc",
-						EffectBuilders = new List<CardEffectDataBuilder>
-						{
-							new CardEffectDataBuilder
-							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectAddStatusEffect,
-								TargetMode = TargetMode.Self,
+								EffectStateName = typeof(CardEffectAddStatusEffectToOtherHeros).AssemblyQualifiedName,
+								TargetMode = TargetMode.LastAttackedCharacter,
+								TargetTeamType = Team.Type.Heroes,
+								ParamInt = 20,
 								ParamStatusEffects = new StatusEffectStackData[]
 								{
 									new StatusEffectStackData
 									{
-										statusId = VanillaStatusEffectIDs.Stealth,
-										count = 1,
-									},
+										statusId = StatusEffectFrantic.IDName,
+										count = 2,
+									}
 								},
 							},
 						},
-					}
+					},
 				},
 			};
 

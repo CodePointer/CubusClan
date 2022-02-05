@@ -5,6 +5,9 @@ using System.Text;
 using Trainworks.Builders;
 using Trainworks.Constants;
 
+using SuccClan.Effects;
+using SuccClan.CardEffects;
+
 namespace SuccClan.Cards.Upgrades
 {
 	class KnightMareAbyssPro
@@ -17,30 +20,36 @@ namespace SuccClan.Cards.Upgrades
 			{
 				UpgradeTitleKey = IDName + "_Name",
 				UseUpgradeHighlightTextTags = true,
-				BonusDamage = 0,
-				BonusHP = 10,
+				BonusDamage = 20,
+				BonusHP = 30,
 
 				TriggerUpgradeBuilders = new List<CharacterTriggerDataBuilder>
-				{ 
+				{
 					new CharacterTriggerDataBuilder
 					{
-						Trigger = CharacterTriggerData.Trigger.PostCombat,
-						DescriptionKey = IDName + "_Desc",
+						Trigger = Trigger_OnFanatic.OnFanaticCharTrigger.GetEnum(),
+						DescriptionKey = IDName + "_OnFanatic_Desc",
 						EffectBuilders = new List<CardEffectDataBuilder>
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectBuffDamage,
-								TargetMode = TargetMode.Room,
-								TargetTeamType = Team.Type.Monsters | Team.Type.Heroes,
-								ParamInt = 5
+								EffectStateName = typeof(CardEffectDrawAddEnergySoulEnchant).AssemblyQualifiedName,
+								ParamInt = 1,  // Soul cost
+								AdditionalParamInt = 1,  // Card & Ember
 							},
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectBuffMaxHealth,
+								EffectStateName = VanillaCardEffectTypes.CardEffectBuffDamage.AssemblyQualifiedName,
 								TargetMode = TargetMode.Room,
-								TargetTeamType = Team.Type.Monsters | Team.Type.Heroes,
-								ParamInt = 5
+								TargetTeamType = Team.Type.Monsters,
+								ParamInt = 4
+							},
+							new CardEffectDataBuilder
+							{
+								EffectStateName = VanillaCardEffectTypes.CardEffectBuffMaxHealth.AssemblyQualifiedName,
+								TargetMode = TargetMode.Room,
+								TargetTeamType = Team.Type.Monsters,
+								ParamInt = 2
 							},
 						},
 					},
