@@ -9,19 +9,22 @@ namespace SuccClan.CardEffects
 {
 	public sealed class CardEffectSpawnSelf : CardEffectBase // TODO: Need to revise.
 	{
-		private int numCopiesOfEachUnit;
-		private bool flagHeal;
-
-		public override void Setup(CardEffectState cardEffectState)
-		{
-			base.Setup(cardEffectState);
-			this.numCopiesOfEachUnit = cardEffectState.GetParamInt();
-			this.flagHeal = cardEffectState.GetParamBool();
-		}
-
 		// Token: 0x060007F3 RID: 2035 RVA: 0x00023774 File Offset: 0x00021974
 		public override bool TestEffect(CardEffectState cardEffectState, CardEffectParams cardEffectParams)
 		{
+			// Check if monster can alive
+			CardUpgradeData paramCardUpgradeData = cardEffectState.GetParamCardUpgradeData();
+			if (paramCardUpgradeData != null)
+			{
+				int bounsMaxHP = paramCardUpgradeData.GetBonusHP();
+				int currentMaxHP = cardEffectParams.selfTarget.GetMaxHP();
+				//Utils.BepLog(new List<string> { "HP check: ", bounsMaxHP.ToString(), currentMaxHP.ToString() });
+				if (currentMaxHP + bounsMaxHP <= 0)
+				{
+					return false;
+				}
+			}
+
 			RoomState selectedRoom = cardEffectParams.GetSelectedRoom();
 			return selectedRoom == null || selectedRoom.IsRoomEnabled();
 		}
@@ -35,20 +38,6 @@ namespace SuccClan.CardEffects
 			RoomState room = cardEffectParams.GetSelectedRoom();
 			CharacterState selfCharacter = cardEffectParams.selfTarget;
 			CharacterData selfCharacterData = selfCharacter.GetSourceCharacterData();
-
-			// Check if monster can alive
-			CardUpgradeData paramCardUpgradeData = cardEffectState.GetParamCardUpgradeData();
-			if (paramCardUpgradeData != null)
-			{
-				int bounsMaxHP = paramCardUpgradeData.GetBonusHP();
-				int currentMaxHP = selfCharacter.GetMaxHP();
-				//Utils.BepLog(new List<string> { "HP check: ", bounsMaxHP.ToString(), currentMaxHP.ToString() });
-				if (currentMaxHP + bounsMaxHP <= 0)
-				{
-					//Utils.BepLog(new List<string> { "HP check failed." });
-					yield break;
-				}
-			}
 
 			SpawnPoint fromMonsterSpawnPoint = selfCharacter.GetSpawnPoint(true);
 			int spawnIndex = fromMonsterSpawnPoint.GetIndexInRoom();
@@ -68,7 +57,7 @@ namespace SuccClan.CardEffects
 
 			RelicManager relicManager = cardEffectParams.relicManager;
 
-			int numSpawns = Mathf.Min(this.numCopiesOfEachUnit, room.GetRemainingSpawnPointCount(Team.Type.Monsters));
+			int numSpawns = Mathf.Min(1, room.GetRemainingSpawnPointCount(Team.Type.Monsters));
 			int i = spawnIndex;
 
 			while (i < spawnIndex + numSpawns && i < saveManager.GetNumSpawnPointsPerFloor())
@@ -80,7 +69,8 @@ namespace SuccClan.CardEffects
 				CardState spawnerCard = cardEffectParams.playedCard;
 				if (fromMonsterSpawnPoint != null && spawnerCard != null)
 				{
-					spawnerCard = CardManager.CopyCardState(spawnerCard, cardEffectParams.relicManager, saveManager, cardEffectParams.allGameData, cardEffectParams.combatManager.GetCardManager().GetCardStatistics());
+					spawnerCard = CardManager.CopyCardState(spawnerCard, cardEffectParams.relicManager, saveManager, 
+						cardEffectParams.allGameData, cardEffectParams.combatManager.GetCardManager().GetCardStatistics());
 				}
 
 				List<string> startingStatusEffects = new List<string> { "cardless" };
@@ -89,8 +79,15 @@ namespace SuccClan.CardEffects
 				yield return cardEffectParams.monsterManager.CreateMonsterState(selfCharacterData, spawnerCard, cardEffectParams.selectedRoom, delegate (CharacterState character)
 				{
 					newMonster = character;
+					if (newMonster != null)
+					{
+						CharacterHelper.CopyCharacterStats(newMonster, selfCharacter);
+						newMonster.SetAttackDamage(selfCharacter.GetAttackDamageWithoutStatusEffectBuffs());
+						newMonster.SetHealth(newMonster.GetMaxHP(), newMonster.GetMaxHP());
+					}
 				}, spawnMode, spawnPoint, null, false, null, startingStatusEffects, false);
 
+				CardUpgradeData paramCardUpgradeData = cardEffectState.GetParamCardUpgradeData();
 				if (newMonster != null && paramCardUpgradeData != null)
 				{
 					CardUpgradeState upgradeState = new CardUpgradeState();
