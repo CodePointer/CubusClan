@@ -40,7 +40,8 @@ namespace SuccClan.Cards.SpellCards
 						EffectStateName = VanillaCardEffectTypes.CardEffectAddBattleCard.AssemblyQualifiedName,
 						ParamInt = (int)CardPile.DeckPileRandom,
 						AdditionalParamInt = 2,
-						ParamCardPool = MyCardPools.ObsessingShardPool,
+						ParamCardPool = MyCardPools.VengefulShardPool,
+						ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
 					},
 					new CardEffectDataBuilder
 					{

@@ -59,18 +59,18 @@ namespace SuccClan.Cards.UnitCards
 							{
 								EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
 								ParamInt = (int)CardPile.HandPile,
-								AdditionalParamInt = 1,
+								AdditionalParamInt = 2,
 								ParamCardPool = MyCardPools.VengefulShardPool,
 								ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
 							},
-							new CardEffectDataBuilder
-							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
-								ParamInt = (int)CardPile.DeckPileRandom,
-								AdditionalParamInt = 1,
-								ParamCardPool = MyCardPools.VengefulShardPool,
-								ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
-							},
+							//new CardEffectDataBuilder
+							//{
+							//	EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
+							//	ParamInt = (int)CardPile.DeckPileRandom,
+							//	AdditionalParamInt = 1,
+							//	ParamCardPool = MyCardPools.VengefulShardPool,
+							//	ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
+							//},
 						},
 					},
 					new CharacterTriggerDataBuilder
@@ -112,6 +112,22 @@ namespace SuccClan.Cards.UnitCards
 				{
 					new CharacterTriggerDataBuilder
 					{
+						Trigger = CharacterTriggerData.Trigger.OnSpawn,
+						DescriptionKey = IDName + "_OnSpawn_Desc",
+						EffectBuilders = new List<CardEffectDataBuilder>
+						{
+							new CardEffectDataBuilder
+							{
+								EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
+								ParamInt = (int)CardPile.HandPile,
+								AdditionalParamInt = 1,
+								ParamCardPool = MyCardPools.VengefulShardPool,
+								ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
+							},
+						},
+					},
+					new CharacterTriggerDataBuilder
+					{
 						Trigger = Trigger_OnFanatic.OnFanaticCharTrigger.GetEnum(),
 						DescriptionKey = IDName + "_OnFanatic_Desc",
 						EffectBuilders = new List<CardEffectDataBuilder>
@@ -126,11 +142,6 @@ namespace SuccClan.Cards.UnitCards
 								EffectStateType = VanillaCardEffectTypes.CardEffectGainEnergy,
 								ParamInt = 1,
 							},
-							//new CardEffectDataBuilder
-							//{
-							//	EffectStateType = typeof(CardEffectSpread),
-							//	ParamInt = 1,
-							//}
 						},
 					},
 				},

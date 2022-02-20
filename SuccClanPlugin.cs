@@ -67,7 +67,7 @@ namespace SuccClan
 
 			MakeRelics();
 
-			// Fix Magic
+			// Fix Magic TODO: Is this necessary?
 			AddToMagicPowerUpgradeList(VanillaCardEffectTypes.CardEffectDamage.AssemblyQualifiedName);
 			AddToDoubleStackEnhancerList(VanillaCardEffectTypes.CardEffectAddStatusEffect.AssemblyQualifiedName);
 
@@ -89,12 +89,12 @@ namespace SuccClan
 		static void MakeStatuses()
 		{
 			StatusEffectFrantic.Make();
-			StatusEffectSoulBlust.Make();
+			//StatusEffectSoulBlust.Make();
 		}
 
 		static void MakeCardPools()
 		{
-			ObsessingShard.Make();
+			//ObsessingShard.Make();
 			MyCardPools.Make();
 		}
 

@@ -5,6 +5,8 @@ using System.Text;
 using Trainworks.Builders;
 using Trainworks.Constants;
 
+using SuccClan.CardEffects;
+
 namespace SuccClan.Cards.Upgrades
 {
 	class KnightMareEndlessPre
@@ -17,8 +19,8 @@ namespace SuccClan.Cards.Upgrades
 			{
 				UpgradeTitleKey = IDName + "_Name",
 				UseUpgradeHighlightTextTags = true,
-				BonusDamage = 0,
-				BonusHP = 10,
+				BonusDamage = 15,
+				BonusHP = 5,
 
 				TriggerUpgradeBuilders = new List<CharacterTriggerDataBuilder>
 				{ 
@@ -30,17 +32,21 @@ namespace SuccClan.Cards.Upgrades
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectBuffDamage,
-								TargetMode = TargetMode.Room,
-								TargetTeamType = Team.Type.Monsters | Team.Type.Heroes,
-								ParamInt = 5
-							},
-							new CardEffectDataBuilder
-							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectBuffMaxHealth,
-								TargetMode = TargetMode.Room,
-								TargetTeamType = Team.Type.Monsters | Team.Type.Heroes,
-								ParamInt = 5
+								EffectStateName = typeof(CardEffectSpawnSelfSoulEnchant).AssemblyQualifiedName,
+								ParamInt = 3,
+								TargetMode = TargetMode.Self,
+								TargetTeamType = Team.Type.Monsters,
+								ParamCardUpgradeData = new CardUpgradeDataBuilder
+								{
+									StatusEffectUpgrades = new List<StatusEffectStackData>
+									{
+										new StatusEffectStackData
+										{
+											statusId = VanillaStatusEffectIDs.Multistrike,
+											count = 2,
+										},
+									},
+								}.Build(),
 							},
 						},
 					},

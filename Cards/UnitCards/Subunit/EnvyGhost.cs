@@ -42,7 +42,7 @@ namespace SuccClan.Cards.UnitCards
 				SubtypeKeys = new List<string> { "SuccClan_Subtype_Ghost" },
 
 				Size = 1,
-				Health = 10,
+				Health = 2,
 				AttackDamage = 0,
 				PriorityDraw = false,
 				
@@ -58,18 +58,18 @@ namespace SuccClan.Cards.UnitCards
 							{
 								EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
 								ParamInt = (int)CardPile.HandPile, 
-								AdditionalParamInt = 1,
+								AdditionalParamInt = 2,
 								ParamCardPool = MyCardPools.VengefulShardPool,
 								ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
 							},
-							new CardEffectDataBuilder
-							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
-								ParamInt = (int)CardPile.DeckPileRandom, 
-								AdditionalParamInt = 1,
-								ParamCardPool = MyCardPools.VengefulShardPool,
-								ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
-							},
+							//new CardEffectDataBuilder
+							//{
+							//	EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
+							//	ParamInt = (int)CardPile.DeckPileRandom, 
+							//	AdditionalParamInt = 1,
+							//	ParamCardPool = MyCardPools.VengefulShardPool,
+							//	ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
+							//},
 						},
 					},
 					new CharacterTriggerDataBuilder
@@ -104,6 +104,22 @@ namespace SuccClan.Cards.UnitCards
 
 				TriggerUpgradeBuilders = new List<CharacterTriggerDataBuilder>
 				{
+					new CharacterTriggerDataBuilder
+					{
+						Trigger = CharacterTriggerData.Trigger.OnSpawn,
+						DescriptionKey = IDName + "_OnSpawn_Desc",
+						EffectBuilders = new List<CardEffectDataBuilder>
+						{
+							new CardEffectDataBuilder
+							{
+								EffectStateType = VanillaCardEffectTypes.CardEffectAddBattleCard,
+								ParamInt = (int)CardPile.HandPile,
+								AdditionalParamInt = 1,
+								ParamCardPool = MyCardPools.VengefulShardPool,
+								ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
+							},
+						},
+					},
 					new CharacterTriggerDataBuilder
 					{
 						Trigger = Trigger_OnFanatic.OnFanaticCharTrigger.GetEnum(),

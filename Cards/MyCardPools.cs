@@ -12,7 +12,7 @@ namespace SuccClan.Cards
 {
 	class MyCardPools
 	{
-		public static CardPool ObsessingShardPool;
+		//public static CardPool ObsessingShardPool;
 		public static CardPool VengefulShardPool;
 		public static CardPool BlightAndJunkPool;
 		public static CardUpgradeData exhaustUpgradeData;
@@ -20,14 +20,14 @@ namespace SuccClan.Cards
 
 		public static void Make()
 		{
-			ObsessingShardPool = new CardPoolBuilder
-			{
-				CardPoolID = ObsessingShard.IDName + "_CardPool",
-				CardIDs = new List<string>
-				{
-					ObsessingShard.IDName,
-				},
-			}.BuildAndRegister();
+			//ObsessingShardPool = new CardPoolBuilder
+			//{
+			//	CardPoolID = ObsessingShard.IDName + "_CardPool",
+			//	CardIDs = new List<string>
+			//	{
+			//		ObsessingShard.IDName,
+			//	},
+			//}.BuildAndRegister();
 
 			VengefulShardPool = new CardPoolBuilder
 			{

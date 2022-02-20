@@ -53,7 +53,8 @@ namespace SuccClan.Cards.SpellCards
 						EffectStateName = VanillaCardEffectTypes.CardEffectAddBattleCard.AssemblyQualifiedName,
 						ParamInt = (int)CardPile.HandPile,  // 0: Draw  1: Discard  3: Hand
 						AdditionalParamInt = 3,  // Number of added card
-						ParamCardPool = MyCardPools.ObsessingShardPool,
+						ParamCardPool = MyCardPools.VengefulShardPool,
+						ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
 						ShouldTest = false,
 					},
 				},

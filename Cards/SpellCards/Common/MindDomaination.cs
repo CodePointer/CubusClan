@@ -26,7 +26,15 @@ namespace SuccClan.Cards.SpellCards
 				CardType = CardType.Spell,
 				
 				EffectBuilders = new List<CardEffectDataBuilder>
-				{ 
+				{
+					new CardEffectDataBuilder
+					{
+						EffectStateName = VanillaCardEffectTypes.CardEffectAddBattleCard.AssemblyQualifiedName,
+						ParamInt = (int)CardPile.HandPile,
+						AdditionalParamInt = 1,
+						ParamCardPool = MyCardPools.VengefulShardPool,
+						ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
+					},
 					new CardEffectDataBuilder
 					{
 						EffectStateName = VanillaCardEffectTypes.CardEffectBump.AssemblyQualifiedName,

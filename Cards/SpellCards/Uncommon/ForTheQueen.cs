@@ -46,10 +46,9 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardEffectDataBuilder
 					{
-						EffectStateName = VanillaCardEffectTypes.CardEffectSacrifice.AssemblyQualifiedName,
+						EffectStateName = typeof(CardEffectMySacrifice).AssemblyQualifiedName,
 						TargetMode = TargetMode.DropTargetCharacter,
 						TargetTeamType = Team.Type.Monsters,
-						//ParamInt = 999,
 					},
 				},
 			};

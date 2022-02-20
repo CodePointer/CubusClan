@@ -5,6 +5,8 @@ using System.Text;
 using Trainworks.Builders;
 using Trainworks.Constants;
 
+using SuccClan.CardEffects;
+
 namespace SuccClan.Cards.Upgrades
 {
 	class KnightMareEndlessPro
@@ -17,30 +19,34 @@ namespace SuccClan.Cards.Upgrades
 			{
 				UpgradeTitleKey = IDName + "_Name",
 				UseUpgradeHighlightTextTags = true,
-				BonusDamage = 0,
-				BonusHP = 10,
+				BonusDamage = 20,
+				BonusHP = 15,
 
 				TriggerUpgradeBuilders = new List<CharacterTriggerDataBuilder>
 				{ 
 					new CharacterTriggerDataBuilder
 					{
-						Trigger = CharacterTriggerData.Trigger.PostCombat,
-						DescriptionKey = IDName + "_Desc",
+						Trigger = CharacterTriggerData.Trigger.OnDeath,
+						DescriptionKey = IDName + "_OnDeath_Desc",
 						EffectBuilders = new List<CardEffectDataBuilder>
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectBuffDamage,
-								TargetMode = TargetMode.Room,
-								TargetTeamType = Team.Type.Monsters | Team.Type.Heroes,
-								ParamInt = 5
-							},
-							new CardEffectDataBuilder
-							{
-								EffectStateType = VanillaCardEffectTypes.CardEffectBuffMaxHealth,
-								TargetMode = TargetMode.Room,
-								TargetTeamType = Team.Type.Monsters | Team.Type.Heroes,
-								ParamInt = 5
+								EffectStateName = typeof(CardEffectSpawnSelfSoulEnchant).AssemblyQualifiedName,
+								ParamInt = 4,
+								TargetMode = TargetMode.Self,
+								TargetTeamType = Team.Type.Monsters,
+								ParamCardUpgradeData = new CardUpgradeDataBuilder
+								{
+									StatusEffectUpgrades = new List<StatusEffectStackData>
+									{
+										new StatusEffectStackData
+										{
+											statusId = VanillaStatusEffectIDs.Multistrike,
+											count = 4,
+										},
+									},
+								}.Build(),
 							},
 						},
 					},
