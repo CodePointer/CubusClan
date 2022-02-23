@@ -18,7 +18,7 @@ namespace SuccClan.Cards.SpellCards
 		{
 			CardDataBuilder railyard = new CardDataBuilder
 			{
-				Cost = 2,
+				Cost = 1,
 				Rarity = CollectableRarity.Uncommon,
 				TargetsRoom = true,
 				Targetless = true,
@@ -37,7 +37,7 @@ namespace SuccClan.Cards.SpellCards
 							new StatusEffectStackData
 							{
 								statusId = StatusEffectFrantic.IDName,
-								count = 2
+								count = 1
 							},
 						}
 					},

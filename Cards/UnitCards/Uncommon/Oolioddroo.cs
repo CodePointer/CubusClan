@@ -76,6 +76,8 @@ namespace SuccClan.Cards.UnitCards
 				UpgradeDescriptionKey = IDName + "_Upgrade_Desc",
 				SourceSynthesisUnit = charData,
 
+				BonusDamage = -5,
+
 				TriggerUpgradeBuilders = new List<CharacterTriggerDataBuilder>
 				{
 					new CharacterTriggerDataBuilder

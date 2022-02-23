@@ -21,7 +21,7 @@ namespace SuccClan.Cards
 			var testCardID = new List<string>
 			{
 				//ForTheQueen.IDName,
-				EndlessShadow.IDName,
+				//EndlessShadow.IDName,
 				//IllusionTwins.IDName,
 				//VanillaCardIDs.VengefulShard,
 				//VanillaCardIDs.VengefulShard,
@@ -45,7 +45,7 @@ namespace SuccClan.Cards
 				//var starterCrystal = CustomCollectableRelicManager.GetRelicDataByID(DesireCrystal.IDName);
 				//__instance.AddRelic(starterCrystal);
 
-				__instance.AddRelic(CustomCollectableRelicManager.GetRelicDataByID(ProfaneCrossbow.IDName));
+				//__instance.AddRelic(CustomCollectableRelicManager.GetRelicDataByID(ProfaneCrossbow.IDName));
 				//__instance.AddRelic(CustomCollectableRelicManager.GetRelicDataByID(MutantElixirs.IDName));
 			}
 		}

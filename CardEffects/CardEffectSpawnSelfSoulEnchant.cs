@@ -46,6 +46,11 @@ namespace SuccClan.CardEffects
 
 		public override IEnumerator ApplyEffect(CardEffectState cardEffectState, CardEffectParams cardEffectParams)
 		{
+			int soulCost = cardEffectState.GetParamInt();
+			if (soulCost > 0)
+			{
+				cardEffectParams.selfTarget.RemoveStatusEffect(VanillaStatusEffectIDs.Soul, false, soulCost, true, cardEffectParams.sourceRelic, null);
+			}
 
 			SaveManager saveManager = cardEffectParams.saveManager;
 			SpawnMode spawnMode = SpawnMode.SelectedSlot;

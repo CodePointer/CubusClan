@@ -18,7 +18,7 @@ namespace SuccClan.Effects
 
 		static Trigger_OnFanatic()
 		{
-			Utils.BepLog(new List<string> { "AssociateTriggers. " });
+			//Utils.BepLog(new List<string> { "AssociateTriggers. " });
 			CustomTriggerManager.AssociateTriggers(OnFanaticTrigger, OnFanaticCharTrigger);
 		}
 	}
@@ -87,7 +87,7 @@ namespace SuccClan.Effects
 						ProviderManager.CombatManager.GetHeroManager().AddCharactersInRoomToList(charList, roomManager.GetSelectedRoom());
 						foreach (var unit in charList)
 						{
-							Utils.BepLog(new List<string> { unit.ToString() });
+							//Utils.BepLog(new List<string> { unit.ToString() });
 							CustomTriggerManager.QueueTrigger(Trigger_OnFanatic.OnFanaticCharTrigger, unit);
 						}
 					}

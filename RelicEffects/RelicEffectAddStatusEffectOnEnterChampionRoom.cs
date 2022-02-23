@@ -73,7 +73,7 @@ namespace SuccClan.RelicEffects
 
 		public IEnumerator ApplyCharacterTriggerEffect(CharacterTriggerRelicEffectParams relicEffectParams)
 		{
-			Utils.BepLog(new List<string> { "ApplyCharacterTriggerEffect" });
+			//Utils.BepLog(new List<string> { "ApplyCharacterTriggerEffect" });
 			for (int i = 0; i < this.statusEffects.Length; i++)
 			{
 				int numStacks = this.statusEffects[i].count;

@@ -26,8 +26,8 @@ namespace SuccClan.Cards.Upgrades
 				{ 
 					new CharacterTriggerDataBuilder
 					{
-						Trigger = CharacterTriggerData.Trigger.PostCombat,
-						DescriptionKey = IDName + "_Desc",
+						Trigger = CharacterTriggerData.Trigger.OnDeath,
+						DescriptionKey = IDName + "_OnDeath_Desc",
 						EffectBuilders = new List<CardEffectDataBuilder>
 						{
 							new CardEffectDataBuilder

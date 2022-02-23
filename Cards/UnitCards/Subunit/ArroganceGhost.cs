@@ -19,7 +19,7 @@ namespace SuccClan.Cards.UnitCards
 		public static void Make()
 		{
 			var charData = BuildUnit();
-			//BuildUpgrade(charData);
+			BuildUpgrade(charData);
 
 			CardDataBuilder railyard = new CardDataBuilder
 			{

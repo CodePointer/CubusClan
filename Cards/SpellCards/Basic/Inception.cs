@@ -38,7 +38,7 @@ namespace SuccClan.Cards.SpellCards
 							new StatusEffectStackData
 							{
 								statusId = VanillaStatusEffectIDs.Soul,
-								count = 2,
+								count = 1,
 							},
 						},
 					},

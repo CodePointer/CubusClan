@@ -76,19 +76,19 @@ namespace SuccClan.CardEffects
 			StatusEffectStackData statusEffectStack = CardEffectAddStatusEffect.GetStatusEffectStack(cardEffectState.GetSourceCardEffectData(), cardEffectState, cardEffectParams.selfTarget, false);
 			if (statusEffectStack == null)
 			{
-				Utils.BepLog(new List<string>
-				{
-					"statusEffectStack is null."
-				});
+				//Utils.BepLog(new List<string>
+				//{
+				//	"statusEffectStack is null."
+				//});
 				yield break;
 			}
 
-			Utils.BepLog(new List<string>
-			{
-				"statusEffectStack:",
-				statusEffectStack.statusId.ToString(),
-				statusEffectStack.count.ToString(),
-			});
+			//Utils.BepLog(new List<string>
+			//{
+			//	"statusEffectStack:",
+			//	statusEffectStack.statusId.ToString(),
+			//	statusEffectStack.count.ToString(),
+			//});
 
 			CharacterState.AddStatusEffectParams addStatusEffectParams = new CharacterState.AddStatusEffectParams
 			{

@@ -69,7 +69,6 @@ namespace SuccClan.RelicEffects
 			{
 				yield break;
 			}
-			Utils.BepLog(new List<string> { "3" });
 			foreach (SubtypeData subtypeData in this.excludeCharacterSubtypes)
 			{
 				if (character.GetHasSubtype(subtypeData))

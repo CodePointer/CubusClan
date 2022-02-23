@@ -38,7 +38,7 @@ namespace SuccClan.Cards.SpellCards
 							new StatusEffectStackData
 							{
 								statusId = StatusEffectFrantic.IDName,
-								count = 1,
+								count = 2,
 							},
 						}
 					},

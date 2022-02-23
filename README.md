@@ -1,38 +1,36 @@
-# CubusClan
- 
-## TODO List
+# SuccClan
 
-### Implementation
+This is a custom clan for Monster Train. 
+I 'm pretty true that there will be tons of bugs and balance problems, so please inform me if you have any suggestion~
 
-- 1 Uncommon Spell: 牺牲一个Ghost。抽牌，对敌人造成伤害。
-- 1 Uncommon Unit：蛾子。对所有敌人造成等同于攻击力的伤害。
-- 将所有Ghost转变为相位锁定修改版（潜行），+1血。存在可能的问题：boss时是否会导致问题？敌方单位亡语是否会杀前排？可以参考disciple里面的boss石。
-- All Upgrade for Second Champion
-- Relic: Profane Crossbow
-- Essence of Subunits
-- Change all the StateType into StateName 完成一半。
-- KnightMare的Soul Blust说明似乎还有些问题。需要修改。
-- Add some cards into the Caverns
+## TODO
+- Loading mod may take a long time.
+- Sprite name = "Status_Frantic" in tooltip
+- Balance problem.
+- Add some cards to the Concealed Caverns:
+	- Chaos Portal: Gain a random Rare Card from your choice of primary or allied clan.
+	- Glowing Brands: Choice of three different clans: Get a Rare Clan draft pick.
+	- Historian's Records: Choice of three random clans: Take the tome.
+- Descriptions for my clan.
 
-### Localization
+## Update Log
 
-- Enssence of Subunits
-- The Enssence name? Where?
+### Ver 0.1.0
+- Uploaded my project.
 
-### Bugs
-
-- Tooltip of ForTheQueen
-- 主动打出非消耗的牌时无法触发狂热效果。
-
-### Game Balance Adjustment
-
-- ShadowLady_Profanity, 收割潜行有点太强了。
-- 狂热加费有点太强了。需要考虑削弱。
 
 ## Tips for Developer
 
 - Use StateName instead of StateType.
-- If you want to buff unit permanently, you need to write your own custom CardEffect. Do not use the CardTrigger, there will be some bugs.
-- The trigger for some types of card played: 不光在discard的时候需要监听，在play card的时候也需要。另外献祭词条是无法触发playcard这个trigger的，需要在discard里面自己写。
-- UpgradeTree for champions, search 'UpgradeTree' by Assets.
-- CardEffectAddStatusEffect, only one status can be applied.
+- If you want to buff unit permanently, you need to write your own custom CardEffect. Do not use the CardTrigger, there will be some bugs. You can refer to my unit "ShadowWarrior".
+- The trigger for some types of card played: You need to listen both discard() and playcard().
+- Offering cannot trigger the playcard(). You need to add that in the discard().
+- If you want to find the UpgradeTree for champions in Assets, you can use the keyword "UpgradeTree".
+- In CardEffectAddStatusEffect, only one status can be applied. Other status will be ignored.
+	- For example, you want to add two status from one card, you need to add two CardEffectAddStatusEffect with one status each.
+- CardEffectSacrifies may have some bugs for Tip. So I write my own version.
+
+## Contact me
+pointer_0@outlook.com
+bilibili: 点子Pointer
+Or just submit issues in this project!
