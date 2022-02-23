@@ -32,5 +32,7 @@ I 'm pretty true that there will be tons of bugs and balance problems, so please
 
 ## Contact me
 pointer_0@outlook.com
-bilibili: µã×ÓPointer
+
+bilibili: ç‚¹å­Pointer
+
 Or just submit issues in this project!
