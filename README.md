@@ -13,7 +13,19 @@ I 'm pretty true that there will be tons of bugs and balance problems, so please
 	- Historian's Records: Choice of three random clans: Take the tome.
 - Descriptions for my clan.
 
+## Known bugs
+- Tooltip for Cubus Spike.
+
 ## Update Log
+
+### Ver 0.1.1
+- Fixed some translation problems.
+- Fixed the Surgestone did not work on the Power Siphon.
+- Fixed the Mind Domaination have 'no valid target' problem.
+- Subtype names now is shown under the unit cards.
+
+- Dark Fury: +Consume.
+- Incubus Butcher: +2[health] -> +1[health]
 
 ### Ver 0.1.0
 - Uploaded my project.

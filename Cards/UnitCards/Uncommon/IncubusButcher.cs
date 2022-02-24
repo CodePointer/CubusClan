@@ -69,7 +69,7 @@ namespace SuccClan.Cards.UnitCards
 								EffectStateType = VanillaCardEffectTypes.CardEffectBuffMaxHealth,
 								TargetMode = TargetMode.Self,
 								TargetTeamType = Team.Type.Monsters,
-								ParamInt = 2,
+								ParamInt = 1,
 							}
 						}
 					}

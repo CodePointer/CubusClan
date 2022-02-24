@@ -85,6 +85,6 @@ namespace SuccClan.RelicEffects
 		}
 
 		// Token: 0x04000C0F RID: 3087
-		private int lastDamageAmount;
+		private int lastDamageAmount = 0;
 	}
 }

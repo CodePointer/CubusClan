@@ -34,6 +34,7 @@ namespace SuccClan.Cards.SpellCards
 						AdditionalParamInt = 1,
 						ParamCardPool = MyCardPools.VengefulShardPool,
 						ParamCardUpgradeData = MyCardPools.exhaustUpgradeData,
+						ShouldTest = false,
 					},
 					new CardEffectDataBuilder
 					{

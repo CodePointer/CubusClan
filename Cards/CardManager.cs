@@ -20,7 +20,9 @@ namespace SuccClan.Cards
 		{
 			var testCardID = new List<string>
 			{
-				//ForTheQueen.IDName,
+				DarkFury.IDName,
+				PowerSiphon.IDName,
+				MindDomaination.IDName,
 				//EndlessShadow.IDName,
 				//IllusionTwins.IDName,
 				//VanillaCardIDs.VengefulShard,

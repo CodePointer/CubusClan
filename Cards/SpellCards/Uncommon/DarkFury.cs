@@ -24,6 +24,14 @@ namespace SuccClan.Cards.SpellCards
 				Targetless = true,
 
 				CardType = CardType.Spell,
+
+				TraitBuilders = new List<CardTraitDataBuilder>
+				{
+					new CardTraitDataBuilder
+					{
+						TraitStateName = VanillaCardTraitTypes.CardTraitExhaustState.AssemblyQualifiedName,
+					},
+				},
 				
 				EffectBuilders = new List<CardEffectDataBuilder>
 				{
