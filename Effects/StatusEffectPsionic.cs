@@ -9,9 +9,9 @@ using Trainworks.Constants;
 
 namespace SuccClan.Effects
 {
-	class StatusEffectSoulBlust : StatusEffectState
+	class StatusEffectPsionic : StatusEffectState
 	{
-		public const string IDName = "Status_SoulBlust";
+		public const string IDName = "status_psionic";
 
 		public override bool TestTrigger(InputTriggerParams inputTriggerParams, OutputTriggerParams outputTriggerParams)
 		{
@@ -32,7 +32,7 @@ namespace SuccClan.Effects
 		{
 			new StatusEffectDataBuilder
 			{
-				StatusEffectStateName = typeof(StatusEffectSoulBlust).AssemblyQualifiedName,
+				StatusEffectStateName = typeof(StatusEffectPsionic).AssemblyQualifiedName,
 				StatusId = IDName,
 				DisplayCategory = StatusEffectData.DisplayCategory.Persistent,
 				TriggerStage = StatusEffectData.TriggerStage.None,

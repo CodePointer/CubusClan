@@ -14,9 +14,16 @@ I 'm pretty true that there will be tons of bugs and balance problems, so please
 - Descriptions for my clan.
 
 ## Known bugs
-- Tooltip for Cubus Spike.
+
 
 ## Update Log
+
+### Ver 0.1.2
+- Improve the translation csv file.
+- Fixed the tooltip for Cubus Spike.
+- Forget to remove some debug code... Fixed.
+
+- Use a custom status 'Psionic' instead of 'Soul' for KnightMare.
 
 ### Ver 0.1.1
 - Fixed some translation problems.
@@ -41,6 +48,7 @@ I 'm pretty true that there will be tons of bugs and balance problems, so please
 - In CardEffectAddStatusEffect, only one status can be applied. Other status will be ignored.
 	- For example, you want to add two status from one card, you need to add two CardEffectAddStatusEffect with one status each.
 - CardEffectSacrifies may have some bugs for Tip. So I write my own version.
+- CardTraitScalingAddStatusEffect & CardEffectAddStatusEffect for X card will take the lower case statusId for matching. So highly recommended to use lower for status id. 
 
 ## Contact me
 pointer_0@outlook.com

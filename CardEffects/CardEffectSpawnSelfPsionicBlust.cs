@@ -6,23 +6,18 @@ using System.Text;
 using UnityEngine;
 using Trainworks.Constants;
 
+using SuccClan.Effects;
+
 namespace SuccClan.CardEffects
 {
-	public sealed class CardEffectSpawnSelfSoulEnchant : CardEffectBase, ICardEffectStatuslessTooltip
+	public sealed class CardEffectSpawnSelfPsionicBlust : CardEffectBase, ICardEffectStatuslessTooltip
 	{
-		private int soulCost;
-
-		public override void Setup(CardEffectState cardEffectState)
-		{
-			base.Setup(cardEffectState);
-			this.soulCost = cardEffectState.GetParamInt();
-		}
-
 		public override bool TestEffect(CardEffectState cardEffectState, CardEffectParams cardEffectParams)
 		{
-			// Check if soul stack is larger than cost
-			int soulStackNum = cardEffectParams.selfTarget.GetStatusEffectStacks(VanillaStatusEffectIDs.Soul);
-			if (soulStackNum < this.soulCost)
+			// Check if psionic stack is larger than cost
+			int psionicCost = cardEffectState.GetParamInt();
+			int psionicStackNum = cardEffectParams.selfTarget.GetStatusEffectStacks(StatusEffectPsionic.IDName);
+			if (psionicStackNum < psionicCost)
 			{
 				return false;
 			}
@@ -46,10 +41,10 @@ namespace SuccClan.CardEffects
 
 		public override IEnumerator ApplyEffect(CardEffectState cardEffectState, CardEffectParams cardEffectParams)
 		{
-			int soulCost = cardEffectState.GetParamInt();
-			if (soulCost > 0)
+			int psionicCost = cardEffectState.GetParamInt();
+			if (psionicCost > 0)
 			{
-				cardEffectParams.selfTarget.RemoveStatusEffect(VanillaStatusEffectIDs.Soul, false, soulCost, true, cardEffectParams.sourceRelic, null);
+				cardEffectParams.selfTarget.RemoveStatusEffect(StatusEffectPsionic.IDName, false, psionicCost, true, cardEffectParams.sourceRelic, null);
 			}
 
 			SaveManager saveManager = cardEffectParams.saveManager;
@@ -136,7 +131,7 @@ namespace SuccClan.CardEffects
 
 		public string GetTooltipBaseKey(CardEffectState cardEffectState)
 		{
-			return "Hint_SoulEnchant";
+			return "Hint_PsionicBlust";
 		}
 	}
 }

@@ -106,7 +106,7 @@ namespace SuccClan.CardEffects
 
 		public override void GetTooltipsStatusList(CardEffectState cardEffectState, ref List<string> outStatusIdList)
 		{
-			CardEffectAddStatusEffect.GetTooltipsStatusList(cardEffectState.GetSourceCardEffectData(), ref outStatusIdList);
+			CardEffectAddStatusEffectToOtherHeros.GetTooltipsStatusList(cardEffectState.GetSourceCardEffectData(), ref outStatusIdList);
 		}
 
 		public static void GetTooltipsStatusList(CardEffectData cardEffectData, ref List<string> outStatusIdList)

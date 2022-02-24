@@ -9,7 +9,7 @@ using Trainworks.Constants;
 
 using SuccClan.Cards.Upgrades;
 using SuccClan.Cards.SpellCards;
-
+using SuccClan.Effects;
 
 namespace SuccClan.Cards
 {
@@ -98,7 +98,7 @@ namespace SuccClan.Cards
 								{
 									new StatusEffectStackData
 									{
-										statusId = VanillaStatusEffectIDs.Soul,
+										statusId = StatusEffectPsionic.IDName,
 										count = 1,
 									},
 								},

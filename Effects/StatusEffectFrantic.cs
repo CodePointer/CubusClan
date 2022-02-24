@@ -11,7 +11,7 @@ namespace SuccClan.Effects
 {
 	class StatusEffectFrantic : StatusEffectState
 	{
-		public const string IDName = "Status_Frantic";
+		public const string IDName = "status_frantic";  // You'd better use lower for status id. The CardTraitScalingAddStatusEffect will use lower case id for matching.
 
 		public override bool TestTrigger(InputTriggerParams inputTriggerParams, OutputTriggerParams outputTriggerParams)
 		{

@@ -33,7 +33,7 @@ namespace SuccClan.Cards.Upgrades
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateName = typeof(CardEffectDrawAddEnergySoulEnchant).AssemblyQualifiedName,
+								EffectStateName = typeof(CardEffectDrawAddEnergyPsionicBlust).AssemblyQualifiedName,
 								ParamInt = 1,  // Soul cost
 								AdditionalParamInt = 1,  // Card & Ember
 							},

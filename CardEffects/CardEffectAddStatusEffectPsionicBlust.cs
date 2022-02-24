@@ -12,7 +12,7 @@ using SuccClan.Effects;
 namespace SuccClan.CardEffects
 {
 	// CardEffectAddStatusEffectWithSoul
-	public class CardEffectAddStatusEffectSoulEnchant : CardEffectBase, ICardEffectStatuslessTooltip
+	public class CardEffectAddStatusEffectPsionicBlust : CardEffectBase, ICardEffectStatuslessTooltip
 	{
 		public static StatusEffectStackData GetStatusEffectStack(CardEffectData cardEffectData, CardEffectState cardEffectState, CharacterState selfTarget, bool isTest = false)
 		{
@@ -30,10 +30,10 @@ namespace SuccClan.CardEffects
 
 		public override bool TestEffect(CardEffectState cardEffectState, CardEffectParams cardEffectParams)
 		{
-			// Check if soul stack is larger than cost
-			int soulCost = cardEffectState.GetParamInt();
-			int soulStackNum = cardEffectParams.selfTarget.GetStatusEffectStacks(VanillaStatusEffectIDs.Soul);
-			if (soulStackNum < soulCost)
+			// Check if psionic stack is larger than cost
+			int psionicCost = cardEffectState.GetParamInt();
+			int psionicStackNum = cardEffectParams.selfTarget.GetStatusEffectStacks(StatusEffectPsionic.IDName);
+			if (psionicStackNum < psionicCost)
 			{
 				return false;
 			}
@@ -67,10 +67,10 @@ namespace SuccClan.CardEffects
 
 		public override IEnumerator ApplyEffect(CardEffectState cardEffectState, CardEffectParams cardEffectParams)
 		{
-			int soulCost = cardEffectState.GetParamInt();
-			if (soulCost > 0)
+			int psionicCost = cardEffectState.GetParamInt();
+			if (psionicCost > 0)
 			{
-				cardEffectParams.selfTarget.RemoveStatusEffect(VanillaStatusEffectIDs.Soul, false, soulCost, true, cardEffectParams.sourceRelic, null);
+				cardEffectParams.selfTarget.RemoveStatusEffect(StatusEffectPsionic.IDName, false, psionicCost, true, cardEffectParams.sourceRelic, null);
 			}
 
 			StatusEffectStackData statusEffectStack = CardEffectAddStatusEffect.GetStatusEffectStack(cardEffectState.GetSourceCardEffectData(), cardEffectState, cardEffectParams.selfTarget, false);
@@ -121,7 +121,7 @@ namespace SuccClan.CardEffects
 
 		public string GetTooltipBaseKey(CardEffectState cardEffectState)
 		{
-			return "Hint_SoulEnchant";
+			return "Hint_PsionicBlust";
 		}
 	}
 }

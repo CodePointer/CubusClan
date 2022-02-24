@@ -7,10 +7,12 @@ using UnityEngine;
 
 using Trainworks.Constants;
 
+using SuccClan.Effects;
+
 namespace SuccClan.CardEffects
 {
 	// CardEffectDrawAddEnergySoulEnchant
-	public sealed class CardEffectDrawAddEnergySoulEnchant : CardEffectBase, ICardEffectStatuslessTooltip
+	public sealed class CardEffectDrawAddEnergyPsionicBlust : CardEffectBase, ICardEffectStatuslessTooltip
 	{
 		public override bool CanPlayAfterBossDead
 		{
@@ -30,29 +32,29 @@ namespace SuccClan.CardEffects
 
 		public override bool TestEffect(CardEffectState cardEffectState, CardEffectParams cardEffectParams)
 		{
-			// Check if soul stack is larger than cost
-			int soulCost = cardEffectState.GetParamInt();
-			int soulStackNum = cardEffectParams.selfTarget.GetStatusEffectStacks(VanillaStatusEffectIDs.Soul);
+			// Check if psionic stack is larger than cost
+			int psionicCost = cardEffectState.GetParamInt();
+			int psionicStackNum = cardEffectParams.selfTarget.GetStatusEffectStacks(StatusEffectPsionic.IDName);
 			//Utils.BepLog(new List<string>
 			//{
 			//	"soulCost, soulStackNum",
 			//	soulCost.ToString(),
 			//	soulStackNum.ToString(),
 			//});
-			return soulStackNum >= soulCost;
+			return psionicStackNum >= psionicCost;
 		}
 
 		public override IEnumerator ApplyEffect(CardEffectState cardEffectState, CardEffectParams cardEffectParams)
 		{
-			int soulCost = cardEffectState.GetParamInt();
-			if (soulCost > 0)
+			int psionicCost = cardEffectState.GetParamInt();
+			if (psionicCost > 0)
 			{
 				//Utils.BepLog(new List<string>
 				//{
 				//	"soulCost:",
 				//	soulCost.ToString(),
 				//});
-				cardEffectParams.selfTarget.RemoveStatusEffect(VanillaStatusEffectIDs.Soul, false, soulCost, true, cardEffectParams.sourceRelic, null);
+				cardEffectParams.selfTarget.RemoveStatusEffect(StatusEffectPsionic.IDName, false, psionicCost, true, cardEffectParams.sourceRelic, null);
 			}
 
 			// Draw Cards
@@ -91,7 +93,7 @@ namespace SuccClan.CardEffects
 
 		public string GetTooltipBaseKey(CardEffectState cardEffectState)
 		{
-			return "Hint_SoulEnchant";
+			return "Hint_PsionicBlust";
 		}
 	}
 }

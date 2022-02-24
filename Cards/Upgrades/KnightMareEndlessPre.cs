@@ -32,7 +32,7 @@ namespace SuccClan.Cards.Upgrades
 						{
 							new CardEffectDataBuilder
 							{
-								EffectStateName = typeof(CardEffectSpawnSelfSoulEnchant).AssemblyQualifiedName,
+								EffectStateName = typeof(CardEffectSpawnSelfPsionicBlust).AssemblyQualifiedName,
 								ParamInt = 3,
 								TargetMode = TargetMode.Self,
 								TargetTeamType = Team.Type.Monsters,

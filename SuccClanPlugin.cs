@@ -24,7 +24,7 @@ namespace SuccClan
 	{
 		public const string GUID = "com.name.package.succclan-mod";
 		public const string NAME = "Succubus Clan";
-		public const string VERSION = "0.1.1";
+		public const string VERSION = "0.1.2";
 		public const string ClanName = "SuccClan";
 
 		public static ClassData clanRef;
@@ -89,6 +89,7 @@ namespace SuccClan
 		static void MakeStatuses()
 		{
 			StatusEffectFrantic.Make();
+			StatusEffectPsionic.Make();
 			//StatusEffectSoulBlust.Make();
 		}
 
