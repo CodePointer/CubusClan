@@ -33,7 +33,7 @@ namespace SuccClan.Cards.Upgrades
 								EffectStateType = VanillaCardEffectTypes.CardEffectBuffDamage,
 								TargetMode = TargetMode.Room,
 								TargetTeamType = Team.Type.Monsters | Team.Type.Heroes,
-								ParamInt = 10
+								ParamInt = 15
 							},
 						},
 					},

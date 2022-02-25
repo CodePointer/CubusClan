@@ -5,7 +5,6 @@ I 'm pretty true that there will be tons of bugs and balance problems, so please
 
 ## TODO
 - Loading mod may take a long time.
-- Sprite name = "Status_Frantic" in tooltip
 - Balance problem.
 - Add some cards to the Concealed Caverns:
 	- Chaos Portal: Gain a random Rare Card from your choice of primary or allied clan.
@@ -17,6 +16,12 @@ I 'm pretty true that there will be tons of bugs and balance problems, so please
 
 
 ## Update Log
+
+### Ver 0.1.3
+- Fix the translation problem for Champion update.
+- Removed the icon of custom status in tooltip.
+
+- The Blood Thursty of Shadow Lady has been buffed.
 
 ### Ver 0.1.2
 - Improve the translation csv file.

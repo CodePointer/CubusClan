@@ -10,9 +10,32 @@ using SuccClan.Cards.SpellCards;
 using SuccClan.Cards.UnitCards;
 
 using SuccClan.Relics;
+using SuccClan.Effects;
 
 namespace SuccClan.Cards
 {
+	[HarmonyPatch(typeof(TooltipUI), "FormatTitleWithIcon")]
+	public static class IconRemovalService
+	{
+		private static void Prefix(ref string title, ref string icon)
+		{
+			var effects = new List<string>
+			{
+				StatusEffectFrantic.IDName,
+				StatusEffectPsionic.IDName,
+			};
+
+			foreach (var effect_name in effects)
+			{
+				string text = StatusEffectManager.GetLocalizedName(effect_name, 1, false, true, false);
+				if (title == text)
+				{
+					icon = "";
+				}
+			}
+		}
+	}
+
 	//[HarmonyPatch(typeof(SaveManager), "SetupRun")]
 	//class AddToStartingDeck
 	//{
