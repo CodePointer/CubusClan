@@ -30,7 +30,7 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardTraitDataBuilder
 					{
-						TraitStateName = VanillaCardTraitTypes.CardTraitExhaustState.AssemblyQualifiedName,
+						TraitStateName = MyCardTraitNames.Consume,
 					},
 				},
 

@@ -18,7 +18,7 @@ namespace SuccClan.Cards.Upgrades
 				UpgradeTitleKey = IDName + "_Name",
 				UseUpgradeHighlightTextTags = true,
 				BonusDamage = 10,
-				BonusHP = 0,
+				BonusHP = 10,
 
 				TriggerUpgradeBuilders = new List<CharacterTriggerDataBuilder>
 				{ 

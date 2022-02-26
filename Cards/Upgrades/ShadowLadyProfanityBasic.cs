@@ -21,7 +21,7 @@ namespace SuccClan.Cards.Upgrades
 				UpgradeTitleKey = IDName + "_Name",
 				UseUpgradeHighlightTextTags = true,
 				BonusDamage = 0,
-				BonusHP = 20,
+				BonusHP = 0,
 
 				StatusEffectUpgrades = new List<StatusEffectStackData>
 				{

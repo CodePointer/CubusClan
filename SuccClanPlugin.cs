@@ -24,7 +24,7 @@ namespace SuccClan
 	{
 		public const string GUID = "com.name.package.succclan-mod";
 		public const string NAME = "Succubus Clan";
-		public const string VERSION = "0.1.3";
+		public const string VERSION = "0.1.4";
 		public const string ClanName = "SuccClan";
 
 		public static ClassData clanRef;

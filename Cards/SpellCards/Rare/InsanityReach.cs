@@ -29,7 +29,7 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardTraitDataBuilder
 					{
-						TraitStateName = VanillaCardTraitTypes.CardTraitLimitedRange.AssemblyQualifiedName,
+						TraitStateName = MyCardTraitNames.Pyrebound,
 					},
 				},
 				

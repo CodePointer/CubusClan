@@ -20,8 +20,8 @@ namespace SuccClan.Cards.Upgrades
 			{
 				UpgradeTitleKey = IDName + "_Name",
 				UseUpgradeHighlightTextTags = true,
-				BonusDamage = 0,
-				BonusHP = 60,
+				BonusDamage = 30,
+				BonusHP = 10,
 
 				StatusEffectUpgrades = new List<StatusEffectStackData>
 				{
@@ -44,7 +44,7 @@ namespace SuccClan.Cards.Upgrades
 								EffectStateName = typeof(CardEffectAddStatusEffectToOtherHeros).AssemblyQualifiedName,
 								TargetMode = TargetMode.LastAttackedCharacter,
 								TargetTeamType = Team.Type.Heroes,
-								ParamInt = 40,
+								ParamInt = 30,
 								ParamStatusEffects = new StatusEffectStackData[]
 								{
 									new StatusEffectStackData

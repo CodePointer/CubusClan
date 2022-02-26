@@ -17,6 +17,12 @@ I 'm pretty true that there will be tons of bugs and balance problems, so please
 
 ## Update Log
 
+### Ver 0.1.4
+- Fix the bug of ObsessingAromatherapy.
+- Fix the bug of Consume stone.
+
+- Buff the ShadowLady.
+
 ### Ver 0.1.3
 - Fix the translation problem for Champion update.
 - Removed the icon of custom status in tooltip.

@@ -29,7 +29,7 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardTraitDataBuilder
 					{
-						TraitStateName = VanillaCardTraitTypes.CardTraitStrongerMagicPower.AssemblyQualifiedName,
+						TraitStateName = MyCardTraitNames.Attuned,
 						ParamInt = 5,
 					},
 				},

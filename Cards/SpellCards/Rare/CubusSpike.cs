@@ -47,7 +47,7 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardTraitDataBuilder
 					{
-						TraitStateName = VanillaCardTraitTypes.CardTraitScalingAddStatusEffect.AssemblyQualifiedName,
+						TraitStateName = MyCardTraitNames.ScalingAddStatusEffect,
 						ParamTrackedValue = CardStatistics.TrackedValueType.PlayedCost,
 						ParamEntryDuration = CardStatistics.EntryDuration.ThisBattle,
 						ParamInt = 2,
@@ -64,7 +64,7 @@ namespace SuccClan.Cards.SpellCards
 					},
 					new CardTraitDataBuilder
 					{
-						TraitStateName = VanillaCardTraitTypes.CardTraitExhaustState.AssemblyQualifiedName,
+						TraitStateName = MyCardTraitNames.Consume,
 					},
 				},
 			};

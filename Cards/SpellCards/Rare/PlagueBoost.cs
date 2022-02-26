@@ -26,11 +26,11 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardTraitDataBuilder
 					{
-						TraitStateName = VanillaCardTraitTypes.CardTraitFreeze.AssemblyQualifiedName,
+						TraitStateName = MyCardTraitNames.Frozen,
 					},
 					new CardTraitDataBuilder
 					{
-						TraitStateName = VanillaCardTraitTypes.CardTraitExhaustState.AssemblyQualifiedName,
+						TraitStateName = MyCardTraitNames.Consume,
 					},
 					new CardTraitDataBuilder
 					{

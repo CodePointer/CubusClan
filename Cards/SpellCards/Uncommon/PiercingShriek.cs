@@ -29,11 +29,12 @@ namespace SuccClan.Cards.SpellCards
 				{
 					new CardTraitDataBuilder
 					{
-						TraitStateName = VanillaCardTraitTypes.CardTraitIgnoreArmor.AssemblyQualifiedName,
+						//TraitStateName = VanillaCardTraitTypes.CardTraitExhaustState.AssemblyQualifiedName,
+						TraitStateName = MyCardTraitNames.Consume,
 					},
 					new CardTraitDataBuilder
 					{
-						TraitStateName = VanillaCardTraitTypes.CardTraitExhaustState.AssemblyQualifiedName,
+						TraitStateName = MyCardTraitNames.Piercing,
 					},
 				},
 				

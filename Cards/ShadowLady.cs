@@ -78,8 +78,8 @@ namespace SuccClan.Cards
 				NameKey = IDName + "_Name",
 
 				Size = 3,
-				Health = 20,
-				AttackDamage = 5,
+				Health = 30,
+				AttackDamage = 10,
 			};
 
 			Utils.AddUnitImg(charBuilder, IDName + ".png");

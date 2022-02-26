@@ -36,46 +36,56 @@ namespace SuccClan.Cards
 		}
 	}
 
-	//[HarmonyPatch(typeof(SaveManager), "SetupRun")]
-	//class AddToStartingDeck
+	//[HarmonyPatch(typeof(RerollMerchantRewardData), "CanBeGranted")]
+	//public static class InfiniteReroll
 	//{
-	//	static void Postfix(ref SaveManager __instance)
+	//	private static void Postfix(ref bool __result)
 	//	{
-	//		var testCardID = new List<string>
-	//		{
-	//			//DarkFury.IDName,
-	//			//PowerSiphon.IDName,
-	//			//MindDomaination.IDName,
-	//			//CubusSpike.IDName,
-	//			//EndlessShadow.IDName,
-	//			//IllusionTwins.IDName,
-	//			//VanillaCardIDs.VengefulShard,
-	//			//VanillaCardIDs.VengefulShard,
-	//			//VanillaCardIDs.VengefulShard,
-	//			//VanillaCardIDs.VengefulShard,
-	//			//VanillaCardIDs.VengefulShard,
-	//			//GreedGhost.IDName,
-	//			//GreedGhost.IDName,
-	//			//GreedGhost.IDName,
-	//			//GreedGhost.IDName,
-	//		};
-
-	//		foreach (var cardID in testCardID)
-	//		{
-	//			__instance.AddCardToDeck(CustomCardManager.GetCardDataByID(cardID));
-	//		}
-
-	//		if (__instance.GetMainClass() == SuccClanPlugin.clanRef
-	//			|| __instance.GetSubClass() == SuccClanPlugin.clanRef)
-	//		{
-	//			//var starterCrystal = CustomCollectableRelicManager.GetRelicDataByID(DesireCrystal.IDName);
-	//			//__instance.AddRelic(starterCrystal);
-
-	//			//__instance.AddRelic(CustomCollectableRelicManager.GetRelicDataByID(ProfaneCrossbow.IDName));
-	//			//__instance.AddRelic(CustomCollectableRelicManager.GetRelicDataByID(MutantElixirs.IDName));
-	//		}
+	//		__result = true;
 	//	}
 	//}
+
+	[HarmonyPatch(typeof(SaveManager), "SetupRun")]
+	class AddToStartingDeck
+	{
+		static void Postfix(ref SaveManager __instance)
+		{
+			//__instance.AdjustGold(5000);
+
+			var testCardID = new List<string>
+			{
+				//PiercingShriek.IDName,
+				//Oolioddroo.IDName,
+				//BloodCarnival.IDName,
+				//PowerSiphon.IDName,
+				//MindDomaination.IDName,
+				//CubusSpike.IDName,
+				//EndlessShadow.IDName,
+				//IllusionTwins.IDName,
+				//VanillaCardIDs.VengefulShard,
+				//VanillaCardIDs.VengefulShard,
+				//VanillaCardIDs.VengefulShard,
+				//VanillaCardIDs.VengefulShard,
+				//VanillaCardIDs.VengefulShard,
+				//GreedGhost.IDName,
+			};
+
+			foreach (var cardID in testCardID)
+			{
+				__instance.AddCardToDeck(CustomCardManager.GetCardDataByID(cardID));
+			}
+
+			if (__instance.GetMainClass() == SuccClanPlugin.clanRef
+				|| __instance.GetSubClass() == SuccClanPlugin.clanRef)
+			{
+				//var starterCrystal = CustomCollectableRelicManager.GetRelicDataByID(DesireCrystal.IDName);
+				//__instance.AddRelic(starterCrystal);
+
+				//__instance.AddRelic(CustomCollectableRelicManager.GetRelicDataByID(ProfaneCrossbow.IDName));
+				//__instance.AddRelic(CustomCollectableRelicManager.GetRelicDataByID(MutantElixirs.IDName));
+			}
+		}
+	}
 
 	//[HarmonyPatch(typeof(CompendiumSectionCards), "IsCardUnlockedAndDiscovered")]
 	//class RevealAllCards

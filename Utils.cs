@@ -9,6 +9,16 @@ using Trainworks.Constants;
 
 namespace SuccClan
 {
+	public static class MyCardTraitNames
+	{
+		public static string Consume = "CardTraitExhaustState";
+		public static string Piercing = "CardTraitIgnoreArmor";
+		public static string ScalingAddStatusEffect = "CardTraitScalingAddStatusEffect";
+		public static string Frozen = "CardTraitFreeze";
+		public static string Pyrebound = "CardTraitLimitedRange";
+		public static string Attuned = "CardTraitStrongerMagicPower";
+	}
+
 	class Utils
 	{
 		public static string rootPath = "";
@@ -118,6 +128,11 @@ namespace SuccClan
 		public static void BepLog(List<string> outputStrs)
 		{
 			Trainworks.Trainworks.Log(BepInEx.Logging.LogLevel.All, string.Join("\t", outputStrs));
+		}
+
+		public static void BepLog(string outputStr)
+		{
+			Trainworks.Trainworks.Log(BepInEx.Logging.LogLevel.All, outputStr);
 		}
 	}
 }

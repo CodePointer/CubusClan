@@ -20,8 +20,8 @@ namespace SuccClan.Cards.Upgrades
 			{
 				UpgradeTitleKey = IDName + "_Name",
 				UseUpgradeHighlightTextTags = true,
-				BonusDamage = 0,
-				BonusHP = 40,
+				BonusDamage = 20,
+				BonusHP = 5,
 
 				StatusEffectUpgrades = new List<StatusEffectStackData>
 				{

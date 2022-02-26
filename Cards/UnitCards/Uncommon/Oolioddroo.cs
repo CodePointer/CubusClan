@@ -40,7 +40,7 @@ namespace SuccClan.Cards.UnitCards
 				SubtypeKeys = new List<string> { "SuccClan_Subtype_Cubus" },
 
 				Size = 2,
-				Health = 20,
+				Health = 30,
 				AttackDamage = 0,
 
 				TriggerBuilders = new List<CharacterTriggerDataBuilder>

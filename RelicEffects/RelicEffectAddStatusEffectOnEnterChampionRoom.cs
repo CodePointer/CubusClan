@@ -36,7 +36,9 @@ namespace SuccClan.RelicEffects
 
 		public bool TestCharacterTriggerEffect(CharacterTriggerRelicEffectParams relicEffectParams)
 		{
-			if (relicEffectParams.characterState.IsDestroyed)
+			//Utils.BepLog("Begin TestCharacterTriggerEffect");
+
+			if (relicEffectParams.characterState == null || relicEffectParams.characterState.IsDestroyed)
 			{
 				return false;
 			}
@@ -49,24 +51,20 @@ namespace SuccClan.RelicEffects
 
 			bool flagHasChampion = false;
 			CharacterState targetCharacter = relicEffectParams.characterState;
-			RoomState roomOwner = targetCharacter.GetSpawnPoint(false).GetRoomOwner();
+			int roomIdx = targetCharacter.GetCurrentRoomIndex();
+			RoomState roomOwner = relicEffectParams.roomManager.GetRoom(roomIdx);
 			var charList = new List<CharacterState>();
 			targetCharacter.GetCombatManager().GetAllCharactersInRoom(charList, roomOwner);
+
 			foreach (var character in charList)
 			{
+				//Utils.BepLog(character == null ? "NULL" : character.ToString());
 				if (character.IsChampion())
 				{
 					flagHasChampion = true;
 					break;
 				}
 			}
-
-			//Utils.BepLog(new List<string>
-			//{
-			//	"TestCharacterTriggerEffect",
-			//	flag1.ToString(), flag2.ToString(), flag3.ToString(), flag4.ToString(),
-			//	flagHasChampion.ToString(),
-			//});
 
 			return flag && flagHasChampion;
 		}

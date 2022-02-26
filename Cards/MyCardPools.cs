@@ -44,7 +44,7 @@ namespace SuccClan.Cards
 				{
 					new CardTraitDataBuilder
 					{
-						TraitStateName = VanillaCardTraitTypes.CardTraitExhaustState.AssemblyQualifiedName,
+						TraitStateName = MyCardTraitNames.Consume,
 					},
 				},
 			}.Build();
